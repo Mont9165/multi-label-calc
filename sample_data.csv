@@ -1,0 +1,6 @@
+message	pr_id	repo_url	commit_url	Incomplete or Inadequate Code Documentation	Bad Identifier	Complex, Long, or Inadequate Logic	Unnecessary Code	Inconsistent or Disrupted Formatting	Wrong, Missing, or Inadequate String Expression or Literal	Inadequate Logging and Monitoring	Missing Constant Usage	Memo
+Fix documentation for login function	1234	https://github.com/example/repo1	https://github.com/example/repo1/commit/abc123	o				o						
+Refactor complex authentication logic	1235	https://github.com/example/repo2	https://github.com/example/repo2/commit/def456	o		o	o							
+Update variable names for clarity	1236	https://github.com/example/repo3	https://github.com/example/repo3/commit/ghi789		o										
+Add logging to payment module	1237	https://github.com/example/repo4	https://github.com/example/repo4/commit/jkl012	o					o	o				
+Remove unused imports	1238	https://github.com/example/repo5	https://github.com/example/repo5/commit/mno345				o							
