@@ -94,8 +94,6 @@ def calculate_match_rate(data: List[Dict[str, str]], label_columns: List[str]) -
             if len(set1) == 0 and len(set2) == 0:
                 # Both empty - perfect match
                 similarity = 1.0
-            elif len(set1.union(set2)) == 0:
-                similarity = 0.0
             else:
                 similarity = len(set1.intersection(set2)) / len(set1.union(set2))
             
