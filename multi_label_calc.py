@@ -23,7 +23,7 @@ def read_csv_file(file_path: str) -> Tuple[List[str], List[Dict[str, str]]]:
         Tuple of (headers, data_rows)
     """
     with open(file_path, 'r', encoding='utf-8') as f:
-        reader = csv.DictReader(f, delimiter='\t')
+        reader = csv.DictReader(f, delimiter=',')
         headers = reader.fieldnames
         data = list(reader)
     return headers, data
@@ -40,7 +40,7 @@ def get_label_columns(headers: List[str]) -> List[str]:
     Returns:
         List of label column names
     """
-    metadata_columns = {'message', 'pr_id', 'repo_url', 'commit_url', 'Memo'}
+    metadata_columns = {'sha', 'message', 'pr_id', 'repo_url', 'commit_url', 'Memo'}
     return [col for col in headers if col not in metadata_columns]
 
 

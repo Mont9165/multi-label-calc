@@ -1,0 +1,4279 @@
+sha,message,pr_id,repo_url,commit_url,Incomplete or Inadequate Code Documentation​,Bad Identifier​,"Complex, Long, or Inadequate Logic​",Unnecessary Code​,Inconsistent or Disrupted Formatting​,"Wrong, Missing, or Inadequate String Expression or Literal​",Inadequate Logging and Monitoring​,Missing Constant Usage​,Memo,,0
+56e2550768424947b8ecc78ccc4e2a017e4e180b,Rename absolute rule tags for clarity,3146127639,https://api.github.com/repos/Nikduke/FS,https://github.com/Nikduke/FS/commit/56e2550768424947b8ecc78ccc4e2a017e4e180b,,o,,,,,,,,,
+b4428a75dd7c2ba62b4a7b63215eb6d89f0c8839,"refactor(extractors): use pep695 generics
+
+- Parameterize `BaseExtractor` with a PEP 695 style type variable `T`
+- Replace `Any` return type in `extract` with generic `T`
+- Update `DummyExtractor` and tests to use concrete type `str`
+- Replace loose `Any` usage in test mocks with more appropriate types
+  like `object` and `dict[str, str]`
+- Improve type clarity and prepare codebase for stricter static analysis",3146398683,https://api.github.com/repos/peppapig450/TikTokSlideshow-Downloader,https://github.com/peppapig450/TikTokSlideshow-Downloader/commit/b4428a75dd7c2ba62b4a7b63215eb6d89f0c8839,,o,,,,,,,,,
+22907851fef89b1fac47632c6a03d500fc58add3,"feat ✨: Enhance commit message with detailed context
+
+This commit update the commit message to provide a more detailed explanation of the changes made in the `cli.py`, `client.py`, `config.py`, and `utils.py` files. The new message includes a description of the changes, their type (feat), and the related commits for reference. This enhancement improves readability and helps future contributors quickly understand the scope and impact of these changes.",3151242918,https://api.github.com/repos/beecave-homelab/cloudflare-browser-rendering-cli,https://github.com/beecave-homelab/cloudflare-browser-rendering-cli/commit/22907851fef89b1fac47632c6a03d500fc58add3,,,,,o,,,,,,
+3aaa6d008e6f0fd185e87f98a6d2126962c609c8,"Refactor config comments for better readability and line wrapping
+
+Co-authored-by: zohair.ul.hasan <zohair.ul.hasan@gmail.com>",3202932829,https://api.github.com/repos/Zohair-coder/drexel-scraper,https://github.com/Zohair-coder/drexel-scraper/commit/3aaa6d008e6f0fd185e87f98a6d2126962c609c8,,,,,o,,,,,,
+da23af6a509eb331f11d5a11e9611ca279c8c7b0,"fix(symlink): 🛠️ improve docset symlink handling
+
+- rename variable to adjusted_path for clarity\n- add regression test for symlinked DocSets path\n- bump version to 1.2.8 and update documentation",3128657262,https://api.github.com/repos/joshuadanpeterson/enhanced-dash-mcp,https://github.com/joshuadanpeterson/enhanced-dash-mcp/commit/da23af6a509eb331f11d5a11e9611ca279c8c7b0,o,o,,,,,,,,,
+b85c85af97322e30427ca286c5541d98fddb7cf1,"refactor: update seed command to remove unused prompt descriptions and adjust email handling
+
+- Removed descriptions from LLMPrompt entries to streamline prompt creation.
+- Updated comments to reflect changes in promotional email handling, clarifying the removal of the third email option.
+- Enhanced code clarity and maintainability in the seed command.",3127947179,https://api.github.com/repos/surp-hovhannes/bahk,https://github.com/surp-hovhannes/bahk/commit/b85c85af97322e30427ca286c5541d98fddb7cf1,o,,,,,,,,,,
+5e258bd04de870da22cc12348d48aa2a9e748502,Refactor tokenizer for clarity,3146342206,https://api.github.com/repos/gevahaviv1/Nand2Tetris-EX11,https://github.com/gevahaviv1/Nand2Tetris-EX11/commit/5e258bd04de870da22cc12348d48aa2a9e748502,,o,o,,,,,,,,
+c23dd8ebc6e8ae4ce18e3fa9706059e277ba5748,"foundation/light-layout/beam-geometry/_: fix extent-segment calculation math
+
+Corrects vertex indexing and variable naming for bisector calculations:
+- Fixed port/starboard lateral vertex indices (vertices[3]/vertices[1])
+- Corrected bisector line assignments with close_bisector_line array
+- Improved variable naming for clarity (beamport/beamstarboard prefixes)
+- Moved bisector line pre-computation outside inner loop for efficiency
+- Adjusted validation beam counts for better visual testing
+
+Still in-progress: mixed extent handling needs refinement for beams where
+different extents are closer on port vs starboard sides (5-sided polygons).
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3253745291,https://api.github.com/repos/rossry/luminary,https://github.com/rossry/luminary/commit/c23dd8ebc6e8ae4ce18e3fa9706059e277ba5748,,o,o,,,,,,,,
+a567948548e3b99adec51c9f58ac39f1941e8987,"refactor: comprehensive code restructuring for improved maintainability
+
+## Summary
+- Eliminated 15+ auto_feature_*.py files into clean feature modules
+- Split 800+ line routes.py into domain-specific modules
+- Simplified configuration management with fallback support
+- Improved code organization, readability, and maintainability
+
+## Key Changes
+- ✅ Created src/features/ for business logic consolidation
+- ✅ Created src/api/routes/ for modular API endpoints
+- ✅ Added settings_simple.py for better dependency management
+- ✅ 100% structure validation test pass rate
+- ✅ Preserved all existing functionality and API compatibility
+
+## Benefits
+- Better separation of concerns
+- Easier to add new features and routes
+- Reduced coupling and circular dependencies
+- Test-friendly modular architecture
+- Human-readable code organization
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3245976075,https://api.github.com/repos/takezou621/repairgpt,https://github.com/takezou621/repairgpt/commit/a567948548e3b99adec51c9f58ac39f1941e8987,,,o,,,,,,,,
+a1141d950f4c0fcf028dfd591cb189e03d38e233,"refactor: rename chain_dag → chain_let throughout codebase
+
+- Rename chain_dag.py → chain_let.py
+- Update chain_dag_impl → chain_let_impl
+- Rename test files and update all references
+- Update comments and documentation
+- Maintain backward compatibility in wire protocol
+
+This change improves semantic clarity as 'let' better represents
+the binding functionality than 'dag' (directed acyclic graph).",3262310380,https://api.github.com/repos/graphistry/pygraphistry,https://github.com/graphistry/pygraphistry/commit/a1141d950f4c0fcf028dfd591cb189e03d38e233,o,o,,,,,,,,,
+e2c7ca202cd6b4be9813b6408f5eff2a617b3372,Poll all readable CAT commands,3206566738,https://api.github.com/repos/DO1FFE/991a-remote,https://github.com/DO1FFE/991a-remote/commit/e2c7ca202cd6b4be9813b6408f5eff2a617b3372,,,,,,,,,,,
+cc4db0a8b6efd9af8c7e04144dc81a3d54b7426b,"Refactor batch scripts for better cross-platform compatibility and readability
+
+Co-authored-by: ctulchu <ctulchu@gmail.com>",3232163462,https://api.github.com/repos/SRValeev/Document-DB,https://github.com/SRValeev/Document-DB/commit/cc4db0a8b6efd9af8c7e04144dc81a3d54b7426b,,,o,,,,,,,,
+ad6f9926c7b418316f9d8a8bc13ba7d8842d6588,test: adjust parameter names for clarity,3164970648,https://api.github.com/repos/xXFirst555Xx/FuelTracker,https://github.com/xXFirst555Xx/FuelTracker/commit/ad6f9926c7b418316f9d8a8bc13ba7d8842d6588,,o,,,,,,,,,
+cb5a5f7f6c772be976a2c2d7ba33dda260d3e237,"style: Clean up SettingsService code formatting and logic
+
+- Remove trailing whitespace
+- Fix quote consistency (single -> double quotes)
+- Simplify __setattr__ logic for better readability
+- Extract error message strings to variables for consistency
+- No functional changes, just code quality improvements
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3230437187,https://api.github.com/repos/langflow-ai/langflow,https://github.com/langflow-ai/langflow/commit/cb5a5f7f6c772be976a2c2d7ba33dda260d3e237,,,o,,o,,,,,,
+58c3c383c83ebca5e472c95407e6dac59918f179,"Add --log-level option and improve JSON formatting
+
+- Add --log-level option to both hal_query.py and prepare_catalog.py with INFO as default
+- Change JSON output to use indent=2 for better readability
+- Add detailed DEBUG logging for working paper/article pairs during exclusion
+- Enable requests debug logging only when --log-level=debug is specified
+
+Addresses GitHub PR feedback for improved logging and formatting.
+
+Co-Authored-By: Minh Ha-Duong <minh.haduong@gmail.com>",3121832184,https://api.github.com/repos/CIRED/cired.digital,https://github.com/CIRED/cired.digital/commit/58c3c383c83ebca5e472c95407e6dac59918f179,,,,,,,o,,,,
+77118ce1b32955b5511138810965998d359a69a2,Reorder helper functions for readability,3237694102,https://api.github.com/repos/TugrulKaraaslan/finansal-analiz-sistemi,https://github.com/TugrulKaraaslan/finansal-analiz-sistemi/commit/77118ce1b32955b5511138810965998d359a69a2,,,o,,,,,,,,
+b6d668fc664c5f376626f06acdf48f9f462884e2,"Implement Flow state export method (#2134)
+
+This commit implements a method for exporting the state of a flow into a
+JSON-serializable dictionary.
+
+The idea is producing a human-readable version of state that can be
+inspected or consumed by other systems, hence JSON and not pickling or
+marshalling.
+
+I consider it an export because it's a one-way process, meaning it
+cannot be loaded back into Python because of complex types.",2850852315,https://api.github.com/repos/crewAIInc/crewAI,https://github.com/crewAIInc/crewAI/commit/b6d668fc664c5f376626f06acdf48f9f462884e2,,,,,,,o,,,,
+965aef5aa0f558a6c8ef4d18c8d3bd35d81628b4,"Updated object graph to better handle dependencies
+
+This commit improves the dependency resolution process in MyObjectGraph class by introducing a new implementation of the _provide() function. The new logic uses a result dictionary and traversal stack to handle dependency accumulation, ensuring more reliable and efficient dependency management. The changes also include added type hinting and improved logging within test_design.py to aid in readability and troubleshooting.",2906509898,https://api.github.com/repos/proboscis/pinjected,https://github.com/proboscis/pinjected/commit/965aef5aa0f558a6c8ef4d18c8d3bd35d81628b4,o,,o,,,,o,,,,
+7dc3ee5cd8ff6ebcf3b80631033d68a7f7e171b9,refactor: restructure project files and update README for clarity,3164049791,https://api.github.com/repos/sserkanakin/reproduction-project,https://github.com/sserkanakin/reproduction-project/commit/7dc3ee5cd8ff6ebcf3b80631033d68a7f7e171b9,o,,,,,,,,,,
+d8f9b53f3560af2f76c2d86bac0bc85d2bbaa458,refactor(term_mapper): improve readability and structure,3122507629,https://api.github.com/repos/VeraLIMS/Fundalyze,https://github.com/VeraLIMS/Fundalyze/commit/d8f9b53f3560af2f76c2d86bac0bc85d2bbaa458,,,o,,,,,,,,
+d13be3cdff46d182e8ca1fd0583f8bf8c8b2054b,docs: refine docstrings for clarity,3213763182,https://api.github.com/repos/TugrulKaraaslan/finansal-analiz-sistemi,https://github.com/TugrulKaraaslan/finansal-analiz-sistemi/commit/d13be3cdff46d182e8ca1fd0583f8bf8c8b2054b,o,,,,,,,,,,
+f4efdc55e22e0e8a5d8d5c446d571155cdabc791,"refactor: implement review suggestions
+
+- Extract model conversion logic to _get_llm_instance helper method
+- Improve error message clarity
+- Simplify LLM instance creation in CrewEvaluator
+
+Co-Authored-By: Joe Moura <joao@crewai.com>",2841002189,https://api.github.com/repos/crewAIInc/crewAI,https://github.com/crewAIInc/crewAI/commit/f4efdc55e22e0e8a5d8d5c446d571155cdabc791,,,o,,,,o,,,,
+335a59ee84f361551752182a122af9b8a4c1b26e,Refactor ActionHelper for clarity,3165888310,https://api.github.com/repos/ok97465/spyder_okvim,https://github.com/ok97465/spyder_okvim/commit/335a59ee84f361551752182a122af9b8a4c1b26e,o,,o,,,,,,,,
+1058082700c5900c2f19189a1862448ff505ff4e,Merge branch 'master' into codex/update-readme.md-for-clarity,3205083186,https://api.github.com/repos/davnnis2003/ds-showncase,https://github.com/davnnis2003/ds-showncase/commit/1058082700c5900c2f19189a1862448ff505ff4e,,,,,,,,,,,
+d5b99ba4138c6b8d6aaae47d00c5816001a53435,"refactor: Apply Sandi Metz 5-line rule to overlap.py methods
+
+- Break down _extract_ending_content (20 lines → 5 lines)
+- Break down _extract_complete_entities_from_end (25 lines → 5 lines)
+- Extract focused helper methods for data structure handling
+- Improve separation of concerns between simple and structured data
+- Enhance testability of entity collection logic
+- Address method complexity identified in code review
+
+Each refactored method now has single responsibility and improved clarity.",3262599201,https://api.github.com/repos/m2ix4i/JSON-Chunking,https://github.com/m2ix4i/JSON-Chunking/commit/d5b99ba4138c6b8d6aaae47d00c5816001a53435,,,o,,,,,,,,
+68afd5c9e677e626218e7dc4b2584ff5c1e61b3e,"Replace chr() functions with json.dumps for cleaner email escaping
+
+- Address GitHub comment requesting 'normal strings' instead of chr(39)/chr(92)
+- Use json.dumps for proper email escaping in JavaScript strings
+- Maintains XSS protection while improving code readability
+- Eliminates f-string syntax conflicts that required chr() workaround
+
+Co-Authored-By: Alek <alek@pynecone.io>",3264413761,https://api.github.com/repos/reflex-dev/reflex-web,https://github.com/reflex-dev/reflex-web/commit/68afd5c9e677e626218e7dc4b2584ff5c1e61b3e,,,o,,,,,,,,
+839abf868a8575c617590f0cd725a0efdd2394ce,"Update webui.py
+
+Added a new Flask server initialization using werkzeug.make_server with a global _server variable, enabling a graceful shutdown before restarting to prevent port conflicts
+
+Implemented _load_ini_with_descriptions to parse comments from the .ini files and display them in the web UI for each setting
+
+Updated the HTML template to dark mode and inserted setting descriptions beneath option labels for better clarity in the interface",3271390806,https://api.github.com/repos/ColinRaine/MusicBot,https://github.com/ColinRaine/MusicBot/commit/839abf868a8575c617590f0cd725a0efdd2394ce,,,,,,,,,,,
+15dee211530ca41fda40fb36c4f7406910095c46,Refactor access point registration in OSM tests for improved readability,3249191998,https://api.github.com/repos/bmander/graphserver,https://github.com/bmander/graphserver/commit/15dee211530ca41fda40fb36c4f7406910095c46,,,o,,,,,,,,
+254f16d9bccdf9c0677e420eb052bcd950b20c07,Reorder helper functions for clarity,3220198992,https://api.github.com/repos/TugrulKaraaslan/finansal-analiz-sistemi,https://github.com/TugrulKaraaslan/finansal-analiz-sistemi/commit/254f16d9bccdf9c0677e420eb052bcd950b20c07,,,,,o,,,,,,
+36a86738e33649cac608602f24fb19bf03ba27f1,"Fix options PnL calculation and rename price_tick variable
+
+- Modify _calculate_options_pnl to return separate call and put PnL values instead of combined total
+- Update _check_pnl to save individual call_unrealized_pnl and put_unrealized_pnl to database
+- Add detailed logging for call and put PnL values separately
+- Rename price_tick variable to spot_price_tick for clarity
+- Addresses GitHub comments: separate call/put PnL calculation and variable naming
+
+This ensures accurate options PnL tracking using live Deribit data for each option type individually.
+
+Co-Authored-By: Alon Ohayon <ohayonal3@gmail.com>",3267138350,https://api.github.com/repos/alonzo151/gridder,https://github.com/alonzo151/gridder/commit/36a86738e33649cac608602f24fb19bf03ba27f1,,,o,,,,o,,,,
+144b96986ecf85bd7e5de96c1d2742d95d6da39e,"Refactor AISuiteLLM to include tools parameter in completion methods
+
+- Update the _prepare_completion_params method to accept an optional tools parameter
+- Modify the chat completion method to utilize the new tools parameter for enhanced functionality
+- Clean up print statements for better code clarity",2894930869,https://api.github.com/repos/crewAIInc/crewAI,https://github.com/crewAIInc/crewAI/commit/144b96986ecf85bd7e5de96c1d2742d95d6da39e,,,o,o,,,,,,,
+51083dabec3e60e316938e47dd0d65eee535745e,"Fix test assertions and improve cleanup logic in persistence integration tests
+
+- Updated assertions to provide clearer error messages when expected values do not match.
+- Enhanced the cleanup logic by resetting the last cleanup time to ensure proper triggering of auto cleanup.
+- Adjusted sleep duration comments for better clarity on timing requirements.
+
+These changes improve the reliability and clarity of the persistence integration tests.",3272234037,https://api.github.com/repos/Kirch77/Syntha_v2,https://github.com/Kirch77/Syntha_v2/commit/51083dabec3e60e316938e47dd0d65eee535745e,o,,o,,,,o,,,,
+60a277a74639e76237ce0bc33dbae2580cfe7768,"Fix critical documentation errors and improve code quality
+
+🔧 Critical Fixes:
+- Renamed LTS_Model_traning.py → LTS_Model_training.py (fixed filename typo)
+- Fixed syntax errors (missing parentheses, brackets)
+
+📚 Documentation Improvements:
+- Added comprehensive module docstrings to both files
+- Added detailed function docstrings (21+ functions documented)
+- Implemented Google-style docstring format with Args, Returns, Notes
+- Added medical imaging context and technical explanations
+- Documented DICOM windowing parameters and their medical significance
+
+🏥 Medical Context Added:
+- Explained medical image processing concepts
+- Documented CT scan orientation and Hounsfield units
+- Added context for liver tumor segmentation workflow
+- Clarified background vs foreground accuracy for medical applications
+
+✨ Code Quality:
+- Consistent documentation style across all functions
+- Proper type hints and parameter descriptions
+- Added usage notes and implementation details
+- Improved code readability and maintainability
+
+Resolves all issues identified in documentation_errors_report.md",3242062876,https://api.github.com/repos/ranuka-laksika/LiverTumer-Segmentation,https://github.com/ranuka-laksika/LiverTumer-Segmentation/commit/60a277a74639e76237ce0bc33dbae2580cfe7768,o,o,,,,,,,,,
+53b8a5862597456ab7ffc9463dcd07a6dcdf1437,fix: Import tiktoken in token_counter method and update test stubs for clarity,3120230441,https://api.github.com/repos/dowhiledev/nomos,https://github.com/dowhiledev/nomos/commit/53b8a5862597456ab7ffc9463dcd07a6dcdf1437,,,o,,,,,,,,
+779839fd78cd3bc36989135ee1eb7ee214830a1e,refactor: streamline argument formatting in check.py and async_checker.py; improve test readability in test_check.py,3235527392,https://api.github.com/repos/jancschaefer/pymarktools,https://github.com/jancschaefer/pymarktools/commit/779839fd78cd3bc36989135ee1eb7ee214830a1e,,,,,o,,,,,,
+dbf8da2d9c21f973e6ec63e18c66a8f0980a7816,"fix: Include agent knowledge in planning process (#1818)
+
+* test: Add test demonstrating knowledge not included in planning process
+
+Issue #1703: Add test to verify that agent knowledge sources are not currently
+included in the planning process. This test will help validate the fix once
+implemented.
+
+- Creates agent with knowledge sources
+- Verifies knowledge context missing from planning
+- Checks other expected components are present
+
+Co-Authored-By: Joe Moura <joao@crewai.com>
+
+* fix: Include agent knowledge in planning process
+
+Issue #1703: Integrate agent knowledge sources into planning summaries
+- Add agent_knowledge field to task summaries in planning_handler
+- Update test to verify knowledge inclusion
+- Ensure knowledge context is available during planning phase
+
+The planning agent now has access to agent knowledge when creating
+task execution plans, allowing for better informed planning decisions.
+
+Co-Authored-By: Joe Moura <joao@crewai.com>
+
+* style: Fix import sorting in test_knowledge_planning.py
+
+- Reorganize imports according to ruff linting rules
+- Fix I001 linting error
+
+Co-Authored-By: Joe Moura <joao@crewai.com>
+
+* test: Update task summary assertions to include knowledge field
+
+Co-Authored-By: Joe Moura <joao@crewai.com>
+
+* fix: Update ChromaDB mock path and fix knowledge string formatting
+
+Co-Authored-By: Joe Moura <joao@crewai.com>
+
+* fix: Improve knowledge integration in planning process with error handling
+
+Co-Authored-By: Joe Moura <joao@crewai.com>
+
+* fix: Update task summary format for empty tools and knowledge
+
+- Change empty tools message to 'agent has no tools'
+- Remove agent_knowledge field when empty
+- Update test assertions to match new format
+- Improve test messages for clarity
+
+Co-Authored-By: Joe Moura <joao@crewai.com>
+
+* fix: Update string formatting for agent tools in task summary
+
+Co-Authored-By: Joe Moura <joao@crewai.com>
+
+* fix: Update string formatting for agent tools in task summary
+
+Co-Authored-By: Joe Moura <joao@crewai.com>
+
+* fix: Update string formatting for agent tools and knowledge in task summary
+
+Co-Authored-By: Joe Moura <joao@crewai.com>
+
+* fix: Update knowledge field formatting in task summary
+
+Co-Authored-By: Joe Moura <joao@crewai.com>
+
+* style: Fix import sorting in test_planning_handler.py
+
+Co-Authored-By: Joe Moura <joao@crewai.com>
+
+* style: Fix import sorting order in test_planning_handler.py
+
+Co-Authored-By: Joe Moura <joao@crewai.com>
+
+* test: Add ChromaDB mocking to test_create_tasks_summary_with_knowledge_and_tools
+
+Co-Authored-By: Joe Moura <joao@crewai.com>
+
+---------
+
+Co-authored-by: Devin AI <158243242+devin-ai-integration[bot]@users.noreply.github.com>
+Co-authored-by: Joe Moura <joao@crewai.com>
+Co-authored-by: João Moura <joaomdmoura@gmail.com>",2841023413,https://api.github.com/repos/crewAIInc/crewAI,https://github.com/crewAIInc/crewAI/commit/dbf8da2d9c21f973e6ec63e18c66a8f0980a7816,,,o,,,,o,,,,
+f56685e24466f1e4584edb521193a93c60e2127d,"Fix code block rendering inconsistencies and update page title
+
+- Standardize all code blocks to use consistent markdown formatting
+- Replace doccmdoutput() calls with standard bash/text code blocks
+- Remove python exec imports that are no longer needed
+- Update page title to 'Custom Component CLI Reference' for clarity
+- Fix visual inconsistencies between different code block types
+
+Co-Authored-By: unknown <>",3221298768,https://api.github.com/repos/reflex-dev/reflex-web,https://github.com/reflex-dev/reflex-web/commit/f56685e24466f1e4584edb521193a93c60e2127d,o,,,o,o,,,,,,
+fd680895144ea9f7820ff282929157325a6103f1,"Convert raw JSON to readable markdown format in GitHub PR comments
+
+- Add format_visual_analysis_to_markdown function to convert structured JSON to markdown
+- Use emojis and clear headers for better readability (✅, ⚠️, ❌)
+- Handle missing fields gracefully - only show sections with data
+- Preserve existing collapsible structural analysis format
+- Maintain backward compatibility with existing functionality
+
+Co-Authored-By: Joao Garin <joao.garin@gmail.com>",3110947452,https://api.github.com/repos/nevinbuilds/bruniai-action,https://github.com/nevinbuilds/bruniai-action/commit/fd680895144ea9f7820ff282929157325a6103f1,,,,,o,o,,,,,
+64ac5281726a08dac75691b67e6a4ef257d2b588,"Improves GUI layout and labeling
+
+- Reduce input field width and adjust its position
+- Rename file-open button to ""Abrir"" for clarity
+- Expand sample size label text and realign its entry and button",3197388207,https://api.github.com/repos/marco-jardim/Comparador-de-Registros,https://github.com/marco-jardim/Comparador-de-Registros/commit/64ac5281726a08dac75691b67e6a4ef257d2b588,,,,,,o,,,,,
+2d8c6e70e4763041c1c7e83a5c2c58e6a1aaee8c,"fix: Update task summary format for empty tools and knowledge
+
+- Change empty tools message to 'agent has no tools'
+- Remove agent_knowledge field when empty
+- Update test assertions to match new format
+- Improve test messages for clarity
+
+Co-Authored-By: Joe Moura <joao@crewai.com>",2763242692,https://api.github.com/repos/crewAIInc/crewAI,https://github.com/crewAIInc/crewAI/commit/2d8c6e70e4763041c1c7e83a5c2c58e6a1aaee8c,,,,,,o,,,,,
+d851741a251e1dacb6f4d021c375561e8b79e44b,"fix: address all 32 CodeRabbit review suggestions for production polish
+
+Security Enhancements:
+- Add CSP headers and meta tags for security hardening
+- Sanitize error messages to prevent XSS vulnerabilities
+- Add accessibility improvements with ARIA labels
+
+Backend Performance & Cleanup:
+- Add database indexes on timestamp columns for query optimization
+- Remove unused SQLAlchemy imports (func, and_) from monitoring router
+- Improve model import formatting for better readability
+
+Frontend Component Improvements:
+- Fix navigation active state logic to prevent false positives
+- Improve loading state management across all components
+- Add defensive programming for API response handling
+- Optimize chart time formatting for different ranges
+- Make Y-axis domains dynamic instead of hard-coded
+
+WebSocket Service Enhancements:
+- Add connection timeout and validation for outgoing messages
+- Remove unused refs and improve connection management
+- Add proper error handling for WebSocket events
+
+State Management Optimizations:
+- Use useCallback to prevent unnecessary re-renders in Settings
+- Remove unused state fields to reduce component complexity
+- Optimize deep state updates with structural sharing
+
+Configuration Improvements:
+- Add additional npm scripts for development workflow
+- Make site filter options dynamic and configurable
+- Improve package.json structure with proper scripts
+
+Code Quality Fixes:
+- Remove dead code and unused variables
+- Improve error boundaries and fallback handling
+- Add proper TypeScript-ready configuration
+- Enhance accessibility with proper ARIA attributes
+
+All 32 suggestions addressed for production-ready monitoring dashboard.
+
+🚀 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3089886140,https://api.github.com/repos/endersclarity/jobbot,https://github.com/endersclarity/jobbot/commit/d851741a251e1dacb6f4d021c375561e8b79e44b,,,o,o,,o,,,,,
+82ccfa3247f2a7486b2cf9d9ac27b979bbbd7058,Refactor OSM routing example for clarity and improved coordinate handling,3249191998,https://api.github.com/repos/bmander/graphserver,https://github.com/bmander/graphserver/commit/82ccfa3247f2a7486b2cf9d9ac27b979bbbd7058,,,o,,,,,,,,
+bc85fee839de3df3eb2a4e0805287554a03e4add,"Address PR feedback: refactor try/except structure and add GIVEN/WHEN/THEN comments
+
+- Move workflow crawling logic into private helper method _gather_event_display_context_from_workflow_crawling
+- Keep only importlib.import_module line in try block as requested
+- Add comprehensive GIVEN/WHEN/THEN comments to test for better readability
+- Maintain all existing functionality while improving code structure
+- All tests continue to pass after refactoring
+
+Co-Authored-By: vargas@vellum.ai <dvargas92495@gmail.com>",3172744769,https://api.github.com/repos/vellum-ai/vellum-python-sdks,https://github.com/vellum-ai/vellum-python-sdks/commit/bc85fee839de3df3eb2a4e0805287554a03e4add,o,,o,,,,,,,,
+00c2f5043e80be88dc3337d5e57a73358f5ca11a,"WIP crew events emitter (#2048)
+
+* WIP crew events emitter
+
+* Refactor event handling and introduce new event types
+
+- Migrate from global `emit` function to `event_bus.emit`
+- Add new event types for task failures, tool usage, and agent execution
+- Update event listeners and event bus to support more granular event tracking
+- Remove deprecated event emission methods
+- Improve event type consistency and add more detailed event information
+
+* Add event emission for agent execution lifecycle
+
+- Emit AgentExecutionStarted and AgentExecutionError events
+- Update CrewAgentExecutor to use event_bus for tracking agent execution
+- Refactor error handling to include event emission
+- Minor code formatting improvements in task.py and crew_agent_executor.py
+- Fix a typo in test file
+
+* Refactor event system and add third-party event listeners
+
+- Move event_bus import to correct module paths
+- Introduce BaseEventListener abstract base class
+- Add AgentOpsListener for third-party event tracking
+- Update event listener initialization and setup
+- Clean up event-related imports and exports
+
+* Enhance event system type safety and error handling
+
+- Improve type annotations for event bus and event types
+- Add null checks for agent and task in event emissions
+- Update import paths for base tool and base agent
+- Refactor event listener type hints
+- Remove unnecessary print statements
+- Update test configurations to match new event handling
+
+* Refactor event classes to improve type safety and naming consistency
+
+- Rename event classes to have explicit 'Event' suffix (e.g., TaskStartedEvent)
+- Update import statements and references across multiple files
+- Remove deprecated events.py module
+- Enhance event type hints and configurations
+- Clean up unnecessary event-related code
+
+* Add default model for CrewEvaluator and fix event import order
+
+- Set default model to ""gpt-4o-mini"" in CrewEvaluator when no model is specified
+- Reorder event-related imports in task.py to follow standard import conventions
+- Update event bus initialization method return type hint
+- Export event_bus in events/__init__.py
+
+* Fix tool usage and event import handling
+
+- Update tool usage to use `.get()` method when checking tool name
+- Remove unnecessary `__all__` export list in events/__init__.py
+
+* Refactor Flow and Agent event handling to use event_bus
+
+- Remove `event_emitter` from Flow class and replace with `event_bus.emit()`
+- Update Flow and Agent tests to use event_bus event listeners
+- Remove redundant event emissions in Flow methods
+- Add debug print statements in Flow execution
+- Simplify event tracking in test cases
+
+* Enhance event handling for Crew, Task, and Event classes
+
+- Add crew name to failed event types (CrewKickoffFailedEvent, CrewTrainFailedEvent, CrewTestFailedEvent)
+- Update Task events to remove redundant task and context attributes
+- Refactor EventListener to use Logger for consistent event logging
+- Add new event types for Crew train and test events
+- Improve event bus event tracking in test cases
+
+* Remove telemetry and tracing dependencies from Task and Flow classes
+
+- Remove telemetry-related imports and private attributes from Task class
+- Remove `_telemetry` attribute from Flow class
+- Update event handling to emit events without direct telemetry tracking
+- Simplify task and flow execution by removing explicit telemetry spans
+- Move telemetry-related event handling to EventListener
+
+* Clean up unused imports and event-related code
+
+- Remove unused imports from various event and flow-related files
+- Reorder event imports to follow standard conventions
+- Remove unnecessary event type references
+- Simplify import statements in event and flow modules
+
+* Update crew test to validate verbose output and kickoff_for_each method
+
+- Enhance test_crew_verbose_output to check specific listener log messages
+- Modify test_kickoff_for_each_invalid_input to use Pydantic validation error
+- Improve test coverage for crew logging and input validation
+
+* Update crew test verbose output with improved emoji icons
+
+- Replace task and agent completion icons from 👍 to ✅
+- Enhance readability of test output logging
+- Maintain consistent test coverage for crew verbose output
+
+* Add MethodExecutionFailedEvent to handle flow method execution failures
+
+- Introduce new MethodExecutionFailedEvent in flow_events module
+- Update Flow class to catch and emit method execution failures
+- Add event listener for method execution failure events
+- Update event-related imports to include new event type
+- Enhance test coverage for method execution failure handling
+
+* Propagate method execution failures in Flow class
+
+- Modify Flow class to re-raise exceptions after emitting MethodExecutionFailedEvent
+- Reorder MethodExecutionFailedEvent import to maintain consistent import style
+
+* Enable test coverage for Flow method execution failure event
+
+- Uncomment pytest.raises() in test_events to verify exception handling
+- Ensure test validates MethodExecutionFailedEvent emission during flow kickoff
+
+* Add event handling for tool usage events
+
+- Introduce event listeners for ToolUsageFinishedEvent and ToolUsageErrorEvent
+- Log tool usage events with descriptive emoji icons (✅ and ❌)
+- Update event_listener to track and log tool usage lifecycle
+
+* Reorder and clean up event imports in event_listener
+
+- Reorganize imports for tool usage events and other event types
+- Maintain consistent import ordering and remove unused imports
+- Ensure clean and organized import structure in event_listener module
+
+* moving to dedicated eventlistener
+
+* dont forget crew level
+
+* Refactor AgentOps event listener for crew-level tracking
+
+- Modify AgentOpsListener to handle crew-level events
+- Initialize and end AgentOps session at crew kickoff and completion
+- Create agents for each crew member during session initialization
+- Improve session management and event recording
+- Clean up and simplify event handling logic
+
+* Update test_events to validate tool usage error event handling
+
+- Modify test to assert single error event with correct attributes
+- Use pytest.raises() to verify error event generation
+- Simplify error event validation in test case
+
+* Improve AgentOps listener type hints and formatting
+
+- Add string type hints for AgentOps classes to resolve potential import issues
+- Clean up unnecessary whitespace and improve code indentation
+- Simplify initialization and event handling logic
+
+* Update test_events to validate multiple tool usage events
+
+- Modify test to assert 75 events instead of a single error event
+- Remove pytest.raises() check, allowing crew kickoff to complete
+- Adjust event validation to support broader event tracking
+
+* Rename event_bus to crewai_event_bus for improved clarity and specificity
+
+- Replace all references to `event_bus` with `crewai_event_bus`
+- Update import statements across multiple files
+- Remove the old `event_bus.py` file
+- Maintain existing event handling functionality
+
+* Enhance EventListener with singleton pattern and color configuration
+
+- Implement singleton pattern for EventListener to ensure single instance
+- Add default color configuration using EMITTER_COLOR from constants
+- Modify log method calls to use default color and remove redundant color parameters
+- Improve initialization logic to prevent multiple initializations
+
+* Add FlowPlotEvent and update event bus to support flow plotting
+
+- Introduce FlowPlotEvent to track flow plotting events
+- Replace Telemetry method with event bus emission in Flow.plot()
+- Update event bus to support new FlowPlotEvent type
+- Add test case to validate flow plotting event emission
+
+* Remove RunType enum and clean up crew events module
+
+- Delete unused RunType enum from crew_events.py
+- Simplify crew_events.py by removing unnecessary enum definition
+- Improve code clarity by removing unneeded imports
+
+* Enhance event handling for tool usage and agent execution
+
+- Add new events for tool usage: ToolSelectionErrorEvent, ToolValidateInputErrorEvent
+- Improve error tracking and event emission in ToolUsage and LLM classes
+- Update AgentExecutionStartedEvent to use task_prompt instead of inputs
+- Add comprehensive test coverage for new event types and error scenarios
+
+* Refactor event system and improve crew testing
+
+- Extract base CrewEvent class to a new base_events.py module
+- Update event imports across multiple event-related files
+- Modify CrewTestStartedEvent to use eval_llm instead of openai_model_name
+- Add LLM creation validation in crew testing method
+- Improve type handling and event consistency
+
+* Refactor task events to use base CrewEvent
+
+- Move CrewEvent import from crew_events to base_events
+- Remove unnecessary blank lines in task_events.py
+- Simplify event class structure for task-related events
+
+* Update AgentExecutionStartedEvent to use task_prompt
+
+- Modify test_events.py to use task_prompt instead of inputs
+- Simplify event input validation in test case
+- Align with recent event system refactoring
+
+* Improve type hinting for TaskCompletedEvent handler
+
+- Add explicit type annotation for TaskCompletedEvent in event_listener.py
+- Enhance type safety for event handling in EventListener
+
+* Improve test_validate_tool_input_invalid_input with mock objects
+
+- Add explicit mock objects for agent and action in test case
+- Ensure proper string values for mock agent and action attributes
+- Simplify test setup for ToolUsage validation method
+
+* Remove ToolUsageStartedEvent emission in tool usage process
+
+- Remove unnecessary event emission for tool usage start
+- Simplify tool usage event handling
+- Eliminate redundant event data preparation step
+
+* refactor: clean up and organize imports in llm and flow modules
+
+* test: Improve flow persistence test cases and logging",2850852315,https://api.github.com/repos/crewAIInc/crewAI,https://github.com/crewAIInc/crewAI/commit/00c2f5043e80be88dc3337d5e57a73358f5ca11a,,,o,o,,,,,,,
+20ea2cb43027df70377f2e125be7b04f5f28f6c0,"style: improve code quality in sql_agent examples
+
+- Add module docstrings for better documentation
+- Remove unused imports
+- Fix f-string formatting issues
+- Standardize variable naming conventions
+- Improve code readability and formatting
+- Ensure consistent model name (gpt-4o)
+
+Co-Authored-By: Soham Ganatra <soham@composio.dev>",2769791644,https://api.github.com/repos/ComposioHQ/composio,https://github.com/ComposioHQ/composio/commit/20ea2cb43027df70377f2e125be7b04f5f28f6c0,o,o,,o,o,,,,,,
+d6c2a3d06b147387f3222e86b3f8517a07461103,Refactor test helpers to improve readability and reduce code duplication,3166033831,https://api.github.com/repos/2lu3/ultimate-tic-tac-toe,https://github.com/2lu3/ultimate-tic-tac-toe/commit/d6c2a3d06b147387f3222e86b3f8517a07461103,,,,,,,,,,,
+33039ca421c3444c9076219d461e531e5fbbe2dd,Improve email HTML for readability,3264737733,https://api.github.com/repos/ammargrowme/asana-notification,https://github.com/ammargrowme/asana-notification/commit/33039ca421c3444c9076219d461e531e5fbbe2dd,,,,,o,o,,,,,
+a2e7ec9936e92600bac72d8c4b087b23c799e73c,"feat: Update pyright configuration and enhance BossBot client initialization
+
+- Added `reportPrivateImportUsage` setting to `pyrightconfig.json` to suppress warnings for private import usage.
+- Refactored `BossBot` class in `client.py` to improve initialization, including setting command prefix and allowed mentions.
+- Introduced new attributes for bot version, guild data, app info, owner ID, invite link, and uptime to enhance bot state management.
+- Updated `BossSettings` in `env.py` to include a description for the command prefix, improving clarity for configuration.
+
+These changes enhance the type checking configuration and improve the overall structure and clarity of the BossBot implementation.",3095072949,https://api.github.com/repos/bossjones/boss-bot,https://github.com/bossjones/boss-bot/commit/a2e7ec9936e92600bac72d8c4b087b23c799e73c,,,o,,,,,,,,
+5c00ddd4b4d77dafef5c3bcb9b4cae5b2cb54ff2,"Improve FastAPI tracing example
+
+- Add health check endpoint for monitoring
+- Add error handling and exception tracking in spans
+- Add type hints for better code clarity
+- Enhance README with detailed usage instructions
+- Add .gitignore for Python projects
+- Record prediction value as span attribute
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3164435855,https://api.github.com/repos/jkatigb/mlops-projects,https://github.com/jkatigb/mlops-projects/commit/5c00ddd4b4d77dafef5c3bcb9b4cae5b2cb54ff2,o,,o,,,,o,,,,
+e470e88953976288cab702d7cb6b0c62c0cedeae,"test: Improve VertexAI configuration tests
+
+- Add error handling test case for missing location
+- Add proper type hints and imports
+- Improve test organization and readability
+
+Co-Authored-By: Joe Moura <joao@crewai.com>",2855672070,https://api.github.com/repos/crewAIInc/crewAI-tools,https://github.com/crewAIInc/crewAI-tools/commit/e470e88953976288cab702d7cb6b0c62c0cedeae,o,,o,,o,,,,,,
+5748e266e6610286d72af510e60effd33bfd3e8e,Merge branch 'main' into cursor/improve-dashboard-formatting-for-clarity-5c86,3226667660,https://api.github.com/repos/TristanSnyder/Property_Intelligence_Platform,https://github.com/TristanSnyder/Property_Intelligence_Platform/commit/5748e266e6610286d72af510e60effd33bfd3e8e,,,,,,,,,,,
+c0386df21a9091554bff469941eae967dac57f1f,"Add comprehensive prompt testing framework
+
+- Complete CLI tool accessible via `uv run prompt-test`
+- 8 curated test cases across 3 categories (basic, complex, edge cases)
+- Automatic evaluation with accuracy, clarity, and technical scoring
+- Human review workflow with structured feedback collection
+- A/B testing between prompt versions with statistical comparison
+- Version-controlled prompt management system
+- Integration with existing Claude explain service logic
+- Professional documentation and examples
+
+Key features:
+- Uses same ExplainRequest/ExplainResponse models as production
+- Automatic .env loading for ANTHROPIC_API_KEY
+- Comprehensive metrics tracking (tokens, response time, scores)
+- Results saved as timestamped JSON files (gitignored)
+- Easy extensibility for new test cases and evaluation metrics
+
+Usage examples:
+- uv run prompt-test list
+- uv run prompt-test run --prompt current --categories basic_optimizations
+- uv run prompt-test run --prompt v1_baseline --compare current
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3083536677,https://api.github.com/repos/compiler-explorer/explain,https://github.com/compiler-explorer/explain/commit/c0386df21a9091554bff469941eae967dac57f1f,,,,,,,,,,,
+95699a0dc3e34eefad219bb091a5ef5bc6a58b11,"refactor: migrate existing codebase to ServiceContainer architecture
+
+Comprehensive refactoring to adopt ServiceContainer dependency injection:
+
+**Controllers & Use Cases:**
+- Update all controllers to use ServiceContainer instead of Config
+- Migrate use cases from Config-based to ServiceContainer-based dependency resolution
+- Improve dependency injection clarity and testability
+
+**Repository & Service Updates:**
+- Update SessionRepository implementations for ServiceContainer integration
+- Refactor EnumConverter and StatusChecker services
+- Enhance service interfaces for better abstraction
+
+**DTO & Validation Improvements:**
+- Update DTOs to work seamlessly with ServiceContainer
+- Improve input validation integration
+- Maintain backward compatibility while improving architecture
+
+**Application Integration:**
+- Update main app.py to use new SystemManager and ApplicationBootstrapper
+- Integrate DLL Gateway into main application flow
+- Improve error handling and system lifecycle management
+
+**Testing Updates:**
+- Update all test cases to use ServiceContainer mocking
+- Improve test reliability and maintainability
+- Add comprehensive test coverage for new architecture
+
+This refactoring improves code maintainability, testability, and follows
+clean architecture principles more closely.
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3135921088,https://api.github.com/repos/ttpss930141011/auto-futures-trading-machine,https://github.com/ttpss930141011/auto-futures-trading-machine/commit/95699a0dc3e34eefad219bb091a5ef5bc6a58b11,,,o,,o,,,,,,
+b02284751f90662a88dfcaf5240dab067eba0ef4,"chore: update pytest version constraints in uv.lock
+
+- Updated pytest version requirement from "">=7.0.0,<8.0.0"" to "">=7.0.0,<9.0.0"" in both the `requires-dist` and `provides-extras` sections of `uv.lock` to allow compatibility with newer versions.
+- Cleaned up whitespace in various service files and test files for consistency and readability.",3229487935,https://api.github.com/repos/SecKatie/wyzeapy,https://github.com/SecKatie/wyzeapy/commit/b02284751f90662a88dfcaf5240dab067eba0ef4,,,,,o,,,,,,
+3be3b29cd4d941d630323d4e66d267678ac6a3ea,"DOC-401 Expand exporter docs
+
+Adds usage notes to exporter module for clarity.",3124267993,https://api.github.com/repos/gedolesku/cgmes-py,https://github.com/gedolesku/cgmes-py/commit/3be3b29cd4d941d630323d4e66d267678ac6a3ea,,,,,,,,,,,
+ac387bcd427ab708eafb165b262fed5013ff5e13,Improve item card name readability,3243161248,https://api.github.com/repos/dankrr/tf2-inventory-scanner,https://github.com/dankrr/tf2-inventory-scanner/commit/ac387bcd427ab708eafb165b262fed5013ff5e13,,o,,,o,,,,,,
+a032e6a781763454664f1c5feccc138e5ff066de,Rename variables for clarity,3070196027,https://api.github.com/repos/bozelosp/remod,https://github.com/bozelosp/remod/commit/a032e6a781763454664f1c5feccc138e5ff066de,,o,,,,,,,,,
+7a19bfb4a92513477788d453e5978557eefc8247,"Address code review feedback: improve model detection, parameter filtering, and test coverage
+
+- Refactor _is_ollama_model to use constants for better maintainability
+- Make parameter filtering more explicit with clear comments
+- Add type hints for better code clarity
+- Add comprehensive edge case tests for model detection
+- Improve test docstrings with detailed descriptions
+- Move integration test to proper tests/ directory structure
+- Fix lint error in test script by adding assertion
+- All tests passing locally with improved code quality
+
+Co-Authored-By: João <joao@crewai.com>",3185497448,https://api.github.com/repos/crewAIInc/crewAI,https://github.com/crewAIInc/crewAI/commit/7a19bfb4a92513477788d453e5978557eefc8247,o,,o,,,,,o,,,
+cfdd315da70f38dcc0c14d3d1f1fa61b2fd9d81a,"Refactor tests and telemetry for maintainability and clarity:
+- Extract duplicated SimpleValidator to fixture in test_validation.py
+- Use stub Collector class and named timeout constant in prometheus.py
+- Move slow_run async helper to module level for reuse in test_ultra_executor_performance.py
+- Format code for consistency
+
+Implements Copilot AI review suggestions for maintainability and clarity.",3237397226,https://api.github.com/repos/aandresalvarez/flujo,https://github.com/aandresalvarez/flujo/commit/cfdd315da70f38dcc0c14d3d1f1fa61b2fd9d81a,,,o,o,,,,,,,
+f8e074911933c6b8abda7914149505430332ee38,Improve UI layout and readability,3240097625,https://api.github.com/repos/boguckicollection/kartoteka,https://github.com/boguckicollection/kartoteka/commit/f8e074911933c6b8abda7914149505430332ee38,,,o,,,o,,,,,
+1fdc825535d66e5c30bd56e718f6ba0e834e25ad,Improve log readability,3248302438,https://api.github.com/repos/godmode99/pythonmt,https://github.com/godmode99/pythonmt/commit/1fdc825535d66e5c30bd56e718f6ba0e834e25ad,,,,,,,,,,,
+5823dfccfaeb82c90bf9d862d4a1f0c01c23aa22,"refactor: rename message_file to stdout_file in from_completed_process
+
+- Rename parameter from message_file to stdout_file for better clarity
+- Update caller in run_docker_command() to use new parameter name
+- Addresses GitHub PR feedback from @aaronsteers
+
+Co-Authored-By: AJ Steers <aj@airbyte.io>",3177819046,https://api.github.com/repos/airbytehq/airbyte-python-cdk,https://github.com/airbytehq/airbyte-python-cdk/commit/5823dfccfaeb82c90bf9d862d4a1f0c01c23aa22,,o,,,,,,,,,
+9654e167a591391af62b7210c1e3713cd3bf06cd,Assign analysis category to readability metrics,3144531880,https://api.github.com/repos/eputnam77/GovDocVerify,https://github.com/eputnam77/GovDocVerify/commit/9654e167a591391af62b7210c1e3713cd3bf06cd,,,o,,,,,,,,
+990f554b74661d5f8436861708e9c02bcc05d308,"Updated object graph to better handle dependencies
+
+This commit improves the dependency resolution process in MyObjectGraph class by introducing a new implementation of the _provide() function. The new logic uses a result dictionary and traversal stack to handle dependency accumulation, ensuring more reliable and efficient dependency management. The changes also include added type hinting and improved logging within test_design.py to aid in readability and troubleshooting.",2906509898,https://api.github.com/repos/proboscis/pinjected,https://github.com/proboscis/pinjected/commit/990f554b74661d5f8436861708e9c02bcc05d308,o,,o,,,,o,,型ヒント追加とログ出力の改善,,
+008244d55c3ca9a634b6a2ac38ca8c65d319d694,"[CONTROL]: consolidate MemoryVault directory
+
+Tetrahedral impact:\n- CREATE: renamed and inserted interface docs\n- COPY: preserved PHENO files at new level\n- CONTROL: updated references and removed scaffolding\n- CULTIVATE: clarified agent usage
+
+F33ling: clarity surge\nQuantum signature: o=))))) 🐙✨",3147493479,https://api.github.com/repos/QuantumCephalopod/CCCC,https://github.com/QuantumCephalopod/CCCC/commit/008244d55c3ca9a634b6a2ac38ca8c65d319d694,o,,,,,o,,,,,
+e44e26cc191de738d5988775ad07c85bfd042948,"refactor: Apply Sandi Metz 5-line rule to strategy.py methods
+
+- Break down _evaluate_spatial_grouping (23 lines → 5 lines)
+- Break down _is_hierarchy_boundary (18 lines → 5 lines)
+- Extract helper methods for container grouping logic
+- Improve separation of spatial analysis concerns
+- Enhance readability and testability of chunking decisions
+- Address method complexity feedback from code reviews
+
+All chunking strategy methods now follow single responsibility principle.",3262599201,https://api.github.com/repos/m2ix4i/JSON-Chunking,https://github.com/m2ix4i/JSON-Chunking/commit/e44e26cc191de738d5988775ad07c85bfd042948,,,o,,,,,,,,
+a2b93b0d02f4fa25c578041de06db719dcd4149a,"Update demo.py emoji labels for better UX
+
+- Changed emoji for user input to 🧑 for consistency
+- Updated input prompt text for clarity
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3070910430,https://api.github.com/repos/michaelirey/mcp_graph_greeter,https://github.com/michaelirey/mcp_graph_greeter/commit/a2b93b0d02f4fa25c578041de06db719dcd4149a,,,,,o,,,,,,
+0e45871f4f6353cca9380a465f3b53fbd9197f0c,"Refactor playlist downloader and enhance threading for downloads
+
+- Restructured `playlist_downloader.py` to improve readability and maintainability.
+- Moved the main logic into a `main()` function for better organization.
+- Enhanced the threading mechanism for downloading songs, allowing for better progress tracking and management.
+- Updated the progress bar to reflect the current downloading status more accurately.
+- Changed the way songs are downloaded to avoid duplicates and ensure a smoother user experience.",3119875752,https://api.github.com/repos/Pallesen01/spotify-playlist-downloader,https://github.com/Pallesen01/spotify-playlist-downloader/commit/0e45871f4f6353cca9380a465f3b53fbd9197f0c,,,o,,,,o,,,,
+b4f6fc69b22d585132598b0e47ca86d10311ba8c,Refactor notification system for clarity and efficiency,3208754823,https://api.github.com/repos/mtx26/MediTime,https://github.com/mtx26/MediTime/commit/b4f6fc69b22d585132598b0e47ca86d10311ba8c,,,o,,,,,,,,
+b7074f5e1bfd37e5e66cd565e35f81cf209404e2,"Adjust chart visualization parameters for better readability and aesthetics
+
+Co-authored-by: 283471711 <283471711@qq.com>",3266880804,https://api.github.com/repos/xiaolangit/chan.py,https://github.com/xiaolangit/chan.py/commit/b7074f5e1bfd37e5e66cd565e35f81cf209404e2,,,,,,,,,,,
+8098ce110d39e923f5f6e370fb9672fa7a4f4147,"Fix communication message logging and add debug utilities
+
+- Fixed JSON logging to include complete simulation data with communication messages
+- Enhanced TXT logging to display communication messages in human-readable format
+- Added debug script for testing communication logging functionality
+- Verified communication messages are properly logged in both TXT and JSON formats
+- Resolves issue where communication messages were generated but not persisted to log files
+
+Co-Authored-By: Gabor Hollbeck <hollbeckg@gmx.de>",3126022639,https://api.github.com/repos/ghollbeck/Multi-Agent-Equilibria,https://github.com/ghollbeck/Multi-Agent-Equilibria/commit/8098ce110d39e923f5f6e370fb9672fa7a4f4147,,,,,,,o,,,,
+524501fdd2f7d244da34510d1e5791bcd6e3ca05,Merge branch 'main' into codex/add-comments-for-code-clarity-2025-07-20,3246709431,https://api.github.com/repos/MagnumopusAI/QEFA-PCD,https://github.com/MagnumopusAI/QEFA-PCD/commit/524501fdd2f7d244da34510d1e5791bcd6e3ca05,,,,,,o,,,,,
+8c68b041b545c4519572ff323f3afdc9cab89b0b,"feat: implement multi-model parallel generation enhancement module
+
+- Add multi-model configuration support for 5+ models (Qwen, GPT-4, DeepSeek, Claude, Doubao)
+- Implement parallel execution with 120s timeout and error handling
+- Create comprehensive evaluation metrics (faithfulness, logic, information density)
+- Add model comparison interface with side-by-side results display
+- Support configurable evaluation weights (accuracy 40%, completeness 30%, readability 30%)
+- Include cost tracking and performance metrics
+- Add frontend UI for multi-model toggle and settings configuration
+- Implement blind test mode and difference highlighting
+- Extend API support for multi-model parameters
+
+Addresses PRD requirements for DeerFlow v1.2 multi-model enhancement module.
+
+Co-Authored-By: rawlence <691997599@qq.com>",3171119804,https://api.github.com/repos/rawlencecn/deer-flow,https://github.com/rawlencecn/deer-flow/commit/8c68b041b545c4519572ff323f3afdc9cab89b0b,,,o,,,,o,,,,
+e659c352df0404977a6836b6bf38115b9aaf75e0,"Refactor Crew class and LLM hierarchy for improved type handling and code clarity
+
+- Update Crew class methods to enhance readability with consistent formatting and type hints.
+- Change LLM class to inherit from BaseLLM for better structure.
+- Remove unnecessary type checks and streamline tool handling in CrewAgentExecutor.
+- Adjust BaseLLM to provide default implementations for stop words and context window size methods.
+- Clean up AISuiteLLM by removing unused methods related to stop words and context window size.",2894930869,https://api.github.com/repos/crewAIInc/crewAI,https://github.com/crewAIInc/crewAI/commit/e659c352df0404977a6836b6bf38115b9aaf75e0,o,,o,o,,,,,,,
+cf92211a243b23a43e14ef4cb69e71dd3c4514f4,Refactor smart_merge for clarity,3070325506,https://api.github.com/repos/bozelosp/remod,https://github.com/bozelosp/remod/commit/cf92211a243b23a43e14ef4cb69e71dd3c4514f4,o,o,o,,,,,,,,
+9476315b806e6788ab1207c241f3d84f1fd58ad6,"Implement Phase 1 Critical Infrastructure for Purposeful Live AI Coaching Platform
+
+✅ Complete PostgreSQL database implementation:
+- Comprehensive schema with User, Client, Coach, Session, Payment, CrisisAlert, AuditLog models
+- Proper relationships, constraints, and indexes
+- UUID primary keys for enhanced security
+- Soft deletes and audit trails
+
+✅ JWT Authentication & RBAC system:
+- Secure JWT with access/refresh token pattern
+- Role-based access control (Client, Coach, Admin)
+- Password security with bcrypt hashing
+- User registration, login, profile management
+- Session management with automatic token refresh
+
+✅ Stripe payment processing integration:
+- Subscription management for three tiers (Shift Session, Clarity+, Mastery)
+- One-time payments and recurring billing
+- Webhook handling for payment status updates
+- Payment history and invoice tracking
+- Secure customer data handling
+
+✅ Advanced crisis detection & escalation:
+- Sophisticated scoring algorithm analyzing text for crisis indicators
+- Severity levels (Low, Moderate, High, Critical, Emergency)
+- Automatic escalation to coaches and emergency contacts
+- Email notifications for crisis alerts
+- Behavioral pattern analysis (late-night activity, missed sessions)
+- Manual resolution tracking with notes
+
+✅ Comprehensive coach dashboard:
+- Client management with risk level indicators
+- Session tracking and scheduling
+- Crisis alert monitoring with resolution capabilities
+- Analytics overview (client count, active sessions, risk distribution)
+- Real-time notifications for high-priority alerts
+
+✅ Full-featured admin panel:
+- User management (create, edit, activate/deactivate users)
+- Business analytics (revenue, user growth, session statistics)
+- System monitoring (active sessions, crisis alerts)
+- Role assignment and permission management
+- Audit trail viewing
+
+✅ Modern React frontend:
+- React 19 with Vite build system
+- Responsive design with mobile support
+- Protected routes with role-based access
+- Real-time updates and state management
+- Stripe integration for payment processing
+- Crisis analysis interface for clients
+
+✅ Security & Compliance:
+- HIPAA-compliant data encryption and access controls
+- GDPR compliance with data export/deletion capabilities
+- Audit logging for all sensitive operations
+- Secure session management
+- Input validation and sanitization
+
+🔧 Technical Implementation:
+- Extended existing Flask backend from 25% to full Phase 1 completion
+- Preserved existing AI diagnostic functionality
+- Added comprehensive error handling and validation
+- Implemented proper database migrations
+- Created initialization scripts for easy setup
+- Added environment configuration with .env.example
+
+📚 Documentation:
+- Comprehensive README_PHASE1.md with setup instructions
+- API endpoint documentation
+- Security and compliance guidelines
+- Environment configuration guide
+- Testing and deployment instructions
+
+This implementation provides a solid foundation for the Purposeful Live AI coaching platform,
+focusing on security, scalability, and compliance while preserving the existing AI functionality.
+
+Co-Authored-By: carlhvisagie@gmail.com <carlhvisagie@gmail.com>",3185070849,https://api.github.com/repos/carlvisagie/purposeful-ai-backend,https://github.com/carlvisagie/purposeful-ai-backend/commit/9476315b806e6788ab1207c241f3d84f1fd58ad6,o,,o,,,,o,,,,
+4288cc96729e94f279a6eb24bce8a9e16bc82957,Refactor solver for clarity,3202134824,https://api.github.com/repos/christopher-wolff/solver,https://github.com/christopher-wolff/solver/commit/4288cc96729e94f279a6eb24bce8a9e16bc82957,,o,o,,,,,,,,
+56990b8f8742004df2ae8652d8d413a3cfb0624e,Add readable CombatResult output,3165663702,https://api.github.com/repos/basvanopheusden/magic-combat,https://github.com/basvanopheusden/magic-combat/commit/56990b8f8742004df2ae8652d8d413a3cfb0624e,,,,,,o,o,,,,
+2bb2492f7534f8f8806c7c8a40f08491f7a5ea33,"Refactor mock_factory.py and run_opus_server.py for improved readability and consistency
+
+- Updated audio directory paths in create_customer_service_mock and create_sales_mock functions.
+- Added missing commas for consistency in response configuration dictionaries.
+- Reformatted comments and spacing for better readability.
+- Minor adjustments to the environment variable loading comment in run_opus_server.py.",3275667955,https://api.github.com/repos/csmangum/opusagent,https://github.com/csmangum/opusagent/commit/2bb2492f7534f8f8806c7c8a40f08491f7a5ea33,,,,,o,,,,,,
+d8393d57b3562c04b7364255457c241755a04614,Refactor agent code for clarity,3157119029,https://api.github.com/repos/rottino15/inceptia-desafio,https://github.com/rottino15/inceptia-desafio/commit/d8393d57b3562c04b7364255457c241755a04614,o,,o,,,,,,,,
+e85f64b8143ed8e8f85aa7f6c5a97b63c7f6b706,"Convert test cases from JSON to YAML format
+
+- Replace all JSON test case files with YAML equivalents for better human readability
+- Add PyYAML dependency to support YAML parsing
+- Update scorer.py to load YAML files with proper UTF-8 encoding
+- Use cleaner YAML syntax with multiline strings for code blocks
+- Maintain identical test case data and structure
+
+Benefits:
+- More maintainable and readable test case definitions
+- Better for version control diffs
+- Easier to write and edit by hand
+- Less verbose syntax compared to JSON
+
+Addresses PR feedback requesting YAML format over JSON.
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3083536677,https://api.github.com/repos/compiler-explorer/explain,https://github.com/compiler-explorer/explain/commit/e85f64b8143ed8e8f85aa7f6c5a97b63c7f6b706,,,o,,,,,,,,
+f98cb53b01e7752b57902b9ccd8a06b4c13fb2a4,"docs: Add Japanese comment for login router clarity
+
+Co-Authored-By: okawa.sora@ditgroup.jp <okawa.sora@ditgroup.jp>",3251064285,https://api.github.com/repos/EM-Dev-Git/devin_okawa,https://github.com/EM-Dev-Git/devin_okawa/commit/f98cb53b01e7752b57902b9ccd8a06b4c13fb2a4,,,,,,,,,,,
+2b3e1cd551135d9529c07a94f52f11aa3a822a77,"refactor(services): modernize service layer from classes to functions with DI
+
+- Transform 50+ complex service classes into simple functions with dependency injection
+- Replace abstract base classes and inheritance hierarchies with functional composition
+- Implement pure functions for rate limiting, monitoring, auto-detection, deployment
+- Add FastAPI Depends() for clean dependency injection throughout
+- Create backward compatibility wrappers to maintain existing API contracts
+- Preserve all critical functionality: 5-tier browser automation, RAG, AI tracking
+
+BREAKING CHANGE: Service layer now uses functional programming patterns
+
+Performance improvements:
+- 60% reduction in service layer complexity
+- Simplified testing and maintenance
+- Better separation of concerns
+- Improved code readability
+
+Files modified:
+- src/services/functional/: New functional service modules (4 files, ~800 lines)
+- src/infrastructure/client_manager.py: Updated to use functional services
+- src/unified_mcp_server.py: Modernized monitoring initialization
+- src/services/dependencies.py: Updated auto-detection imports
+
+🚀 Generated with advanced AI assistance
+
+Co-Authored-By: Advanced AI <noreply@anthropic.com>",3173229433,https://api.github.com/repos/BjornMelin/ai-docs-vector-db-hybrid-scraper,https://github.com/BjornMelin/ai-docs-vector-db-hybrid-scraper/commit/2b3e1cd551135d9529c07a94f52f11aa3a822a77,,,o,,,,,,,,
+9c4a3823300fc5eb136ef8fb4e666e6d0c0ae896,refactor: improve webhook router readability,3209885778,https://api.github.com/repos/jgengo/intra-events-notify,https://github.com/jgengo/intra-events-notify/commit/9c4a3823300fc5eb136ef8fb4e666e6d0c0ae896,,,o,,,,,o,,,
+041ddb646c0fb527544f768e9fd089b9ef27581b,"Add comprehensive Whisper file access debugging and fallback approaches
+
+- Add detailed file permissions and readability checks before transcription
+- Implement multiple fallback approaches: direct path, absolute path, Windows short path, temp file copy
+- Add comprehensive logging to identify exact failure point in Whisper transcription
+- Handle Windows-specific path issues with ctypes short path conversion
+- Provide detailed error reporting for all transcription attempts
+
+Addresses: [WinError 2] The system cannot find the file specified during Whisper transcription
+Co-Authored-By: rajib10682@gmail.com <rajib10682@gmail.com>",3247239929,https://api.github.com/repos/rajib10682/lms-content-mgmt-service,https://github.com/rajib10682/lms-content-mgmt-service/commit/041ddb646c0fb527544f768e9fd089b9ef27581b,,,o,,,,o,,,,
+6cf91b23ba18c535e2387566acfdaaa04eb72877,"Add configuration for isort and refactor JavaScript and Python code for consistency
+
+- Created a new `pyproject.toml` file to configure isort with black profile settings.
+- Cleaned up whitespace in `generate_seq.js` for better readability.
+- Refactored `translate.js` to improve code formatting and consistency.
+- Updated `server.py` to enhance readability by standardizing dictionary formatting and improving whitespace usage.
+- Improved error handling and response formatting in the server's POST method.",3118546017,https://api.github.com/repos/rbnfr/DNA-web,https://github.com/rbnfr/DNA-web/commit/6cf91b23ba18c535e2387566acfdaaa04eb72877,,,,,o,,,,,,
+6f0bb58858e035927cbfe0450f757e94d0356c23,"Update code quality checks, improve code formatting, and enhance test cases
+
+- Updated GitHub Actions workflow to use actions/upload-artifact@v4 for archiving bandit reports.
+- Refactored docstrings in openodia/__init__.py and added newlines for consistency.
+- Added newlines in openodia/_letters.py, openodia/_summarization.py, openodia/_translate.py, openodia/_understandData.py, and openodia/corpus/dictionary.py for better readability.
+- Improved formatting of character maps in tests/test_letters.py for better clarity.
+- Enhanced test cases in tests/test_odianames.py, tests/test_summarization.py, tests/test_translate.py, and tests/test_understandData.py for better structure and readability.",3184825407,https://api.github.com/repos/soumendrak/openodia,https://github.com/soumendrak/openodia/commit/6f0bb58858e035927cbfe0450f757e94d0356c23,o,,,,o,,,,,,
+6bae32116cbafcd3c2b159e63a4a171c783c7f56,Improve media manager readability and sorting,3266097143,https://api.github.com/repos/tpersp/EchoView,https://github.com/tpersp/EchoView/commit/6bae32116cbafcd3c2b159e63a4a171c783c7f56,,,o,,o,,,,,,
+eb394fe83c7d857eb71140a21da8d4cddc27d26c,"Simplify nested if statements in base.py for better readability
+
+Co-Authored-By: Phil Rogers <github@philr.dev>",3004954502,https://api.github.com/repos/philr-a1/mj-will_nessai__fork__a4b3af0,https://github.com/philr-a1/mj-will_nessai__fork__a4b3af0/commit/eb394fe83c7d857eb71140a21da8d4cddc27d26c,,,o,,,,,,,,
+1d0360370fb213cc926b86acf6a0283d755f2657,Refactor transform_tools for clarity,3127323950,https://api.github.com/repos/jrkropp/open-webui-developer-toolkit,https://github.com/jrkropp/open-webui-developer-toolkit/commit/1d0360370fb213cc926b86acf6a0283d755f2657,,,o,,,,,,,,
+8ca1653b8ed22f769be4e63afe976536b3a9f03c,"Consolidate imports and remove duplicates for improved efficiency
+
+- Moved all imports to top of file in single consolidated block
+- Removed 7 duplicate matplotlib configuration sections
+- Eliminated redundant import statements (numpy, pandas, matplotlib imported 8+ times)
+- Fixed Jupyter-specific errors (get_ipython, display calls)
+- Consolidated duplicate data loading patterns
+- Unified make_lags function definition
+- Added comprehensive efficiency analysis report
+
+Performance improvements:
+- Reduced script initialization time by ~10-15%
+- Improved code maintainability and readability
+- Enhanced portability (runs outside Jupyter environments)
+- Eliminated memory overhead from duplicate imports
+
+Co-Authored-By: peterch.yu@gmail.com <peterch.yu@gmail.com>",3247074201,https://api.github.com/repos/pchyu/Data_Analytics,https://github.com/pchyu/Data_Analytics/commit/8ca1653b8ed22f769be4e63afe976536b3a9f03c,,,o,o,o,,,,,,
+e1c0425024e5c6d4030aac25f2010f0f0b8176b8,"Fix banner sizing to match 1366x250px dimensions
+
+- Create banner creation script to generate correct 1366x250px image
+- Update CSS from background-size: cover to contain for proper scaling
+- Adjust height from min-height: 400px to height: 250px
+- Maintain text overlay and readability with dark overlay
+- Ensure banner fits site width without excessive scaling
+- Preserve existing homepage layout and functionality
+
+Co-Authored-By: 氷川霧霞 <kilica.hikawa@gmail.com>",3165644008,https://api.github.com/repos/kilica/workestimator,https://github.com/kilica/workestimator/commit/e1c0425024e5c6d4030aac25f2010f0f0b8176b8,,,,,,o,,,,,
+2c9b9ea72e158bf400bf5d1c74dc82d8ffb48c19,"fix: resolve compilation errors and CI test failures
+
+Swift/iOS fixes:
+- Move AuthenticatedUser and AuthResponse to APIModels.swift for proper scope
+- Remove duplicate AuthenticatedUser.swift file
+- Fix nil contextual type annotation for authenticatedUser
+- Update NetworkClient requestData method with proper error handling
+- Remove complex token refresh wrapper temporarily to avoid compilation issues
+
+Backend/CI fixes:
+- Add fallback import for backend module in test configuration
+- Fix Limiter monkeypatch in conftest.py for proper test isolation
+- Add JWT package comment for clarity
+- Improve error handling in Apple auth service
+
+This resolves all reported compilation errors:
+- Cannot find type 'AuthenticatedUser' in scope
+- 'nil' requires a contextual type
+- Missing argument for parameter #2 in call
+- Cannot find type 'AuthResponse' in scope
+- Type of expression is ambiguous without a type annotation
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3154548152,https://api.github.com/repos/sankalpsthakur/astronova,https://github.com/sankalpsthakur/astronova/commit/2c9b9ea72e158bf400bf5d1c74dc82d8ffb48c19,,,o,,,,,,,,
+95b76da1e9859e0b99b32686325a72e6d4c84c4d,"Refactor AuditEmitter to AuditJournal with record() method
+
+- Rename AuditEmitter class to AuditJournal for clarity
+- Change emit() method to record() for more descriptive naming
+- Update all provider interfaces to use AuditJournal parameters
+- Update documentation from ""Must Emit:"" to ""Must Record:""
+- Update test files to use new naming conventions
+- Maintain backward compatibility in audit enforcement system
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3141178048,https://api.github.com/repos/8ly-dev/Serv,https://github.com/8ly-dev/Serv/commit/95b76da1e9859e0b99b32686325a72e6d4c84c4d,o,o,,,,,,,,,
+6d7645ca3595ce9f48876f83e5cab329bfdac283,Add English comments for clarity,3252198011,https://api.github.com/repos/Leyangf/AchromatCFW,https://github.com/Leyangf/AchromatCFW/commit/6d7645ca3595ce9f48876f83e5cab329bfdac283,o,,,,,,,,,,
+e00764fe9a7196fc70e050c1d2627b305f3c50d1,Refactor main script for clarity,3233912152,https://api.github.com/repos/Inigoarze/Proyecto-app-juan,https://github.com/Inigoarze/Proyecto-app-juan/commit/e00764fe9a7196fc70e050c1d2627b305f3c50d1,,,o,,,,,,,,
+4230bbc7f398623c82d80491eae598193edb4577,"🔧 BACKEND FIXES CONTINUED: Error Handling & Database Management
+
+✅ PROPER ERROR HANDLING:
+- 🔒 Added comprehensive try-catch blocks with custom exceptions
+- 🔒 Fixed store_test_suites to raise DatabaseConnectionError and TestStorageError
+- 🔒 Improved logging and error chaining with 'from' keyword
+- 🔒 Replaced generic Exception handling with specific exception types
+
+🗄️ DATABASE CONNECTION IMPROVEMENTS:
+- ✅ Replaced asyncpg.connect(DATABASE_URL) with db_manager.get_connection()
+- ✅ Used async context managers for proper connection cleanup
+- ✅ Removed manual conn.close() calls (handled by context manager)
+- ✅ Consistent database connection patterns across codebase
+
+🧹 CODE CLEANUP:
+- ✅ Removed unused imports (TestSuiteGenerator, test_suite, triggered_by)
+- ✅ Removed unused variables (validation_type, engine, optimizer)
+- ✅ Cleaned up variable assignments that were never used
+- ✅ Improved code readability and performance
+
+🔧 DEPENDENCY MANAGEMENT:
+- ✅ Fixed more incorrect FastAPI Depends() usage
+- ✅ Proper import error handling with descriptive messages
+- ✅ Better module availability checking
+
+PROGRESS: Backend security ✅ | Database patterns ✅ | More fixes pending",3250972475,https://api.github.com/repos/voicebootix/jyotiflow-ai,https://github.com/voicebootix/jyotiflow-ai/commit/4230bbc7f398623c82d80491eae598193edb4577,,,o,o,,,o,,,,
+8098ce110d39e923f5f6e370fb9672fa7a4f4147,"Fix communication message logging and add debug utilities
+
+- Fixed JSON logging to include complete simulation data with communication messages
+- Enhanced TXT logging to display communication messages in human-readable format
+- Added debug script for testing communication logging functionality
+- Verified communication messages are properly logged in both TXT and JSON formats
+- Resolves issue where communication messages were generated but not persisted to log files
+
+Co-Authored-By: Gabor Hollbeck <hollbeckg@gmx.de>",3158927678,https://api.github.com/repos/ghollbeck/Multi-Agent-Equilibria,https://github.com/ghollbeck/Multi-Agent-Equilibria/commit/8098ce110d39e923f5f6e370fb9672fa7a4f4147,,,,,,,,,,,
+c38481a133925c39e80712e7273d0e4ad0ecdc25,"make the side effect in tests more readable
+
+Signed-off-by: Alex Chantavy <alex@subimage.io>",3131034017,https://api.github.com/repos/cartography-cncf/cartography,https://github.com/cartography-cncf/cartography/commit/c38481a133925c39e80712e7273d0e4ad0ecdc25,o,,,,,,,,,,
+2dc3cff33aa9db23dc59bb871b31b105fe01eb63,Add docstrings to improve code clarity,3119037295,https://api.github.com/repos/pyXeon/FrequencyTester,https://github.com/pyXeon/FrequencyTester/commit/2dc3cff33aa9db23dc59bb871b31b105fe01eb63,o,,,,,,,,,,
+2e164c09fb35aa1d3cde86f46aaa0f48fe26fd94,style: improve pie chart label readability,3148248726,https://api.github.com/repos/andrewyamamoto/bazaar-tracker,https://github.com/andrewyamamoto/bazaar-tracker/commit/2e164c09fb35aa1d3cde86f46aaa0f48fe26fd94,,,,,,o,,,,,
+8b01e0eab1dfab0af08f0bcc50429c9fefc8b156,"fix(config): complete resolution of all 14 linting violations in PR #149
+
+Successfully resolved all originally identified linting violations:
+
+✅ G004 (8 violations): Replaced f-strings with % formatting in logging statements
+✅ S104 (3 violations): Added proper noqa/nosec comments for intentional 0.0.0.0 binding
+✅ PLW0603 (2 violations): Added noqa comments for singleton pattern global usage
+✅ PLR0912 (1 violation): Refactored get_settings function using helper functions
+✅ BLE001 (1 violation): Replaced blind Exception catch with specific exceptions
+
+Additional improvements made during the process:
+- Reduced cyclomatic complexity via helper function extraction
+- Improved code organization and readability
+- Enhanced error handling and validation
+- Maintained all existing functionality and behavior
+
+Configuration system tested and validated working correctly.
+All core linting issues resolved for PR #149 merge readiness.
+
+Note: Skipping pre-commit hooks due to poetry.lock dependency sync issue.
+MyPy pydantic-settings import error is infrastructure-related, not code quality.
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3203985620,https://api.github.com/repos/williaby/PromptCraft,https://github.com/williaby/PromptCraft/commit/8b01e0eab1dfab0af08f0bcc50429c9fefc8b156,o,,o,,,,o,,,,
+d65055aeb2d8873f2f5c48312183ed5a6728d5c7,refactor(fetching): improve readability and modularity,3122504348,https://api.github.com/repos/VeraLIMS/Fundalyze,https://github.com/VeraLIMS/Fundalyze/commit/d65055aeb2d8873f2f5c48312183ed5a6728d5c7,o,,o,,,,,,,,
+3a12b1c1f3f5cf71a4ddf011872eed4160c26485,"Refactor code structure, improve modularity and readability across modules",3151548395,https://api.github.com/repos/CameronWeller/ux-mirror,https://github.com/CameronWeller/ux-mirror/commit/3a12b1c1f3f5cf71a4ddf011872eed4160c26485,,,o,,,,,,,,
+377317431ee1e0b2b5a8dbf21651100c2c2ac58b,Improve text readability,3122796765,https://api.github.com/repos/juanmalinares/Player-profiler,https://github.com/juanmalinares/Player-profiler/commit/377317431ee1e0b2b5a8dbf21651100c2c2ac58b,,,,,,o,,,,,
+cbfc5ca47900f3936b1cd4e6f6eb9e9b1c23a395,Refactor README translation initialization for improved readability,3231959490,https://api.github.com/repos/KarlTDebiec/Scinoephile,https://github.com/KarlTDebiec/Scinoephile/commit/cbfc5ca47900f3936b1cd4e6f6eb9e9b1c23a395,,,,,o,,,,,,
+82a45b037e388f4d322345d21405e8b7f39886b4,Improve docstrings for clarity,3213719599,https://api.github.com/repos/TugrulKaraaslan/finansal-analiz-sistemi,https://github.com/TugrulKaraaslan/finansal-analiz-sistemi/commit/82a45b037e388f4d322345d21405e8b7f39886b4,o,,,,,,,,,,
+fe3e4504e6ebaa382396a7d725063d1b6f51c6f4,Merge branch 'feature/tls-proxy-support' into codex/revise-docs/llm-proxy-server.md-for-clarity,3125018371,https://api.github.com/repos/othercriteria/vibectl,https://github.com/othercriteria/vibectl/commit/fe3e4504e6ebaa382396a7d725063d1b6f51c6f4,,,,,,,,,,,
+6a2ff8069aa12ba11e1e2e093c937ab35c56f821,"feat: update service implementations with new patterns
+
+- Add async_retry decorator to all API calls
+- Add circuit breaker pattern to service calls
+- Add metrics collection for monitoring
+- Update error handling to use new patterns
+- Improve code organization and readability
+
+Link to Devin run: https://app.devin.ai/sessions/a6cab2804c7042539e465ccbda99bdfd
+
+Co-Authored-By: Leon zhao <leonchiuchikwan@gmail.com>",2839694111,https://api.github.com/repos/kwannz/bera-,https://github.com/kwannz/bera-/commit/6a2ff8069aa12ba11e1e2e093c937ab35c56f821,,,o,,,,o,,,,
+a3561b42fdd1a133774267aeeebbbd8f6cb2b1ce,"refactor: Optimize conversation count retrieval in cluster API
+
+- Simplified the query for retrieving clusters by removing unnecessary eager loading of relationships.
+- Updated conversation count retrieval to ensure it is fetched safely and accurately in multiple locations, including cluster responses and child nodes.
+- Enhanced sorting logic for clusters based on conversation counts, improving performance and clarity in the API responses.",3088173646,https://api.github.com/repos/567-labs/kura,https://github.com/567-labs/kura/commit/a3561b42fdd1a133774267aeeebbbd8f6cb2b1ce,,,o,,,,,,,,
+3a306b2e5fce518cba5c2a515905f5c1735d66d8,Add supervisor start logs for clarity,3238124518,https://api.github.com/repos/sharvan9515/datascience_automation,https://github.com/sharvan9515/datascience_automation/commit/3a306b2e5fce518cba5c2a515905f5c1735d66d8,,,,,,,o,,,,
+f58d56c70a9b92afb2de9bf1884d454256d4568d,"Merge pull request #1070 from TonyDeRosia/codex/refactor-area-listing-output-for-readability
+
+Improve area listing formatting",3158137767,https://api.github.com/repos/TonyDeRosia/evennia-minimud,https://github.com/TonyDeRosia/evennia-minimud/commit/f58d56c70a9b92afb2de9bf1884d454256d4568d,,,,,,,,,,,
+7043da2a6ce805e6057af43099337b38c7a8c613,Refactor test board helper methods for improved readability and reusability,3166059217,https://api.github.com/repos/2lu3/ultimate-tic-tac-toe,https://github.com/2lu3/ultimate-tic-tac-toe/commit/7043da2a6ce805e6057af43099337b38c7a8c613,,,,,,,,,,,
+34e6444b30e66ade0da1521ff3dcf151d1b90057,"foundation/_: implement complete infrastructure with geometry, patterns, and web preview
+
+This foundation implementation establishes the core infrastructure for the Luminary project:
+
+## Geometry Module
+- Complete geometric processing pipeline for polyhedral structures
+- Point operations with vector math and coordinate transformations
+- Triangle subdivision and kite-based geometry for icosahedral forms
+- Facet system supporting triangles, kites, and trapezoids
+- Beam generation with dual-extent positioning along facet edges
+- Net class managing geometric hierarchy with 6,300+ beams
+- Coordinate mapping from 3D geometry to beam arrays
+
+## Static SVG Rendering System
+- SVG export with geometric structure visualization
+- Beam polygons with positioning and OKLCH color support
+- Facet edge line rendering for structure clarity
+- Extended mode showing beam IDs and relationships
+- Responsive viewport sizing and presentation
+- Validation framework with automated test generation
+
+## Patterns Module
+- Pattern development framework with base classes
+- BeamArrayBuilder for numpy-based beam data structures
+- Pattern discovery system with automatic file scanning
+- OKLCH color space integration for color control
+- Schema definitions for beam array column access
+- Mathematical pattern implementations (ripple, spiral, wave, breathe)
+
+## Web Preview and Animation System
+- FastAPI server with WebSocket streaming for real-time animation
+- Frame generation at 30+ FPS with vectorized numpy operations
+- Concurrent client broadcasting with timeout protection
+- HTML5 client with pattern selector and live visualization
+- Client-side frame handling with immediate rendering
+- Real-time pattern switching and example collection
+
+## Configuration and Validation
+- JSON configuration system for geometric parameters
+- Validation suite with visual output generation
+- Pentagon-based configurations (3A-33, 4A-31, 4A-35, 5A-35)
+- Test coverage across all modules
+- Performance optimizations achieving 22+ FPS with 6,300 beam updates
+
+This foundation enables geometric pattern generation with real-time web visualization and establishes architecture for light installation control systems.
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3253744864,https://api.github.com/repos/rossry/luminary,https://github.com/rossry/luminary/commit/34e6444b30e66ade0da1521ff3dcf151d1b90057,,,,,,,,,,,
+1ab8fe3d10173621cbd2c550bee3ee2ef3559b65,"style: Format typing imports with line breaks for better readability
+
+Co-Authored-By: Joe Moura <joao@crewai.com>",2786715226,https://api.github.com/repos/crewAIInc/crewAI,https://github.com/crewAIInc/crewAI/commit/1ab8fe3d10173621cbd2c550bee3ee2ef3559b65,,,,,o,,,,,,
+7937537177266714367e5965c63adc3781874726,Merge branch 'main' into codex/refactor-datalake-writer-for-clarity,3277737317,https://api.github.com/repos/davidheineman/minieval,https://github.com/davidheineman/minieval/commit/7937537177266714367e5965c63adc3781874726,,,,,,,,,,,
+5ac01ab74cc5c1f8ef2ea1935d177dd8b4b6a954,Improve readability for downloads and show disabled plans,3130829259,https://api.github.com/repos/DO1FFE/qrcode,https://github.com/DO1FFE/qrcode/commit/5ac01ab74cc5c1f8ef2ea1935d177dd8b4b6a954,,,o,,,,,,,,
+dd9c3644713476822ef351724d404e9b8188a2e8,"fix(config): complete resolution of all 14 linting violations in PR #149
+
+Successfully resolved all originally identified linting violations:
+
+✅ G004 (8 violations): Replaced f-strings with % formatting in logging statements
+✅ S104 (3 violations): Added proper noqa/nosec comments for intentional 0.0.0.0 binding
+✅ PLW0603 (2 violations): Added noqa comments for singleton pattern global usage
+✅ PLR0912 (1 violation): Refactored get_settings function using helper functions
+✅ BLE001 (1 violation): Replaced blind Exception catch with specific exceptions
+
+Additional improvements made during the process:
+- Reduced cyclomatic complexity via helper function extraction
+- Improved code organization and readability
+- Enhanced error handling and validation
+- Maintained all existing functionality and behavior
+
+Configuration system tested and validated working correctly.
+All core linting issues resolved for PR #149 merge readiness.
+
+Note: Skipping pre-commit hooks due to poetry.lock dependency sync issue.
+MyPy pydantic-settings import error is infrastructure-related, not code quality.
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3205717046,https://api.github.com/repos/williaby/PromptCraft,https://github.com/williaby/PromptCraft/commit/dd9c3644713476822ef351724d404e9b8188a2e8,o,,o,,,,o,,,,
+759e274b8f44523b994a499e1f92414c621b8620,"Improve dependency resolution in object graph
+
+The _provide() function in the MyObjectGraph class has been reworked to improve the process of dependency resolution. The logic now accumulates resolved dependencies in a results dictionary, using a stack to handle dependency traversal. Along with these changes, additional type hinting and logging has been introduced in test_design.py for better readability and troubleshooting.",2905475904,https://api.github.com/repos/proboscis/pinjected,https://github.com/proboscis/pinjected/commit/759e274b8f44523b994a499e1f92414c621b8620,o,,o,,,,o,,,,
+8343d894acf086cfb23dd6372814fdcdba6d05fa,Refactor helpers and supervisor for clarity,3129423893,https://api.github.com/repos/janbjorge/pgqueuer,https://github.com/janbjorge/pgqueuer/commit/8343d894acf086cfb23dd6372814fdcdba6d05fa,,,o,,,,,,,,
+6983e2566b32b0d5ffa6503588251cfa0265de7b,"Rename chat button for clarity
+
+Co-Authored-By: aman Kumar <amandsit@gmail.com>",3011315862,https://api.github.com/repos/aman965/demo-vrp-agent,https://github.com/aman965/demo-vrp-agent/commit/6983e2566b32b0d5ffa6503588251cfa0265de7b,o,,,,,,,,,,
+8d97ec81e832113455af4587db75d011e1ee9d72,"fix: improve API key validation and base URL handling
+
+- Check for both None and empty string in API key validation
+- Only use environment base URL if default hasn't been overridden
+- Improve docstring clarity around base URL precedence
+
+Co-Authored-By: Sudeep Pillai <sudeep@vlm.run>",2781897195,https://api.github.com/repos/vlm-run/vlmrun-python-sdk,https://github.com/vlm-run/vlmrun-python-sdk/commit/8d97ec81e832113455af4587db75d011e1ee9d72,o,,o,,,,,,,,
+3aeec5579cdedc5a6f0c94dba68d5542e134ba08,Simplify age calculator script for clarity,3249937768,https://api.github.com/repos/chain11207/Python-Practice,https://github.com/chain11207/Python-Practice/commit/3aeec5579cdedc5a6f0c94dba68d5542e134ba08,,,o,,,,,,,,
+753ebc860bb330ec145b810adf7083725278e81f,"refactor: Rename and restructure QueueCog for improved clarity and functionality
+
+- Renamed `task_queue.py` to `queue.py` to better reflect its purpose and removed the old file.
+- Updated `client.py` to load the renamed `QueueCog` correctly.
+- Enhanced `QueueCog` with improved command documentation and pagination logic for displaying the download queue.
+- Added detailed descriptions for command arguments and improved user feedback for queue management commands (show, clear, remove, pause, resume).
+- Ensured all references to the old `task_queue` are updated to maintain functionality and consistency across the codebase.
+
+These changes streamline the queue management functionality and improve the overall user experience with clearer command structures and responses.",3095072949,https://api.github.com/repos/bossjones/boss-bot,https://github.com/bossjones/boss-bot/commit/753ebc860bb330ec145b810adf7083725278e81f,o,o,o,,,,,,,,
+2e17dcbdbe0fbeca78a9afdee1fb0a9ab4251d82,test: update recorded callback variable names for clarity,3246293779,https://api.github.com/repos/hivesolutions/flask-quorum,https://github.com/hivesolutions/flask-quorum/commit/2e17dcbdbe0fbeca78a9afdee1fb0a9ab4251d82,,o,,,,,,,,,
+0758e0d18c621561fec7c20b4ffe46bd9eb9b752,"Update Home Assistant YAML syntax for 2024.8 and 2024.10 changes
+
+This commit updates all YAML configurations to use the new syntax introduced in Home Assistant versions 2024.8 and 2024.10.
+
+## Changes Applied:
+
+### 2024.8 Changes:
+- Updated 160+ service calls from 'service:' to 'action:'
+
+### 2024.10 Changes:
+- Updated 85+ trigger sections from 'trigger:' to 'triggers:'
+- Updated 55+ condition sections from 'condition:' to 'conditions:'
+- Updated 85+ action sections from 'action:' to 'actions:'
+- Updated 125+ platform definitions from 'platform:' to 'trigger:'
+
+## Summary:
+- Total files processed: 66 YAML files
+- Files updated: 42 files with automations
+- Files unchanged: 24 files (no automations or already current)
+- All changes validated - no old syntax patterns remaining
+
+## Files Updated:
+- 11 area automation files
+- 10 function automation files
+- 7 routine automation files
+- 5 system & project automation files
+- 9 integration configuration files
+
+## Benefits:
+- Future-proofed for newer Home Assistant versions
+- Improved readability and consistency
+- Follows latest Home Assistant best practices
+- Fully backward compatible
+
+## Tools Created:
+- update_yaml_syntax.py: Automated update script
+- validate_yaml_syntax.py: Validation script
+- YAML_SYNTAX_CHANGES.md: Comprehensive documentation
+
+All changes have been thoroughly tested and validated.",3240515147,https://api.github.com/repos/Apocrathia/home-assistant-config,https://github.com/Apocrathia/home-assistant-config/commit/0758e0d18c621561fec7c20b4ffe46bd9eb9b752,,o,o,,,,,,,,
+c5cd9354c1019dca4205322e536b40b77e89178f,Format JSON configuration for better readability and add filtered header to include filters for sample2.c,3271985804,https://api.github.com/repos/fischerjooo/generator_project,https://github.com/fischerjooo/generator_project/commit/c5cd9354c1019dca4205322e536b40b77e89178f,,,,,o,,,,,,
+caa5d3456b875168d56812c205e0571c122c4fa4,"Fix flake8 linting issues in test files
+
+- Break long lines to comply with 79-character limit
+- Fix continuation line indentation (E128 errors)
+- Remove trailing whitespace from blank lines (W293 errors)
+- Improve code readability while maintaining functionality
+
+Co-Authored-By: auraconnectai@gmail.com <auraconnectai@gmail.com>",3260633304,https://api.github.com/repos/AuraTechWave/auraconnectai,https://github.com/AuraTechWave/auraconnectai/commit/caa5d3456b875168d56812c205e0571c122c4fa4,,,,,,,,,,,
+04437a0f4a4d25a23a1fd9056e1238a64add98bd,Improve readability and docs,3246794827,https://api.github.com/repos/Isaac-McPadden/Farkle_II,https://github.com/Isaac-McPadden/Farkle_II/commit/04437a0f4a4d25a23a1fd9056e1238a64add98bd,o,,,,o,,,,,,
+9cbcc580f31fbfdf343dee9568481f1a0d9587a5,"Fix typos and security audit
+
+- Replace 'geos' with 'geographies' in geotesting documentation for clarity
+- Fix potential None type operation in find_doc_updates.py
+- Add comprehensive security audit report showing no vulnerabilities found
+- All API keys verified as legitimate public client-side keys
+
+Co-Authored-By: xhuang@statsig.com <xhuang@statsig.com>",3237246213,https://api.github.com/repos/statsig-io/docs,https://github.com/statsig-io/docs/commit/9cbcc580f31fbfdf343dee9568481f1a0d9587a5,,o,o,,,,,,,,
+a5d90b927a90be69682284d9d31d376c5c4366b0,Update people service extensively for logic and readability,3190916118,https://api.github.com/repos/chughtapan/praga_core,https://github.com/chughtapan/praga_core/commit/a5d90b927a90be69682284d9d31d376c5c4366b0,,,o,,,,,,,,
+e3c6b02548be54a375379c713081b5c3fdbbd137,"Add GitHub comment posting functionality to issue scoping
+
+- Add post_analysis_comment method to IssueScoper class for posting analysis results as GitHub issue comments
+- Add --post-comment CLI flag to scope_issue_cli.py to enable comment posting
+- Include proper error handling and validation for GitHub token requirements
+- Format comments with markdown for better readability on GitHub
+- Maintain backward compatibility with existing CLI functionality
+- Update help documentation with new --post-comment example
+
+Co-Authored-By: tanyang125@gmail.com <tanyang125@gmail.com>",3267803015,https://api.github.com/repos/itstabya/devin-github-issues-integration,https://github.com/itstabya/devin-github-issues-integration/commit/e3c6b02548be54a375379c713081b5c3fdbbd137,,,,,,,,,,,
+dab5b5c59f2b20bb8750ae44381a201d0c7607ca,"Fix deployment architecture: standardize on ECS Fargate over App Runner
+
+- Update CI workflow to use requirements.txt instead of requirements-apprunner.txt
+- Remove unused App Runner IAM roles and references from infrastructure
+- Update IAM role names from app_runner_role to ecs_task_role for clarity
+- Update UI and documentation to reflect ECS Fargate deployment
+- Optimize Docker health check configuration for ECS Fargate
+- Add comprehensive test script for FastAPI functionality
+- Remove requirements-apprunner.txt file (no longer needed)
+
+All tests pass locally:
+- FastAPI app imports and starts correctly
+- Docker builds and runs successfully
+- Health endpoints respond properly
+- All dependencies available
+
+Co-Authored-By: John Lowry <jrlowry@gmail.com>",3260456802,https://api.github.com/repos/lowrycito/dbkb,https://github.com/lowrycito/dbkb/commit/dab5b5c59f2b20bb8750ae44381a201d0c7607ca,,o,o,o,,,o,,,,
+52cdaeb7c3f5c821464c094bb6f7d9f90487312f,"test: ✅ improve async server tests
+
+- rename test for clarity and loosen regex
+
+- add help guide and link from README
+
+- update server usage docs",3127973312,https://api.github.com/repos/joshuadanpeterson/enhanced-dash-mcp,https://github.com/joshuadanpeterson/enhanced-dash-mcp/commit/52cdaeb7c3f5c821464c094bb6f7d9f90487312f,o,o,,,,,,,,,
+697528b48bfd7632bc110b73c9684b98ac87b5d9,Handle unreadable images during training,3136443271,https://api.github.com/repos/ash2d/wildlife-tools,https://github.com/ash2d/wildlife-tools/commit/697528b48bfd7632bc110b73c9684b98ac87b5d9,,,,,,,,,,,
+cfebbafedd0f142832b6a1e9d58590e20078b722,Refactor local agent test for clarity,3267496328,https://api.github.com/repos/Bryan-Roe-ai/semantic-kernel,https://github.com/Bryan-Roe-ai/semantic-kernel/commit/cfebbafedd0f142832b6a1e9d58590e20078b722,o,,o,,,,,,,,
+9ae3769793b98f5a20ff62bf8b42d1e7ad3993d8,Improve evaluator language detection and readability,3168722225,https://api.github.com/repos/kamiyamazgc/text_agent,https://github.com/kamiyamazgc/text_agent/commit/9ae3769793b98f5a20ff62bf8b42d1e7ad3993d8,,,o,,,,,,,,
+c3a4e7707cd0451c59b14df059f28bb32a1d69af,"Implement robust edge case handling for configuration generation
+
+- Add comprehensive input validation and sanitization in TmuxConfigGenerator
+- Handle None, empty, and invalid configuration data gracefully
+- Add proper error handling for file operations in questionnaire
+- Always set prefix and status position explicitly for clarity
+- Validate configuration values with warnings for invalid inputs
+- Add comprehensive test suite for edge cases (13 new tests)
+- Improve user experience with graceful degradation on errors
+
+Fixes issue #12: Handle edge cases in config generation",3177813726,https://api.github.com/repos/jeremyeder/tmux-ultimate,https://github.com/jeremyeder/tmux-ultimate/commit/c3a4e7707cd0451c59b14df059f28bb32a1d69af,,,o,,,,o,,,,
+9f5cc5408efe801a4281ee4d049e634c180bd7f4,"feat: modify run_docker_command to always return EntrypointOutput
+
+- Always store STDOUT to disk for memory efficiency
+- Add returncode and stderr properties to EntrypointOutput for backward compatibility
+- Update all callers in standard tests to use EntrypointOutput return type
+- Improve error analysis and readability in test failure outputs
+- Maintain strict backward compatibility through enhanced EntrypointOutput properties
+
+Co-Authored-By: AJ Steers <aj@airbyte.io>",3177819046,https://api.github.com/repos/airbytehq/airbyte-python-cdk,https://github.com/airbytehq/airbyte-python-cdk/commit/9f5cc5408efe801a4281ee4d049e634c180bd7f4,,,o,,,,o,,,,
+33daa989f5508308db7c1f1eab1764f6b4de87ff,"Fix health monitoring orchestrator reference handling
+
+- Modified startup_event() to return the orchestrator instance explicitly
+- Updated unified startup to use the returned orchestrator instead of module import
+- This prevents potential issues with incorrect orchestrator references during cleanup
+- Improves code clarity by making orchestrator instance management explicit
+- Adds proper None checking for failed initialization",3236229402,https://api.github.com/repos/voicebootix/jyotiflow-ai,https://github.com/voicebootix/jyotiflow-ai/commit/33daa989f5508308db7c1f1eab1764f6b4de87ff,,,o,,,,,,,,
+6a5580619f6f477525ae6ebfb7bc2acf846a1019,Improve docstrings for clarity,3267614635,https://api.github.com/repos/mattsq/XTYLearner,https://github.com/mattsq/XTYLearner/commit/6a5580619f6f477525ae6ebfb7bc2acf846a1019,o,,,,,,,,,,
+0138396e4dc66b8356914b50ff1f9a536358f2cf,"Implement `xerotrust` reconcile
+
+Update reconciliation tests
+
+Convert xerotrust reconcile tests to use snapshots
+
+- Change reconcile tests to use compare(actual, expected=snapshot()) pattern
+- Add pytest-insta import to test file
+- Generate snapshots for reconcile success and mismatch scenarios
+- Snapshots capture Rich table output for better test reliability
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+
+Add borders to Rich tables for improved readability
+
+WIP - reconcile script
+
+reconcile_daily
+
+fix sorting on main table
+
+fix sorting on main table
+
+Changes needed to get reconcilliation working
+
+Refactor attempt by claude
+
+More claude refactoring
+
+My test refactoring
+
+de-wide
+
+remove unnecessary parse_date
+
+fix typing
+
+Remove unused methods
+
+Simplify date sorting
+
+Simplify reconciliation
+
+Always show table and add --stop-on-diff
+
+unused
+
+fixup",3164806984,https://api.github.com/repos/cjw296/xerotrust,https://github.com/cjw296/xerotrust/commit/0138396e4dc66b8356914b50ff1f9a536358f2cf,,,,,,,,,,,
+571635fada6753813660b24276462a78b86b1032,Enhance docstrings for clarity and completeness across multiple functions in aligner.py,3095763579,https://api.github.com/repos/The-Africa-Channel/Sentence-Segmentation-Aligner,https://github.com/The-Africa-Channel/Sentence-Segmentation-Aligner/commit/571635fada6753813660b24276462a78b86b1032,o,,,,,,,,,,
+b4e6e7b9a4abe0d71d545c7fbbf361c5341b4b09,Improve documentation and code clarity,3072077858,https://api.github.com/repos/oothomas/M3T_Classifer,https://github.com/oothomas/M3T_Classifer/commit/b4e6e7b9a4abe0d71d545c7fbbf361c5341b4b09,o,,,,o,,,,,,
+b892a3333b96dbf866ad47e52a467ea35736c3c4,"Implement performance optimizations based on PR feedback
+
+- Add is_gzip() helper to check gzip header before calling magic
+- Add try_decompress() helper for cleaner decompression logic
+- Optimize is_svg_content() to only decode first 512 bytes
+- Refactor detect_and_decompress_svg() to check gzip header first
+- Add comprehensive tests for new helper functions
+- Improve code structure and readability
+
+These changes address Copilot's suggestions for better performance
+and code organization while maintaining all existing functionality.
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3207538097,https://api.github.com/repos/stampchain-io/btc_stamps,https://github.com/stampchain-io/btc_stamps/commit/b892a3333b96dbf866ad47e52a467ea35736c3c4,,,o,,,,,,,,
+2097df0f41c0e665e1dbba6b88e65d03755275a7,Refactor code structure and remove redundant changes for improved readability and maintainability,3122647133,https://api.github.com/repos/lefebma/els-crm,https://github.com/lefebma/els-crm/commit/2097df0f41c0e665e1dbba6b88e65d03755275a7,,o,,o,,,,,,,
+4a75c09b1f49c06bcbf72f59ff44a667f6b906ec,Refactor test cases with Arrange-Act-Assert pattern and improve readability,3166053325,https://api.github.com/repos/2lu3/ultimate-tic-tac-toe,https://github.com/2lu3/ultimate-tic-tac-toe/commit/4a75c09b1f49c06bcbf72f59ff44a667f6b906ec,,,,,,,,,テスト？可読性改善でない,,
+5f0e613453482a28ab38ed25e8c60b873152e88b,"Improve EMPATHY_PROMPT formatting with line breaks for readability
+
+Co-authored-by: amirbiron <amirbiron@gmail.com>",3236642704,https://api.github.com/repos/amirbiron/Shalva-bot,https://github.com/amirbiron/Shalva-bot/commit/5f0e613453482a28ab38ed25e8c60b873152e88b,o,,,,,,,,,,
+06c0468966fa99acaebb2f86b903fb5c51c03fe0,Refactor financial app for clarity and modularity,3121495222,https://api.github.com/repos/camiloquinnt21/Never-Broke-Again-,https://github.com/camiloquinnt21/Never-Broke-Again-/commit/06c0468966fa99acaebb2f86b903fb5c51c03fe0,,,o,,,,,,,,
+cccc5b2c1adf5a8a16a99ad0e5f0d1a445a5a00c,Improve variable names for clarity,3070221918,https://api.github.com/repos/bozelosp/remod,https://github.com/bozelosp/remod/commit/cccc5b2c1adf5a8a16a99ad0e5f0d1a445a5a00c,,o,,,,,,,,,
+7090d0d70913ad8dd66840daa9f13832d5a87e0d,"Implement Delphi integration for CrossCoder interpretability (Issue #703)
+
+This commit adds comprehensive integration with the Delphi interpretability library,
+enabling advanced feature analysis for CrossCoder models.
+
+Key features:
+- CrossCoder adapters for Delphi compatibility (single and dual model)
+- Modified latent cache supporting dual model activation collection
+- Anthropic Batch API integration for 10-100x faster processing
+- Token alignment and chat template handling for different architectures
+- HTML visualizations with feature explanations and scores
+- Configuration-driven pipeline with YAML inheritance
+
+Components:
+- src/crosscoder/delphi_integration/: Core integration modules
+  - crosscoder_adapter.py: Adapters for Delphi's sparse coder interface
+  - crosscoder_cache.py: Extended cache for dual model activations
+  - batch_explainer.py: Batch API for efficient explanation generation
+  - tokenization_bridge.py: Handles chat templates and alignment
+- experiments/delphi_analysis/: Analysis pipeline and testing
+- configs/delphi_analysis/: YAML configurations
+- delphi/: Complete Delphi library included as subfolder
+
+The integration processes millions of tokens efficiently, generates human-readable
+explanations for features, and scores their quality using multiple metrics.
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3264990806,https://api.github.com/repos/safety-research/crosscoder_emergent_misalignment,https://github.com/safety-research/crosscoder_emergent_misalignment/commit/7090d0d70913ad8dd66840daa9f13832d5a87e0d,,,,,,,,,,,
+756fed527557ead1fbfa22c88278127b5861d5d1,"Refactor test files for improved readability and consistency
+
+- Reorganized import statements in multiple test files for clarity.
+- Standardized the formatting of dictionary entries and assertions for consistency.
+- Removed unnecessary blank lines and added spacing for better readability.
+- Updated comments to enhance understanding of test cases.
+- Ensured consistent use of single and double quotes across test files.
+- Improved the structure of test cases to follow a more uniform style.",3133721205,https://api.github.com/repos/tachyon-beep/shogidrl,https://github.com/tachyon-beep/shogidrl/commit/756fed527557ead1fbfa22c88278127b5861d5d1,o,,,,o,,,,,,
+533f4f64cd937289cfde3a1463a12a01bbbb4461,"refactor: remove unused User import in seed command
+
+- Eliminated the unused User import from the seed command to enhance code clarity and maintainability.
+- Streamlined the codebase by removing unnecessary dependencies, aligning with previous refactoring efforts.",3127947179,https://api.github.com/repos/surp-hovhannes/bahk,https://github.com/surp-hovhannes/bahk/commit/533f4f64cd937289cfde3a1463a12a01bbbb4461,,,,o,,,,,,,
+b8fc2af678da8f09a0dc0a1383d332422bb6b942,"Refactor tab names for improved readability and semantic clarity
+
+Co-authored-by: marathepratham53 <marathepratham53@gmail.com>",3269285977,https://api.github.com/repos/pratham5188/StockTrendAIbackup,https://github.com/pratham5188/StockTrendAIbackup/commit/b8fc2af678da8f09a0dc0a1383d332422bb6b942,,o,,,,,,,,,
+b7c6d196df63b5cb4bb99fd838f6782d50d55300,Fix readability metrics applied per paragraph,3144260587,https://api.github.com/repos/eputnam77/GovDocVerify,https://github.com/eputnam77/GovDocVerify/commit/b7c6d196df63b5cb4bb99fd838f6782d50d55300,,,o,,,,,,,,
+d6acd9c249198b947d31b410dd52962d72306c6d,"Trying out timeouts (#1840)
+
+* Make tests green again
+
+* Add Git validations for publishing tools  (#1381)
+
+This commit prevents tools from being published if the underlying Git
+repository is unsynced with origin.
+
+* fix: JSON encoding date objects (#1374)
+
+* Update README  (#1376)
+
+* Change all instaces of crewAI to CrewAI and fix installation step
+
+* Update the  example to use YAML format
+
+* Update  to come after setup and edits
+
+* Remove double tool instance
+
+* docs: correct miswritten command name (#1365)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Add `--force` option to `crewai tool publish` (#1383)
+
+This commit adds an option to bypass Git remote validations when
+publishing tools.
+
+* add plotting to flows documentation (#1394)
+
+* Brandon/cre 288 add telemetry to flows (#1391)
+
+* Telemetry for flows
+
+* store node names
+
+* Brandon/cre 291 flow improvements (#1390)
+
+* Implement joao feedback
+
+* update colors for crew nodes
+
+* clean up
+
+* more linting clean up
+
+* round legend corners
+
+---------
+
+Co-authored-by: João Moura <joaomdmoura@gmail.com>
+
+* quick fixes (#1385)
+
+* quick fixes
+
+* add generic name
+
+---------
+
+Co-authored-by: João Moura <joaomdmoura@gmail.com>
+
+* reduce import time by 6x (#1396)
+
+* reduce import by 6x
+
+* fix linting
+
+* Added version details (#1402)
+
+Co-authored-by: João Moura <joaomdmoura@gmail.com>
+
+* Update twitter logo to x-twiiter (#1403)
+
+* fix task cloning error (#1416)
+
+* Migrate docs from MkDocs to Mintlify (#1423)
+
+* add new mintlify docs
+
+* add favicon.svg
+
+* minor edits
+
+* add github stats
+
+* Fix/logger - fix #1412 (#1413)
+
+* improved logger
+
+* log file looks better
+
+* better lines written to log file
+
+---------
+
+Co-authored-by: João Moura <joaomdmoura@gmail.com>
+
+* fixing tests
+
+* preparing new version
+
+* updating init
+
+* Preparing new version
+
+* Trying to fix linting and other warnings (#1417)
+
+* Trying to fix linting
+
+* fixing more type issues
+
+* clean up ci
+
+* more ci fixes
+
+---------
+
+Co-authored-by: Eduardo Chiarotti <dudumelgaco@hotmail.com>
+
+* Feat/poetry to uv migration (#1406)
+
+* feat: Start migrating to UV
+
+* feat: add uv to flows
+
+* feat: update docs on Poetry -> uv
+
+* feat: update docs and uv.locl
+
+* feat: update tests and github CI
+
+* feat: run ruff format
+
+* feat: update typechecking
+
+* feat: fix type checking
+
+* feat: update python version
+
+* feat: type checking gic
+
+* feat: adapt uv command to run the tool repo
+
+* Adapt tool build command to uv
+
+* feat: update logic to let only projects with crew to be deployed
+
+* feat: add uv to tools
+
+* fix; tests
+
+* fix: remove breakpoint
+
+* fix :test
+
+* feat: add crewai update to migrate from poetry to uv
+
+* fix: tests
+
+* feat: add validation for ˆ character on pyproject
+
+* feat: add run_crew to pyproject if doesnt exist
+
+* feat: add validation for poetry migration
+
+* fix: warning
+
+---------
+
+Co-authored-by: Vinicius Brasil <vini@hey.com>
+
+* fix: training issue (#1433)
+
+* fix: training issue
+
+* fix: output from crew
+
+* fix: message
+
+* Use a slice for the manager request. Make the task use the agent i18n settings (#1446)
+
+* Fix Cache Typo in Documentation (#1441)
+
+* Correct the role for the message being added to the messages list (#1438)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* fix typo in template file (#1432)
+
+* Adapt Tools CLI to uv (#1455)
+
+* Adapt Tools CLI to UV
+
+* Fix failing test
+
+* use the same i18n as the agent for tool usage (#1440)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Upgrade docs to mirror change from `Poetry` to `UV` (#1451)
+
+* Update docs to use  instead of
+
+* Add Flows YouTube tutorial & link images
+
+* feat: ADd warning from poetry -> uv (#1458)
+
+* feat/updated CLI to allow for model selection & submitting API keys (#1430)
+
+* updated CLI to allow for submitting API keys
+
+* updated click prompt to remove default number
+
+* removed all unnecessary comments
+
+* feat: implement crew creation CLI command
+
+- refactor code to multiple functions
+- Added ability for users to select provider and model when uing crewai create command and ave API key to .env
+
+* refactered select_choice function for early return
+
+* refactored  select_provider to have an ealry return
+
+* cleanup of comments
+
+* refactor/Move functions into utils file, added new provider file and migrated fucntions thre, new constants file + general function refactor
+
+* small comment cleanup
+
+* fix unnecessary deps
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+Co-authored-by: Brandon Hancock <brandon@brandonhancock.io>
+
+* Fix incorrect parameter name in Vision tool docs page (#1461)
+
+Co-authored-by: João Moura <joaomdmoura@gmail.com>
+
+* Feat/memory base (#1444)
+
+* byom - short/entity memory
+
+* better
+
+* rm uneeded
+
+* fix text
+
+* use context
+
+* rm dep and sync
+
+* type check fix
+
+* fixed test using new cassete
+
+* fixing types
+
+* fixed types
+
+* fix types
+
+* fixed types
+
+* fixing types
+
+* fix type
+
+* cassette update
+
+* just mock the return of short term mem
+
+* remove print
+
+* try catch block
+
+* added docs
+
+* dding error handling here
+
+* preparing new version
+
+* fixing annotations
+
+* fix tasks and agents ordering
+
+* Avoiding exceptions
+
+* feat: add poetry.lock to uv migration (#1468)
+
+* fix tool calling issue (#1467)
+
+* fix tool calling issue
+
+* Update tool type check
+
+* Drop print
+
+* cutting new version
+
+* new verison
+
+* Adapt `crewai tool install <tool>` to uv (#1481)
+
+This commit updates the tool install comamnd to uv's new custom index
+feature.
+
+Related: https://github.com/astral-sh/uv/pull/7746/
+
+* fix(docs): typo (#1470)
+
+* drop unneccesary tests (#1484)
+
+* drop uneccesary tests
+
+* fix linting
+
+* simplify flow (#1482)
+
+* simplify flow
+
+* propogate changes
+
+* Update docs and scripts
+
+* Template fix
+
+* make flow kickoff sync
+
+* Clean up docs
+
+* Add Cerebras LLM example configuration to LLM docs (#1488)
+
+* ensure original embedding config works (#1476)
+
+* ensure original embedding config works
+
+* some fixes
+
+* raise error on unsupported provider
+
+* WIP: brandons notes
+
+* fixes
+
+* rm prints
+
+* fixed docs
+
+* fixed run types
+
+* updates to add more docs and correct imports with huggingface embedding server enabled
+
+---------
+
+Co-authored-by: Brandon Hancock <brandon@brandonhancock.io>
+
+* use copy to split testing and training on crews (#1491)
+
+* use copy to split testing and training on crews
+
+* make tests handle new copy functionality on train and test
+
+* fix last test
+
+* fix test
+
+* preparing new verison
+
+* fix/fixed missing API prompt + CLI docs update (#1464)
+
+* updated CLI to allow for submitting API keys
+
+* updated click prompt to remove default number
+
+* removed all unnecessary comments
+
+* feat: implement crew creation CLI command
+
+- refactor code to multiple functions
+- Added ability for users to select provider and model when uing crewai create command and ave API key to .env
+
+* refactered select_choice function for early return
+
+* refactored  select_provider to have an ealry return
+
+* cleanup of comments
+
+* refactor/Move functions into utils file, added new provider file and migrated fucntions thre, new constants file + general function refactor
+
+* small comment cleanup
+
+* fix unnecessary deps
+
+* Added docs for new CLI provider + fixed missing API prompt
+
+* Minor doc updates
+
+* allow user to bypass api key entry + incorect number selected logic + ruff formatting
+
+* ruff updates
+
+* Fix spelling mistake
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+Co-authored-by: Brandon Hancock <brandon@brandonhancock.io>
+
+* chore(readme-fix): fixing step for 'running tests' in the contribution section (#1490)
+
+Co-authored-by: Eduardo Chiarotti <dudumelgaco@hotmail.com>
+
+* support unsafe code execution. add in docker install and running checks. (#1496)
+
+* support unsafe code execution. add in docker install and running checks.
+
+* Update return type
+
+* Fix memory imports for embedding functions (#1497)
+
+* updating crewai version
+
+* new version
+
+* new version
+
+* update plot command (#1504)
+
+* feat: add tomli so we can support 3.10 (#1506)
+
+* feat: add tomli so we can support 3.10
+
+* feat: add validation for poetry data
+
+* Forward install command options to `uv sync` (#1510)
+
+Allow passing additional options from `crewai install` directly to
+`uv sync`. This enables commands like `crewai install --locked` to work
+as expected by forwarding all flags and options to the underlying uv
+command.
+
+* improve tool text description and args (#1512)
+
+* improve tool text descriptoin and args
+
+* fix lint
+
+* Drop print
+
+* add back in docstring
+
+* Improve tooling docs
+
+* Update flow docs to talk about self evaluation example
+
+* Update flow docs to talk about self evaluation example
+
+* Update flows.mdx - Fix link
+
+* Update flows cli to allow you to easily add additional crews to a flow (#1525)
+
+* Update flows cli to allow you to easily add additional crews to a flow
+
+* fix failing test
+
+* adding more error logs to test thats failing
+
+* try again
+
+* Bugfix/flows with multiple starts plus ands breaking (#1531)
+
+* bugfix/flows-with-multiple-starts-plus-ands-breaking
+
+* fix user found issue
+
+* remove prints
+
+* prepare new version
+
+* Added security.md file (#1533)
+
+* Disable telemetry explicitly (#1536)
+
+* Disable telemetry explicitly
+
+* fix linting
+
+* revert parts to og
+
+* Enhance log storage to support more data types (#1530)
+
+* Add llm providers accordion group (#1534)
+
+* add llm providers accordion group
+
+* fix numbering
+
+* Replace .netrc with uv environment variables (#1541)
+
+This commit replaces .netrc with uv environment variables for installing
+tools from private repositories. To store credentials, I created a new
+and reusable settings file for the CLI in
+`$HOME/.config/crewai/settings.json`.
+
+The issue with .netrc files is that they are applied system-wide and are
+scoped by hostname, meaning we can't differentiate tool repositories
+requests from regular requests to CrewAI's API.
+
+* refactor: Move BaseTool to main package and centralize tool description generation (#1514)
+
+* move base_tool to main package and consolidate tool desscription generation
+
+* update import path
+
+* update tests
+
+* update doc
+
+* add base_tool test
+
+* migrate agent delegation tools to use BaseTool
+
+* update tests
+
+* update import path for tool
+
+* fix lint
+
+* update param signature
+
+* add from_langchain to BaseTool for backwards support of langchain tools
+
+* fix the case where StructuredTool doesn't have func
+
+---------
+
+Co-authored-by: c0dez <li@vitablehealth.com>
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Update docs  (#1550)
+
+* add llm providers accordion group
+
+* fix numbering
+
+* Fix directory tree & add llms to accordion
+
+* Feat/ibm memory (#1549)
+
+* Everything looks like its working. Waiting for lorenze review.
+
+* Update docs as well.
+
+* clean up for PR
+
+* add inputs to flows (#1553)
+
+* add inputs to flows
+
+* fix flows lint
+
+* Increase providers fetching timeout
+
+* Raise an error if an LLM doesnt return a response (#1548)
+
+* docs update (#1558)
+
+* add llm providers accordion group
+
+* fix numbering
+
+* Fix directory tree & add llms to accordion
+
+* update crewai enterprise link in docs
+
+* Feat/watson in cli (#1535)
+
+* getting cli and .env to work together for different models
+
+* support new models
+
+* clean up prints
+
+* Add support for cerebras
+
+* Fix watson keys
+
+* Fix flows to support cycles and added in test (#1556)
+
+* fix missing config (#1557)
+
+* making sure we don't check for agents that were not used in the crew
+
+* preparing new version
+
+* updating LLM docs
+
+* preparing new version
+
+* curring new version
+
+* preparing new version
+
+* preparing new version
+
+* add missing init
+
+* fix LiteLLM callback replacement
+
+* fix test_agent_usage_metrics_are_captured_for_hierarchical_process
+
+* removing prints
+
+* fix: Step callback issue (#1595)
+
+* fix: Step callback issue
+
+* fix: Add empty thought since its required
+
+* Cached prompt tokens on usage metrics
+
+* do not include cached on total
+
+* Fix crew_train_success test
+
+* feat: Reduce level for Bandit and fix code to adapt (#1604)
+
+* Add support for retrieving user preferences and memories using Mem0 (#1209)
+
+* Integrate Mem0
+
+* Update src/crewai/memory/contextual/contextual_memory.py
+
+Co-authored-by: Deshraj Yadav <deshraj@gatech.edu>
+
+* pending commit for _fetch_user_memories
+
+* update poetry.lock
+
+* fixes mypy issues
+
+* fix mypy checks
+
+* New fixes for user_id
+
+* remove memory_provider
+
+* handle memory_provider
+
+* checks for memory_config
+
+* add mem0 to dependency
+
+* Update pyproject.toml
+
+Co-authored-by: Deshraj Yadav <deshraj@gatech.edu>
+
+* update docs
+
+* update doc
+
+* bump mem0 version
+
+* fix api error msg and mypy issue
+
+* mypy fix
+
+* resolve comments
+
+* fix memory usage without mem0
+
+* mem0 version bump
+
+* lazy import mem0
+
+---------
+
+Co-authored-by: Deshraj Yadav <deshraj@gatech.edu>
+Co-authored-by: João Moura <joaomdmoura@gmail.com>
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* upgrade chroma and adjust embedder function generator (#1607)
+
+* upgrade chroma and adjust embedder function generator
+
+* >= version
+
+* linted
+
+* preparing enw version
+
+* adding before and after crew
+
+* Update CLI Watson supported models + docs (#1628)
+
+* docs: add gh_token documentation to GithubSearchTool
+
+* Move kickoff callbacks to crew's domain
+
+* Cassettes
+
+* Make mypy happy
+
+* Knowledge (#1567)
+
+* initial knowledge
+
+* WIP
+
+* Adding core knowledge sources
+
+* Improve types and better support for file paths
+
+* added additional sources
+
+* fix linting
+
+* update yaml to include optional deps
+
+* adding in lorenze feedback
+
+* ensure embeddings are persisted
+
+* improvements all around Knowledge class
+
+* return this
+
+* properly reset memory
+
+* properly reset memory+knowledge
+
+* consolodation and improvements
+
+* linted
+
+* cleanup rm unused embedder
+
+* fix test
+
+* fix duplicate
+
+* generating cassettes for knowledge test
+
+* updated default embedder
+
+* None embedder to use default on pipeline cloning
+
+* improvements
+
+* fixed text_file_knowledge
+
+* mypysrc fixes
+
+* type check fixes
+
+* added extra cassette
+
+* just mocks
+
+* linted
+
+* mock knowledge query to not spin up db
+
+* linted
+
+* verbose run
+
+* put a flag
+
+* fix
+
+* adding docs
+
+* better docs
+
+* improvements from review
+
+* more docs
+
+* linted
+
+* rm print
+
+* more fixes
+
+* clearer docs
+
+* added docstrings and type hints for cli
+
+---------
+
+Co-authored-by: João Moura <joaomdmoura@gmail.com>
+Co-authored-by: Lorenze Jay <lorenzejaytech@gmail.com>
+
+* Updated README.md, fix typo(s) (#1637)
+
+* Update Perplexity example in documentation (#1623)
+
+* Fix threading
+
+* preparing new version
+
+* Log in to Tool Repository on `crewai login` (#1650)
+
+This commit adds an extra step to `crewai login` to ensure users also
+log in to Tool Repository, that is, exchanging their Auth0 tokens for a
+Tool Repository username and password to be used by UV downloads and API
+tool uploads.
+
+* add knowledge to mint.json
+
+* Improve typed task outputs (#1651)
+
+* V1 working
+
+* clean up imports and prints
+
+* more clean up and add tests
+
+* fixing tests
+
+* fix test
+
+* fix linting
+
+* Fix tests
+
+* Fix linting
+
+* add doc string as requested by eduardo
+
+* Update Github actions (#1639)
+
+* actions/checkout@v4
+
+* actions/cache@v4
+
+* actions/setup-python@v5
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* update (#1638)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* fix spelling issue found by @Jacques-Murray (#1660)
+
+* Update readme for running mypy (#1614)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Feat/remove langchain (#1654)
+
+* feat: add initial changes from langchain
+
+* feat: remove kwargs of being processed
+
+* feat: remove langchain, update uv.lock and fix type_hint
+
+* feat: change docs
+
+* feat: remove forced requirements for parameter
+
+* feat add tests for new structure tool
+
+* feat: fix tests and adapt code for args
+
+* Feat/remove langchain (#1668)
+
+* feat: add initial changes from langchain
+
+* feat: remove kwargs of being processed
+
+* feat: remove langchain, update uv.lock and fix type_hint
+
+* feat: change docs
+
+* feat: remove forced requirements for parameter
+
+* feat add tests for new structure tool
+
+* feat: fix tests and adapt code for args
+
+* fix tool calling for langchain tools
+
+* doc strings
+
+---------
+
+Co-authored-by: Eduardo Chiarotti <dudumelgaco@hotmail.com>
+
+* added knowledge to agent level (#1655)
+
+* added knowledge to agent level
+
+* linted
+
+* added doc
+
+* added from suggestions
+
+* added test
+
+* fixes from discussion
+
+* fix docs
+
+* fix test
+
+* rm cassette for knowledge_sources test as its a mock and update agent doc string
+
+* fix test
+
+* rm unused
+
+* linted
+
+* Update Agents docs to include two approaches for creating an agent: with and without YAML configuration
+
+* Documentation Improvements: LLM Configuration and Usage (#1684)
+
+* docs: improve tasks documentation clarity and structure
+
+- Add Task Execution Flow section
+- Add variable interpolation explanation
+- Add Task Dependencies section with examples
+- Improve overall document structure and readability
+- Update code examples with proper syntax highlighting
+
+* docs: update agent documentation with improved examples and formatting
+
+- Replace DuckDuckGoSearchRun with SerperDevTool
+- Update code block formatting to be consistent
+- Improve template examples with actual syntax
+- Update LLM examples to use current models
+- Clean up formatting and remove redundant comments
+
+* docs: enhance LLM documentation with Cerebras provider and formatting improvements
+
+* docs: simplify LLMs documentation title
+
+* docs: improve installation guide clarity and structure
+
+- Add clear Python version requirements with check command
+- Simplify installation options to recommended method
+- Improve upgrade section clarity for existing users
+- Add better visual structure with Notes and Tips
+- Update description and formatting
+
+* docs: improve introduction page organization and clarity
+
+- Update organizational analogy in Note section
+- Improve table formatting and alignment
+- Remove emojis from component table for cleaner look
+- Add 'helps you' to make the note more action-oriented
+
+* docs: add enterprise and community cards
+
+- Add Enterprise deployment card in quickstart
+- Add community card focused on open source discussions
+- Remove deployment reference from community description
+- Clean up introduction page cards
+- Remove link from Enterprise description text
+
+* Fixes issues with result as answer not properly exiting LLM loop (#1689)
+
+* v1 of fix implemented. Need to confirm with tokens.
+
+* remove print statements
+
+* preparing new version
+
+* fix missing code in flows docs (#1690)
+
+* docs: improve tasks documentation clarity and structure
+
+- Add Task Execution Flow section
+- Add variable interpolation explanation
+- Add Task Dependencies section with examples
+- Improve overall document structure and readability
+- Update code examples with proper syntax highlighting
+
+* docs: update agent documentation with improved examples and formatting
+
+- Replace DuckDuckGoSearchRun with SerperDevTool
+- Update code block formatting to be consistent
+- Improve template examples with actual syntax
+- Update LLM examples to use current models
+- Clean up formatting and remove redundant comments
+
+* docs: enhance LLM documentation with Cerebras provider and formatting improvements
+
+* docs: simplify LLMs documentation title
+
+* docs: improve installation guide clarity and structure
+
+- Add clear Python version requirements with check command
+- Simplify installation options to recommended method
+- Improve upgrade section clarity for existing users
+- Add better visual structure with Notes and Tips
+- Update description and formatting
+
+* docs: improve introduction page organization and clarity
+
+- Update organizational analogy in Note section
+- Improve table formatting and alignment
+- Remove emojis from component table for cleaner look
+- Add 'helps you' to make the note more action-oriented
+
+* docs: add enterprise and community cards
+
+- Add Enterprise deployment card in quickstart
+- Add community card focused on open source discussions
+- Remove deployment reference from community description
+- Clean up introduction page cards
+- Remove link from Enterprise description text
+
+* docs: add code snippet to Getting Started section in flows.mdx
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Update reset memories command based on the SDK (#1688)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Update using langchain tools docs (#1664)
+
+* Update example of how to use LangChain tools with correct syntax
+
+* Use .env
+
+* Add  Code back
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* [FEATURE] Support for custom path in RAGStorage (#1659)
+
+* added path to RAGStorage
+
+* added path to short term and entity memory
+
+* add path for long_term_storage for completeness
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* [Doc]: Add documenation for openlit observability (#1612)
+
+* Create openlit-observability.mdx
+
+* Update doc with images and steps
+
+* Update mkdocs.yml and add OpenLIT guide link
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Fix indentation in llm-connections.mdx code block (#1573)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Knowledge project directory standard (#1691)
+
+* Knowledge project directory standard
+
+* fixed types
+
+* comment fix
+
+* made base file knowledge source an abstract class
+
+* cleaner validator on model_post_init
+
+* fix type checker
+
+* cleaner refactor
+
+* better template
+
+* Update README.md (#1694)
+
+Corrected the statement which says users can not disable telemetry, but now users can disable by setting the environment variable OTEL_SDK_DISABLED to true.
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Talk about getting structured consistent outputs with tasks.
+
+* remove all references to pipeline and pipeline router (#1661)
+
+* remove all references to pipeline and router
+
+* fix linting
+
+* drop poetry.lock
+
+* docs: add nvidia as provider (#1632)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* add knowledge demo + improve knowledge docs (#1706)
+
+* Brandon/cre 509 hitl multiple rounds of followup (#1702)
+
+* v1 of HITL working
+
+* Drop print statements
+
+* HITL code more robust. Still needs to be refactored.
+
+* refactor and more clear messages
+
+* Fix type issue
+
+* fix tests
+
+* Fix test again
+
+* Drop extra print
+
+* New docs about yaml crew with decorators. Simplify template crew with… (#1701)
+
+* New docs about yaml crew with decorators. Simplify template crew with links
+
+* Fix spelling issues.
+
+* updating tools
+
+* curting new verson
+
+* Incorporate Stale PRs that have feedback (#1693)
+
+* incorporate #1683
+
+* add in --version flag to cli. closes #1679.
+
+* Fix env issue
+
+* Add in suggestions from @caike to make sure ragstorage doesnt exceed os file limit. Also, included additional checks to support windows.
+
+* remove poetry.lock as pointed out by @sanders41 in #1574.
+
+* Incorporate feedback from crewai reviewer
+
+* Incorporate @lorenzejay feedback
+
+* drop metadata requirement (#1712)
+
+* drop metadata requirement
+
+* fix linting
+
+* Update docs for new knowledge
+
+* more linting
+
+* more linting
+
+* make save_documents private
+
+* update docs to the new way we use knowledge and include clearing memory
+
+* add support for langfuse with litellm (#1721)
+
+* docs: Add quotes to agentops installing command (#1729)
+
+* docs: Add quotes to agentops installing command
+
+* feat: Add ContextualMemory to __init__
+
+* feat: remove import due to circular improt
+
+* feat: update tasks config main template typos
+
+* Fixed output_file not respecting system path (#1726)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* fix:typo error (#1732)
+
+* Update crew_agent_executor.py
+
+typo error
+
+* Update en.json
+
+typo error
+
+* Fix Knowledge docs Spaceflight News API dead link
+
+* call storage.search in user context search instead of memory.search (#1692)
+
+Co-authored-by: Eduardo Chiarotti <dudumelgaco@hotmail.com>
+
+* Add doc structured tool (#1713)
+
+* Add doc structured tool
+
+* Fix example
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* _execute_tool_and_check_finality 结果给回调参数，这样就可以提前拿到结果信息，去做数据解析判断做预判 (#1716)
+
+Co-authored-by: xiaohan <fuck@qq.com>
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* format bullet points (#1734)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Add missing @functools.wraps when wrapping functions and preserve wrapped class name in @CrewBase. (#1560)
+
+* Update annotations.py
+
+* Update utils.py
+
+* Update crew_base.py
+
+* Update utils.py
+
+* Update crew_base.py
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Fix disk I/O error when resetting short-term memory. (#1724)
+
+* Fix disk I/O error when resetting short-term memory.
+
+Reset chromadb client and nullifies references before
+removing directory.
+
+* Nit for clarity
+
+* did the same for knowledge_storage
+
+* cleanup
+
+* cleanup order
+
+* Cleanup after the rm of the directories
+
+---------
+
+Co-authored-by: Lorenze Jay <lorenzejaytech@gmail.com>
+Co-authored-by: Lorenze Jay <63378463+lorenzejay@users.noreply.github.com>
+
+* restrict python version compatibility (#1731)
+
+* drop 3.13
+
+* revert
+
+* Drop test cassette that was causing error
+
+* trying to fix failing test
+
+* adding thiago changes
+
+* resolve final tests
+
+* Drop skip
+
+* Bugfix/restrict python version compatibility (#1736)
+
+* drop 3.13
+
+* revert
+
+* Drop test cassette that was causing error
+
+* trying to fix failing test
+
+* adding thiago changes
+
+* resolve final tests
+
+* Drop skip
+
+* drop pipeline
+
+* Update pyproject.toml and uv.lock to drop crewai-tools as a default requirement (#1711)
+
+* copy googles changes. Fix tests. Improve LLM file (#1737)
+
+* copy googles changes. Fix tests. Improve LLM file
+
+* Fix type issue
+
+* fix:typo error (#1738)
+
+* Update base_agent_tools.py
+
+typo error
+
+* Update main.py
+
+typo error
+
+* Update base_file_knowledge_source.py
+
+typo error
+
+* Update test_main.py
+
+typo error
+
+* Update en.json
+
+* Update prompts.json
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Remove manager_callbacks reference (#1741)
+
+* include event emitter in flows (#1740)
+
+* include event emitter in flows
+
+* Clean up
+
+* Fix linter
+
+* sort imports with isort rules by ruff linter (#1730)
+
+* sort imports
+
+* update
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+Co-authored-by: Eduardo Chiarotti <dudumelgaco@hotmail.com>
+
+* Added is_auto_end flag in agentops.end session in crew.py (#1320)
+
+When using agentops, we have the option to pass the `skip_auto_end_session` parameter, which is supposed to not end the session if the `end_session` function is called by Crew.
+
+Now the way it works is, the `agentops.end_session` accepts `is_auto_end` flag and crewai should have passed it as `True` (its `False` by default). 
+
+I have changed the code to pass is_auto_end=True
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* NVIDIA Provider : UI changes (#1746)
+
+* docs: add nvidia as provider
+
+* nvidia ui docs changes
+
+* add note for updated list
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Fix small typo in sample tool (#1747)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Feature/add workflow permissions (#1749)
+
+* fix: Call ChromaDB reset before removing storage directory to fix disk I/O errors
+
+* feat: add workflow permissions to stale.yml
+
+* revert rag_storage.py changes
+
+* revert rag_storage.py changes
+
+---------
+
+Co-authored-by: Matt B <mattb@Matts-MacBook-Pro.local>
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* remove pkg_resources which was causing issues (#1751)
+
+* apply agent ops changes and resolve merge conflicts (#1748)
+
+* apply agent ops changes and resolve merge conflicts
+
+* Trying to fix tests
+
+* add back in vcr
+
+* update tools
+
+* remove pkg_resources which was causing issues
+
+* Fix tests
+
+* experimenting to see if unique content is an issue with knowledge
+
+* experimenting to see if unique content is an issue with knowledge
+
+* update chromadb which seems to have issues with upsert
+
+* generate new yaml for failing test
+
+* Investigating upsert
+
+* Drop patch
+
+* Update casettes
+
+* Fix duplicate document issue
+
+* more fixes
+
+* add back in vcr
+
+* new cassette for test
+
+---------
+
+Co-authored-by: Lorenze Jay <lorenzejaytech@gmail.com>
+
+* drop print (#1755)
+
+* Fix: CrewJSONEncoder now accepts enums (#1752)
+
+* bugfix: CrewJSONEncoder now accepts enums
+
+* sort imports
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Fix bool and null handling (#1771)
+
+* include 12 but not 13
+
+* change to <13 instead of <=12
+
+* Gemini 2.0 (#1773)
+
+* Update llms.mdx (Gemini 2.0)
+
+- Add Gemini 2.0 flash to Gemini table.
+- Add link to 2 hosting paths for Gemini in Tip.
+- Change to lower case model slugs vs names, user convenience.
+- Add https://artificialanalysis.ai/ as alternate leaderboard.
+- Move Gemma to ""other"" tab.
+
+* Update llm.py (gemini 2.0)
+
+Add setting for Gemini 2.0 context window to llm.py
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Remove relative import in flow `main.py` template (#1782)
+
+* Add `tool.crewai.type` pyproject attribute in templates (#1789)
+
+* Correcting a small grammatical issue that was bugging me: from _satisfy the expect criteria_ to _satisfies the expected criteria_ (#1783)
+
+Signed-off-by: PJ Hagerty <pjhagerty@gmail.com>
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* feat: Add task guardrails feature (#1742)
+
+* feat: Add task guardrails feature
+
+Add support for custom code guardrails in tasks that validate outputs
+before proceeding to the next task. Features include:
+
+- Optional task-level guardrail function
+- Pre-next-task execution timing
+- Tuple return format (success, data)
+- Automatic result/error routing
+- Configurable retry mechanism
+- Comprehensive documentation and tests
+
+Link to Devin run: https://app.devin.ai/sessions/39f6cfd6c5a24d25a7bd70ce070ed29a
+
+Co-Authored-By: Joe Moura <joao@crew",,,/commit/d6acd9c249198b947d31b410dd52962d72306c6d,,,,,,,,,,,
+14b01dd37459ea99906b6606237ba32b080781a0,Add human_readable_size util and tests,3198273302,https://api.github.com/repos/AshKuhlmann/file_flow,https://github.com/AshKuhlmann/file_flow/commit/14b01dd37459ea99906b6606237ba32b080781a0,,,,,,,,,,,
+385e49a0701792bc7cae4c59f48df9aae9968c68,"Fix linter error and improve comment clarity in match prediction
+
+Co-authored-by: dyilmaz156 <dyilmaz156@gmail.com>",3219766024,https://api.github.com/repos/D1Y4R/FootballHub,https://github.com/D1Y4R/FootballHub/commit/385e49a0701792bc7cae4c59f48df9aae9968c68,,,,,,o,,,,,
+2ab6ec737c8b9bfa02527e1413444af2a78405e7,"Improve DataFrame handling in fuel type methods
+
+Enhanced get_fuel_type to return an empty DataFrame when no data is available and set index name for clarity. Refactored get_fuel_type_percent_by_vehicle to simplify filtering logic and ensure consistent DataFrame output.",3216494468,https://api.github.com/repos/LPGAG24/EV_Efficacity_2025,https://github.com/LPGAG24/EV_Efficacity_2025/commit/2ab6ec737c8b9bfa02527e1413444af2a78405e7,,o,o,,,,,,,,
+4750b93b7d018046a8d6be5ce09bfd5ee3dc3005,"Refactor Makefile to use SERVICE_NAME variable and update related scripts (#70)
+
+- Changed DOCKER_SERVICE variable to SERVICE_NAME in Makefile for
+clarity.
+- Updated GitHub Actions workflow to reflect the new SERVICE_NAME
+variable.
+- Modified package.json scripts to include new install:lock commands for
+better dependency management.
+- Updated sync-host.sh to simplify the installation process.
+- Adjusted test commands in package.json files across multiple packages
+to ensure consistent execution.
+
+This refactor enhances the clarity and usability of the Makefile and
+related scripts, improving the overall development experience.",3200812427,https://api.github.com/repos/kevin-mind/nopo,https://github.com/kevin-mind/nopo/commit/4750b93b7d018046a8d6be5ce09bfd5ee3dc3005,,o,o,,,,,,,,
+0bd09d4a19e70b20b8001f07eb7ea33b7777518b,Improve PrunerIQ table layout and metric clarity,3127302117,https://api.github.com/repos/theallyprompts/PixelPruner,https://github.com/theallyprompts/PixelPruner/commit/0bd09d4a19e70b20b8001f07eb7ea33b7777518b,o,,,,o,,,,,,
+52a81d15b520cd3dcc28fbd93a7f5604569b1e83,"Improve docstrings and test clarity as requested in PR review
+
+Co-Authored-By: Joe Moura <joao@crewai.com>",2969300392,https://api.github.com/repos/crewAIInc/crewAI,https://github.com/crewAIInc/crewAI/commit/52a81d15b520cd3dcc28fbd93a7f5604569b1e83,o,,,,,,,,,,
+9431a4e2acb0458b26d4b5fe1f7f947a6d3ea813,"refactor: Modularize large files into focused subdirectories
+
+Address code review feedback by breaking down large modules into smaller,
+focused components for improved maintainability.
+
+## Refactoring Changes
+
+### PRISMA Package (knowledge_storm/prisma/)
+- **models.py**: Core data structures (Paper, SearchStrategy, etc.)
+- **search.py**: SearchStrategyBuilder for PICO methodology
+- **screening.py**: ScreeningAssistant + PRISMAScreener (80/20 rule)
+- **extraction.py**: DataExtractionHelper for systematic data extraction
+- **reporting.py**: ZeroDraftGenerator for overcoming blank page syndrome
+- **assistant.py**: Main PRISMAAssistant orchestrator
+- **__init__.py**: Clean exports for external use
+
+### VERIFY Package (knowledge_storm/verify/)
+- **models.py**: Core data structures (Claim, VerificationResult, etc.)
+- **fact_checker.py**: FactChecker for claim verification
+- **memory.py**: ResearchMemory for learning patterns
+- **fixer.py**: TargetedFixer for surgical corrections
+- **system.py**: Main VERIFYSystem orchestrator
+- **__init__.py**: Clean exports for external use
+
+## Task Management Cleanup
+
+- Simplified verbose `details` fields in tasks.json (725 → more readable)
+- Moved implementation logs to `.taskmaster/logs/` for better organization
+- Preserved essential task definitions while improving JSON readability
+- Created backup of original tasks.json
+
+## Benefits
+
+- **Maintainability**: Smaller, focused modules easier to understand/modify
+- **Testability**: Components can be tested in isolation
+- **Reusability**: Individual components can be imported as needed
+- **Organization**: Clear separation of concerns across subdirectories
+- **Documentation**: Each module has a specific, clear purpose
+
+## Backward Compatibility
+
+- All existing imports continue to work through __init__.py exports
+- Updated test_verify_system.py to use new modular imports
+- Original large files backed up as .bak files
+- No breaking changes to external APIs
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3224828689,https://api.github.com/repos/huluobohua/storm-loop,https://github.com/huluobohua/storm-loop/commit/9431a4e2acb0458b26d4b5fe1f7f947a6d3ea813,,,o,,,,,,,,
+c71c93fde099623e1160facbdb5fb1147f7827cb,"Extract generate_cost_analysis_report to module-level function
+
+- Move generate_cost_analysis_report from inside cost_analysis to top-level
+- Improve code readability and maintainability
+- Enable easier unit testing of the report generation logic
+- Remove nested function definition to simplify code structure
+- No functional changes, pure refactoring for better architecture
+
+Addresses PR #10 review comment about nested function extraction.
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3195145062,https://api.github.com/repos/yar0316/simple-architect-assistant,https://github.com/yar0316/simple-architect-assistant/commit/c71c93fde099623e1160facbdb5fb1147f7827cb,,,o,o,,,,,,,
+0a791dc5c4937e2d3a7d2e80a9b7571638ed5389,"Add LFGM (New York Mets) color theme
+
+## New Theme: LFGM (Let's Fucking Go Mets)
+- **Colors**: Official New York Mets blue (#002d72) and orange (#ff671f)
+- **Design**: Blue background with orange accents and white text
+- **Styling**: Comprehensive tmux element styling including status bars, borders, messages
+
+## Implementation
+- **Questionnaire**: Added LFGM option to color scheme choices with proper ANSI codes
+- **Generator**: Full color scheme implementation with Mets blue/orange palette
+- **Documentation**: Updated color count from 5 to 6 themes, added visual preview
+- **Help Text**: Extended color scheme help to mention LFGM theme
+
+## Visual Design
+- Primary blue background (#002d72) for main status bar
+- Orange accent (#ff671f) for active windows and highlights
+- White text for optimal contrast and readability
+- Secondary blue tones for borders and inactive elements
+- Comprehensive styling for all tmux UI elements
+
+Perfect for Mets fans who want their terminal to show team pride\! ⚾️🧡💙
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3177835565,https://api.github.com/repos/jeremyeder/tmux-ultimate,https://github.com/jeremyeder/tmux-ultimate/commit/0a791dc5c4937e2d3a7d2e80a9b7571638ed5389,,,,,,,,,,,
+eb6439f215b3612deadcdd73d5a7eae6bd3c6d02,"feat: complete comprehensive testing suite and finalize code quality improvements
+
+- Add comprehensive test suites for all major components:
+  * Server router and service tests with mocking and error handling
+  * Group router tests covering CRUD operations and player management
+  * Backup router tests including scheduling and statistics
+  * Template router tests with cloning and access control
+  * File router tests with security validation and search functionality
+
+- Fix code quality issues:
+  * Fix boolean comparison patterns in ServerService queries
+  * Add missing shutil import in TemplateService
+  * Fix authorization service import in backup router
+  * Update SQLAlchemy query patterns for better readability
+
+- Add comprehensive API documentation:
+  * Complete endpoint reference covering all 46 use cases
+  * Role-based access control documentation
+  * Error handling and security guidelines
+  * Request/response schema documentation
+
+- All code passes linting and formatting checks
+- Tests cover authentication, authorization, validation, and error scenarios
+- Maintains backward compatibility with existing functionality
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3140708028,https://api.github.com/repos/mmiura-2351/mc-server-dashboard-api,https://github.com/mmiura-2351/mc-server-dashboard-api/commit/eb6439f215b3612deadcdd73d5a7eae6bd3c6d02,,,,,,,,,,,
+8c766e63f36368318d36e5e8f22e9ef89e1e7cb7,"refactor: simplify response processing by removing VertexAIParallelBase dependency
+
+- Removed the VertexAIParallelBase type from the return annotations in `process_response` and `handle_response_model` functions to streamline type hints.
+- Updated assertions in `VertexAIParallelBase` and `AnthropicParallelBase` classes for clarity and consistency.
+- Enhanced overall readability and maintainability of the `process_response.py` and `parallel.py` modules.",3244853040,https://api.github.com/repos/567-labs/instructor,https://github.com/567-labs/instructor/commit/8c766e63f36368318d36e5e8f22e9ef89e1e7cb7,,,o,o,,,,,,,
+e7c43cab73e5160787608517b620c789e92fe056,Add Optional type hint to aligner.py for improved clarity,3098718646,https://api.github.com/repos/The-Africa-Channel/Sentence-Segmentation-Aligner,https://github.com/The-Africa-Channel/Sentence-Segmentation-Aligner/commit/e7c43cab73e5160787608517b620c789e92fe056,o,,,,,,,,,,
+8784b9c2bf46aaea13660b4324d905c8ddebb38a,"refactor(mcp): simplify client manager handling and improve configuration validation
+
+- Remove global client manager variable and use lifespan context for initialization
+- Consolidate API key validation checks for OpenAI and Firecrawl providers
+- Update tool registration calls to use lifespan.client_manager
+- Clean up import statements and enhance test structure for lifespan management
+
+This refactor enhances clarity by reducing global state and improving the organization of client manager initialization, adhering to KISS principles. The validation logic is streamlined to avoid redundancy while maintaining functionality.",3098613022,https://api.github.com/repos/BjornMelin/ai-docs-vector-db-hybrid-scraper,https://github.com/BjornMelin/ai-docs-vector-db-hybrid-scraper/commit/8784b9c2bf46aaea13660b4324d905c8ddebb38a,,,o,,o,,,,,,
+22306b1ee1558baaefdfb3b1a22ef9972b793d5e,Improve timeline tag readability,3101533805,https://api.github.com/repos/vitarb/valkey_agentic_demo,https://github.com/vitarb/valkey_agentic_demo/commit/22306b1ee1558baaefdfb3b1a22ef9972b793d5e,,,,,,,o,,,,
+759dce6e8c0195ed6d3a6e92844db12fa41c9bca,"fix: remove Load Demo Data and Try Live Demo buttons, replace with upload instructions
+
+- Remove problematic Load Demo Data button that was causing CORS issues
+- Remove Try Live Demo button that was redirecting to same page
+- Replace with clean instruction box guiding users to upload documents
+- Update PerformanceMetrics to show static demo values instead of API calls
+- Maintain all Redis branding improvements (bigger logo, readable text)
+- Provide clear guidance for testing with suggested document types",3264390971,https://api.github.com/repos/MatthewEngman/documind,https://github.com/MatthewEngman/documind/commit/759dce6e8c0195ed6d3a6e92844db12fa41c9bca,,,,o,,,,,,,
+140857bfc359941658212171973d9287b43a5b31,Improve readability of discrete simulator,3169131558,https://api.github.com/repos/WonJayne/mc_dagprop,https://github.com/WonJayne/mc_dagprop/commit/140857bfc359941658212171973d9287b43a5b31,o,,o,,,,,,ちょっとわからない,,
+b1c1e3f6018b83ddabfe4654ab8839c5153837ac,Reorder helper functions for readability,3225290508,https://api.github.com/repos/TugrulKaraaslan/finansal-analiz-sistemi,https://github.com/TugrulKaraaslan/finansal-analiz-sistemi/commit/b1c1e3f6018b83ddabfe4654ab8839c5153837ac,,,o,,,,,,構造の簡素化？,,
+87d4a7fcf34e535c13365d1aa781a51c9daa1a8c,"Feat/update graphql queries (#4)
+
+* misc
+
+* remove unused
+
+* Add organization endpoints and model to fetch and list organizations
+
+* Update pre-commit configuration to exclude test files and refactor configuration management for improved readability and consistency. Adjust API service methods for better error handling and response structure, ensuring all variables are sourced from environment settings.
+
+* update pagination
+
+* feat: working org query
+
+* reorganize dir structure
+
+* frontend: init commit
+
+* add config
+
+* Enhance frontend: add API integration for fetching organizations, update package dependencies, and improve project structure.",3186245451,https://api.github.com/repos/Backland-Labs/quorum-ai,https://github.com/Backland-Labs/quorum-ai/commit/87d4a7fcf34e535c13365d1aa781a51c9daa1a8c,,,o,o,,,,,,,
+e11d0e6c8e523936d851003a20d3cea8fed60bfa,refactor(bot): improve handler readability,3209888875,https://api.github.com/repos/jgengo/portfolio-herbarium-bot,https://github.com/jgengo/portfolio-herbarium-bot/commit/e11d0e6c8e523936d851003a20d3cea8fed60bfa,,,,,o,,,,ちょっとわからない,,
+0e5ed2036e1a0a054f8c83ed60d8936c83a7d762,"feat: Rename td_ui_runner.py to build_router_ui.py
+
+The `td_ui_runner.py` script has been renamed to `build_router_ui.py` to better reflect its purpose of building the router UI. This change improves clarity and consistency within the codebase.",3222154824,https://api.github.com/repos/EleusisEnterprises/ShowControl,https://github.com/EleusisEnterprises/ShowControl/commit/0e5ed2036e1a0a054f8c83ed60d8936c83a7d762,,o,,,,,,,,,
+119db3b4896795169ad0efe40dae55c871567d8e,"refactor: implement suggested improvements from PR review
+
+- Rename variables to follow consistent snake_case convention
+- Improve documentation with detailed docstrings
+- Refactor nested try-except blocks into separate helper functions
+- Create constants for repositories and prompt templates
+- Simplify import statements for better readability
+- Add comprehensive README.md with instructions and documentation
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+Co-Authored-By: Claude <noreply@anthropic.com>",2889328836,https://api.github.com/repos/foyzulkarim/transformers-tasks,https://github.com/foyzulkarim/transformers-tasks/commit/119db3b4896795169ad0efe40dae55c871567d8e,o,,o,,o,,,,,,
+476439479c8cf934cd803557442df9cdbe2704d1,"Remove deprecated employee management scripts and migration files
+
+This commit deletes several obsolete scripts and migration files related to employee management, including:
+
+- Removed `remove_max_employees.py` and `remove_min_employees.py` scripts, which were previously used for managing employee limits in the shifts table.
+- Deleted the `SCHEDULER_ENHANCEMENTS.md` file, which contained outdated enhancement plans for the scheduler.
+- Cleared the `TASKS.md` file, which was no longer relevant to the current task management approach.
+- Removed various test scripts and migration files that are no longer in use, streamlining the codebase.
+
+These changes aim to clean up the repository by eliminating unused code and files, improving maintainability and clarity of the project structure.",3106315457,https://api.github.com/repos/jango-blockchained/schichtplan,https://github.com/jango-blockchained/schichtplan/commit/476439479c8cf934cd803557442df9cdbe2704d1,,,,o,,,,,,,
+c9934d986f85277a79b230536c0bd148611a49c2,"Add Ruff for linting and update pyproject.toml and uv.lock files. Refactor pageindex functions for improved readability and performance, including enhanced error handling and logging. Update utils for better async support and code organization.",3107624893,https://api.github.com/repos/Black-Milk/PageIndex,https://github.com/Black-Milk/PageIndex/commit/c9934d986f85277a79b230536c0bd148611a49c2,,,o,,,,o,,,,
+a6d9741d18247769393a9b9a5de986cd042b8200,"Fix failing tests and address comprehensive GitHub review feedback
+
+- Fix undefined i18n variable error in test_i18n_slice_access method
+- Replace Mock tools with proper BaseTool instances to fix validation errors
+- Add comprehensive docstrings to all test methods explaining validation purpose
+- Add pytest fixtures for test isolation with @pytest.fixture(autouse=True)
+- Add parametrized tests for agent initialization patterns using @pytest.mark.parametrize
+- Add negative test cases for default template behavior and incomplete templates
+- Remove unused Mock and patch imports to fix lint errors
+- Improve test organization by moving Pydantic models to top of file
+- Add metadata (title, description, categoryId, priority) to documentation frontmatter
+- Add showLineNumbers to all Python code blocks for better readability
+- Add explicit security warnings about stop sequence pitfalls and template injection
+- Improve header hierarchy consistency using #### for subsections
+- Add cross-references between troubleshooting sections
+- Document default parameter behaviors explicitly
+- Add additional troubleshooting steps for debugging prompts
+
+Addresses all actionable feedback from GitHub reviews by joaomdmoura and mplachta.
+Fixes failing CI tests by using proper CrewAI API patterns and BaseTool instances.
+
+Co-Authored-By: João <joao@crewai.com>",3165391685,https://api.github.com/repos/crewAIInc/crewAI,https://github.com/crewAIInc/crewAI/commit/a6d9741d18247769393a9b9a5de986cd042b8200,o,,o,o,,,,,,,
+c01f5aeae12f84367ac563fefbdd6fd918170ca0,Handle readability issues without type,3144313949,https://api.github.com/repos/eputnam77/GovDocVerify,https://github.com/eputnam77/GovDocVerify/commit/c01f5aeae12f84367ac563fefbdd6fd918170ca0,,,o,,,,,,,,
+007b7dfa41b285f62ed244b6a0b79b91e84abdd5,Improve variable names for clarity,3070142411,https://api.github.com/repos/bozelosp/remod,https://github.com/bozelosp/remod/commit/007b7dfa41b285f62ed244b6a0b79b91e84abdd5,,o,,,,,,,,,
+222aa4620995b370e3826c1d8d9969882a7a66ab,refactor: Update test cases and configuration for improved clarity and functionality,3076471941,https://api.github.com/repos/Tomodo1773/line-character-agent,https://github.com/Tomodo1773/line-character-agent/commit/222aa4620995b370e3826c1d8d9969882a7a66ab,,,,,,,,,,,
+d00787a336398020dc5fd25d2b6ddc857b13dcc7,fix: update event label titles for clarity and improve modal styling,3128426163,https://api.github.com/repos/waor1990/casino-calendar,https://github.com/waor1990/casino-calendar/commit/d00787a336398020dc5fd25d2b6ddc857b13dcc7,,,,,,,,,,,
+137bfc52cec50932cdfd9b224abf88f0eb6391b2,"test(infrastructure): reorganize test suite and fix broken tests
+
+- Restructure test directory from flat to hierarchical organization:
+  • Created tests/unit/, tests/integration/, tests/performance/, tests/fixtures/
+  • Added comprehensive __init__.py files with documentation
+  • Moved all test files to organized structure
+
+- Enhance pytest configuration for clean, readable output:
+  • Updated pyproject.toml with optimized pytest settings
+  • Added clean output formatting, disabled warnings, shortened tracebacks
+  • Created scripts/test.sh for multiple test execution modes
+  • Fixed cryptic test output with human-readable summary format
+
+- Fix broken tests across multiple components:
+  • Resolved API key validation issues (valid-length test keys)
+  • Fixed crawling provider method signatures and return values
+  • Corrected embedding provider async mock setup and parameters
+  • Updated config loader to use local providers for testing
+  • Fixed EmbeddingManager config attribute references
+
+- Create comprehensive GitHub issues for remaining test work:
+  • Issue #70: Embedding provider comprehensive testing
+  • Issue #71: Crawling provider and manager testing
+  • Issue #72: DragonflyDB cache performance validation
+  • Issue #73: MCP server and integration testing
+  • Issue #74: Core component test coverage
+
+- Update documentation:
+  • Enhanced CLAUDE.md with new test commands and structure
+  • Updated TODO.md with complete session progress
+  • Added test organization and GitHub issue tracking
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3094996224,https://api.github.com/repos/BjornMelin/ai-docs-vector-db-hybrid-scraper,https://github.com/BjornMelin/ai-docs-vector-db-hybrid-scraper/commit/137bfc52cec50932cdfd9b224abf88f0eb6391b2,,,,,,,,,,,
+300b4dd7e8f9f72386746b412600412fc1b72b5b,"🧹 Remove unused imports from spiritual router
+
+- Remove unused pydantic imports (BaseModel, Field)
+- Remove unused typing imports (Dict, Any, List, Optional)
+- Clean up imports after moving remedies endpoint to enhanced router
+- Improves code clarity and reduces unnecessary dependencies",3249196692,https://api.github.com/repos/voicebootix/jyotiflow-ai,https://github.com/voicebootix/jyotiflow-ai/commit/300b4dd7e8f9f72386746b412600412fc1b72b5b,,,,o,,,,,,,
+e6b615cecf074e698d9a23c14660694ef7dcfd2e,Show readability metrics after summary,3144293919,https://api.github.com/repos/eputnam77/GovDocVerify,https://github.com/eputnam77/GovDocVerify/commit/e6b615cecf074e698d9a23c14660694ef7dcfd2e,,,,,,,o,,,,
+04174a349bd496f4115df816c9d2c0dc5dcffedc,Refactor: Rename function to improve clarity in target listing,3226790448,https://api.github.com/repos/legacy-use/legacy-use,https://github.com/legacy-use/legacy-use/commit/04174a349bd496f4115df816c9d2c0dc5dcffedc,,o,,,,,,,,,
+6da3c0279a4c0a39cc332983d678132b973ee347,"refactor: enhance test data consistency by utilizing TestDataFactory
+
+- Replaced direct model instantiation with TestDataFactory in various test files to ensure consistent and email-compatible user creation.
+- Updated test setup methods across multiple test cases to leverage TestDataFactory for creating churches, users, profiles, and fasts.
+- Improved readability and maintainability of test code by centralizing test data creation logic.",3126128950,https://api.github.com/repos/surp-hovhannes/bahk,https://github.com/surp-hovhannes/bahk/commit/6da3c0279a4c0a39cc332983d678132b973ee347,,,o,,,,,o,,,
+a1ff5d5712204c43798a01b7576e8d80ae54ecf1,"Improve chart readability by adding font sizes to chart elements
+
+Co-authored-by: tfreeman2 <tfreeman2@student.bccc.edu>",3228719908,https://api.github.com/repos/KobiMou/Acoustics,https://github.com/KobiMou/Acoustics/commit/a1ff5d5712204c43798a01b7576e8d80ae54ecf1,,,,,,,,,,,
+050f87992cdd20e4e0df8d99e5be80639acbfdba,Refactor world generator for clarity,3163364934,https://api.github.com/repos/komjaur/anywher,https://github.com/komjaur/anywher/commit/050f87992cdd20e4e0df8d99e5be80639acbfdba,,,o,,,,,,,,
+0f50ed3f19ded84227007126c9812e58297c2f44,"Fix critical bugs and improve code quality in bug_script.py
+
+- Fix mathematical error: divide by len(scores) instead of scores list
+- Remove hardcoded 'bob' exclusion from eligibility logic
+- Optimize lookup_city function using dict.get() for O(1) lookup
+- Standardize code style: consistent quotes, proper indentation
+- Improve variable naming: userInfo -> user_info
+- Remove unnecessary try-catch that masked the division bug
+- Fix output formatting for better readability
+
+Co-Authored-By: register@kingname.info <qkxie@hongshan.com>",3142350070,https://api.github.com/repos/qkxie/test_devin,https://github.com/qkxie/test_devin/commit/0f50ed3f19ded84227007126c9812e58297c2f44,,o,o,o,o,,,,,,
+d3ba81231855db7e090d31d2b421baf51fd08813,"Improve charging profile UI and time slot selection
+
+Replaces the numeric input for time resolution with a selectbox for slot duration, displaying the resulting number of slots per day. Charging profile editors for home and work are now collapsible using expanders, and container borders are added for clarity. Various section headers and comments are updated for consistency and readability.",3186568954,https://api.github.com/repos/LPGAG24/EV_Efficacity_2025,https://github.com/LPGAG24/EV_Efficacity_2025/commit/d3ba81231855db7e090d31d2b421baf51fd08813,o,,o,,,,,,,,
+e7b6b9816edccd5cb020d336b855ea6a6e474537,Handle unreadable images in preprocessing,3134828981,https://api.github.com/repos/dhirajbandi/Modified-Alexnet-Research-Review,https://github.com/dhirajbandi/Modified-Alexnet-Research-Review/commit/e7b6b9816edccd5cb020d336b855ea6a6e474537,,,,,,,,,画像処理,,
+7b9ce6661bb68dd20e6ac97757a152b5e41de693,"Refactor API documentation and improve code clarity with documentation
+
+Removes docstrings from API function definitions and adds them to the router endpoints for improved code maintainability.
+
+Replit-Commit-Author: Agent
+Replit-Commit-Session-Id: d5b7af23-c0f1-4cb5-bcc8-c118ce5b631f",3227802966,https://api.github.com/repos/Sanchit3017/Wns_Project1,https://github.com/Sanchit3017/Wns_Project1/commit/7b9ce6661bb68dd20e6ac97757a152b5e41de693,o,,,o,,,,,,,
+7b1cd3ab41c3027a6aead39e89d1ce280a1db187,"Disentangle interbroker and intercontroller protocol information
+
+Resolves TODO comment by creating clear separation between broker and controller protocols.
+
+- Split interbroker_security_protocol to only handle broker-to-broker communication
+- Added effective_intercontroller_security_protocol for controller-to-controller communication
+- Added validation to prevent misuse when brokers/controllers are not present
+- Maintains backward compatibility for existing test code
+- Improves API clarity and reduces confusion about protocol usage
+
+This enhancement is critical for mining/industrial IoT deployments where
+different security requirements may exist for broker and controller communication.
+
+Co-Authored-By: unknown <>",3167665147,https://api.github.com/repos/cognition-workshop/kafka,https://github.com/cognition-workshop/kafka/commit/7b1cd3ab41c3027a6aead39e89d1ce280a1db187,,,,,,,,,,,
+8f6fc467388cb4e7e15d93102838aff6b2f22a90,Refactor Glicko rating calculation to improve clarity and structure,3198481185,https://api.github.com/repos/croquant/sumoracle,https://github.com/croquant/sumoracle/commit/8f6fc467388cb4e7e15d93102838aff6b2f22a90,,,o,,,,,,,,
+8620ecfbed655d048123574374113db46b7c3091,fix: update type hint for session history to use Union for better clarity,3120810631,https://api.github.com/repos/dowhiledev/nomos,https://github.com/dowhiledev/nomos/commit/8620ecfbed655d048123574374113db46b7c3091,o,,,,,,,,,,
+20cd4b9e7b074cf23e38ed3adf8737e5fa7e886d,Rename cryptic variables for readability,3070571894,https://api.github.com/repos/bozelosp/remod,https://github.com/bozelosp/remod/commit/20cd4b9e7b074cf23e38ed3adf8737e5fa7e886d,,o,,,,,,,,,
+b992dd2baf305bb08d5d7ce6f097ecd2a1636457,"Fix flake8 linting errors in Order Tagging & Categorization
+
+- Fix E501 line too long errors by breaking long lines
+- Remove W293 blank line whitespace in service functions
+- Maintain readability while adhering to 79 character limit
+- All imports and functionality preserved
+
+Co-Authored-By: auraconnectai@gmail.com <auraconnectai@gmail.com>",3260636263,https://api.github.com/repos/AuraTechWave/auraconnectai,https://github.com/AuraTechWave/auraconnectai/commit/b992dd2baf305bb08d5d7ce6f097ecd2a1636457,,,,,,,,,,,
+0aeff70fe1005956d8b4e186ce686d17f3d31543,"Add inline comments to load() function
+
+- Added brief comments explaining each code block's purpose
+- Covers metadata parsing, layer processing, and tile extraction
+- Addresses GitHub comment feedback for improved code readability
+
+Co-Authored-By: Matt Link <matt@gopromptless.ai>",3229946146,https://api.github.com/repos/mattlink/pyrexpaint,https://github.com/mattlink/pyrexpaint/commit/0aeff70fe1005956d8b4e186ce686d17f3d31543,o,,,,,,,,,,
+35de31c3c44b17dc9aebcc16442e9736bdb2d69c,fix bytes handling in readability extractor,3207094360,https://api.github.com/repos/rootfinding/news-please,https://github.com/rootfinding/news-please/commit/35de31c3c44b17dc9aebcc16442e9736bdb2d69c,,,o,,,,,,,,
+e63d2ec59eed8002eee26748b959edff59697e2c,Improve game stats readability and panel sizing,3126347087,https://api.github.com/repos/tachyon-beep/shogidrl,https://github.com/tachyon-beep/shogidrl/commit/e63d2ec59eed8002eee26748b959edff59697e2c,,,,,,,,,,,
+965aef5aa0f558a6c8ef4d18c8d3bd35d81628b4,"Updated object graph to better handle dependencies
+
+This commit improves the dependency resolution process in MyObjectGraph class by introducing a new implementation of the _provide() function. The new logic uses a result dictionary and traversal stack to handle dependency accumulation, ensuring more reliable and efficient dependency management. The changes also include added type hinting and improved logging within test_design.py to aid in readability and troubleshooting.",2906679211,https://api.github.com/repos/proboscis/pinjected,https://github.com/proboscis/pinjected/commit/965aef5aa0f558a6c8ef4d18c8d3bd35d81628b4,,,o,,,,o,,,,
+c0dd9c10919f9fab76e112bb424cab3ad308c356,Rename variable for clarity in format_for_model,3145573934,https://api.github.com/repos/Ckrest/MythForge,https://github.com/Ckrest/MythForge/commit/c0dd9c10919f9fab76e112bb424cab3ad308c356,,o,,,,,,,,,
+7b9f00343bea2d3a2fc0b20fab170f23aff8c43d,"feat(slideshow): add configurable image preload buffer and improve cleanup
+
+- Added --preload-count argument to set number of images to preload (default: 20) for performance tuning.
+- Made preload buffer size a configurable parameter within ImageSlideshowApp.
+- Improved cache eviction and logging for preloaded images.
+- Changed default slideshow delay from 3.0s to 1.0s.
+- Enhanced clarity, exception handling, and code formatting (expanded compound statements, comments).
+- Updated metadata (author, version) in pyproject.toml.",3119644697,https://api.github.com/repos/obeone/scripts,https://github.com/obeone/scripts/commit/7b9f00343bea2d3a2fc0b20fab170f23aff8c43d,,,o,,o,,o,,,,
+ac1cc148c6e3108c6f7344764a196cafebbc7c98,Add EvaluationAgent with readability scoring,3121403658,https://api.github.com/repos/kkryon/jarvis,https://github.com/kkryon/jarvis/commit/ac1cc148c6e3108c6f7344764a196cafebbc7c98,,,,,,,,,,,
+f46858b9a2d651e93e29150783affea6f1735de5,Add Japanese comments for readability,3266466808,https://api.github.com/repos/ramsesyok/pytavoas,https://github.com/ramsesyok/pytavoas/commit/f46858b9a2d651e93e29150783affea6f1735de5,o,,,,,,,,,,
+e3cd6c08dda29e1ac0f3b56fe8ace4b5973740de,"Rename DeprecationWarning to LegacyDeprecationWarning for clarity
+
+Co-authored-by: mattsp1290 <mattsp1290@gmail.com>",3226628537,https://api.github.com/repos/mattsp1290/spacetimedb-python-sdk,https://github.com/mattsp1290/spacetimedb-python-sdk/commit/e3cd6c08dda29e1ac0f3b56fe8ace4b5973740de,,o,,,,,,,,,
+d2c35a1e94fe7247485208b541b1bc6e17f2f896,"Optimize inefficient range-length loops for better performance
+
+- Replace for i in range(len(list)) patterns with list comprehensions
+- Optimize generate_output_token_counts() and generate_output_token_counts_from_existing() in throughput_benchmarks.py
+- Optimize deepspeed_result_to_tokens() using zip() for cleaner iteration
+- Add comprehensive efficiency analysis report documenting optimization opportunities
+
+These changes improve performance by eliminating unnecessary index calculations
+and make the code more readable and Pythonic.
+
+Co-Authored-By: Brooke Peterson <brookelpeterson63@gmail.com>",3151750430,https://api.github.com/repos/barthur63/llm-engine,https://github.com/barthur63/llm-engine/commit/d2c35a1e94fe7247485208b541b1bc6e17f2f896,,,o,,,,,,,,
+0cf077d4e0b9885e9a24457be9b86e9e0351a933,Refactor code structure for improved readability and maintainability,3146280493,https://api.github.com/repos/edenede2/RL,https://github.com/edenede2/RL/commit/0cf077d4e0b9885e9a24457be9b86e9e0351a933,,,o,,,,,,,,
+d7fb5a5359b538ac73c874998f1244ce6ea4d6ff,"Add pyproject.toml and refactor import paths in tests
+
+- Created a new pyproject.toml file to define the build system and project metadata.
+- Refactored import statements in test files to use the new package structure under 'backend'.
+- Cleaned up comments and formatting in the parser_and_ml_example.py script for clarity.",3198809541,https://api.github.com/repos/chieffy99/builder,https://github.com/chieffy99/builder/commit/d7fb5a5359b538ac73c874998f1244ce6ea4d6ff,o,,,,o,,,,Cleaned up comments　より,,
+efb34aca6a1932c427d70b8c9ce44c96eb2d8864,"Refactor image URL handling to consolidate branches
+
+- Consolidate if/else branches for image URL construction as suggested by Greptile
+- Use ternary expression to handle both cases (with/without leading slash) more concisely
+- Maintains same functionality while improving code readability
+
+Co-Authored-By: Alek <alek@pynecone.io>",3210536156,https://api.github.com/repos/reflex-dev/reflex-web,https://github.com/reflex-dev/reflex-web/commit/efb34aca6a1932c427d70b8c9ce44c96eb2d8864,,,o,,,,,,,,
+32da56c68b283ab1f65b4c1baa9e88fe8a58f3de,refactor(data): improve readability and helpers,3122462144,https://api.github.com/repos/VeraLIMS/Fundalyze,https://github.com/VeraLIMS/Fundalyze/commit/32da56c68b283ab1f65b4c1baa9e88fe8a58f3de,,,o,,,,,,ちょっとわからない,,
+ab01f5b4ff6e61fd25e011d9fe4d77cf23755044,"Refactor test_all_nodes.py for improved clarity and functionality, enhancing message handling and output reporting.",3197475972,https://api.github.com/repos/Quillianne/drivers-ddboat-ros2,https://github.com/Quillianne/drivers-ddboat-ros2/commit/ab01f5b4ff6e61fd25e011d9fe4d77cf23755044,,,,,,,o,,,,
+e0642deeaee13897d97a0128ebabccb90b44e9c6,"Improve code efficiency by moving import statement to module level
+
+- Move 'import os' from main() function to top of file with other imports
+- Follows PEP 8 best practices for import organization
+- Improves code readability and maintainability
+- Add comprehensive efficiency analysis report documenting multiple improvement opportunities
+
+Co-Authored-By: Omar G Ghafour  <omar@coderabbit.ai>",3151149447,https://api.github.com/repos/omar-coderabbitai/og-test-jira-uno,https://github.com/omar-coderabbitai/og-test-jira-uno/commit/e0642deeaee13897d97a0128ebabccb90b44e9c6,,,,,o,,,,,,
+215568edae58fd2999cee55e03c3a9444c9ce711,"Enhance AgentConfig with detailed comments and improved configuration clarity
+
+Co-authored-by: muradsenay <muradsenay@gmail.com>",3243220565,https://api.github.com/repos/msenay/agents,https://github.com/msenay/agents/commit/215568edae58fd2999cee55e03c3a9444c9ce711,o,,,,,,,,,,
+c4901398a8e03ae124e93eb319f215ceef930edf,"feat: Enhance documentation for download system architecture
+
+- Added a detailed section on the download system architecture in `downloaders.md`, including a comprehensive flow diagram illustrating the interaction between Discord users, CLI users, and the various download strategies.
+- Documented key features of the architecture, such as dual entry points, platform-specific strategies, feature flag control, automatic fallback mechanisms, and unified output formats.
+- Updated best practices for users to start with CLI mode for production until API mode is well-tested.
+
+These changes improve the clarity and usability of the documentation, providing users with a better understanding of the download system's structure and functionality.",3098263055,https://api.github.com/repos/bossjones/boss-bot,https://github.com/bossjones/boss-bot/commit/c4901398a8e03ae124e93eb319f215ceef930edf,,,,,,,,,,,
+957eb1c548f463052e0695efc216c8d959273411,Improve readability section output,3144405865,https://api.github.com/repos/eputnam77/GovDocVerify,https://github.com/eputnam77/GovDocVerify/commit/957eb1c548f463052e0695efc216c8d959273411,,,,,,,o,,,,
+b8dc6deac59a930f88415475b71de30673ec0516,Reorder functions in backtest_core for clarity,3216995786,https://api.github.com/repos/TugrulKaraaslan/finansal-analiz-sistemi,https://github.com/TugrulKaraaslan/finansal-analiz-sistemi/commit/b8dc6deac59a930f88415475b71de30673ec0516,,,,,o,,,,,,
+cc1bf340f4b33865ea0c860514ea1dd5b9150c91,Put most of michal's code into a function so that it is more readable and added a query to the datasetmaker,3131549659,https://api.github.com/repos/kuborro123/CBL-crime-and-security-Group7,https://github.com/kuborro123/CBL-crime-and-security-Group7/commit/cc1bf340f4b33865ea0c860514ea1dd5b9150c91,,,o,,,,,,,,
+a89d0691da4562bb4f2c4637f5ee80a6876634c8,"docs: enhance architecture and response processing documentation
+
+- Updated the architecture documentation to provide a clearer overview of the Instructor library's core components and request flow.
+- Expanded the `process_response.py` module docstring to detail response processing, including handling for various LLM providers and error recovery strategies.
+- Improved type hints and added examples for better clarity and usability in the documentation.
+- Consolidated explanations of key components and their roles in the system, ensuring a more comprehensive understanding for developers.",3244853040,https://api.github.com/repos/567-labs/instructor,https://github.com/567-labs/instructor/commit/a89d0691da4562bb4f2c4637f5ee80a6876634c8,o,,,,,,,,,,
+246a757132d4401ef2aa0acf460d30e8f4b94d8e,"Enhance AI rules documentation and scripts for better maintainability and clarity
+
+- Updated AI rules documentation across multiple files to include notes for maintainers and detailed setup instructions.
+- Improved the Makefile to streamline AI rules generation and testing commands.
+- Enhanced the `generate_ai_rules.py` script to filter content based on target AI assistant types, ensuring appropriate sections are included or excluded.
+- Added related ADR references in existing ADR documents for better traceability.",3146204510,https://api.github.com/repos/dudarev/speechdown,https://github.com/dudarev/speechdown/commit/246a757132d4401ef2aa0acf460d30e8f4b94d8e,,,,,,,,,,,
+a61214fe7cc2b9d5bbbec3dc25d0c631c4f853b0,"refactor: improve service naming for better clarity
+
+Service naming improvements to enhance code readability:
+
+**Gateway Services:**
+- Rename GatewayInitializerService → MarketDataGatewayService for clarity
+- Update interface naming for consistency
+- Remove obsolete gateway initialization patterns
+
+**Process Management:**
+- Enhance ProcessManagerService interface
+- Remove unused gateway thread management methods
+- Improve service lifecycle management
+
+**Service Organization:**
+- Better separation of concerns between market data and order execution
+- Clearer service boundaries and responsibilities
+- Improved dependency injection patterns
+
+These naming improvements make the codebase more intuitive for new developers
+while maintaining full backward compatibility.
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3135921088,https://api.github.com/repos/ttpss930141011/auto-futures-trading-machine,https://github.com/ttpss930141011/auto-futures-trading-machine/commit/a61214fe7cc2b9d5bbbec3dc25d0c631c4f853b0,,o,o,o,,,,,,,
+3aed20329d29ef7ad64eab74f524934b45027015,"Refactor country list display with improved formatting and readability
+
+Co-authored-by: albertmaxer6 <albertmaxer6@gmail.com>",3243047432,https://api.github.com/repos/HyperCyx/otpbot,https://github.com/HyperCyx/otpbot/commit/3aed20329d29ef7ad64eab74f524934b45027015,,,,,,,,,,,
+4bc239f2ad5bf5495f3c49f99e3bc808221d5e42,Expand logic functions for readability,3203927405,https://api.github.com/repos/kamekazz/DataWasher,https://github.com/kamekazz/DataWasher/commit/4bc239f2ad5bf5495f3c49f99e3bc808221d5e42,,,o,,,,,,,,
+66863d7a0d478c1ecade11c7b52014bcb5dc2888,"Update Azure artifact repository tests to use keyword arguments
+
+- Remove None tracking_uri parameter from AzureBlobArtifactRepository calls
+- Update AzureDataLakeArtifactRepository calls to use keyword arguments
+- Use explicit client= and credential= parameters for clarity
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+Signed-off-by: harupy <17039389+harupy@users.noreply.github.com>",3173971926,https://api.github.com/repos/mlflow/mlflow,https://github.com/mlflow/mlflow/commit/66863d7a0d478c1ecade11c7b52014bcb5dc2888,o,,,o,,,,,,,
+dea1d7f2ab3e1e2fe3c2f20cd124578f63aff043,More readable CLI output,3186070661,https://api.github.com/repos/vaeryn-uk/ollama-cli-code-agent,https://github.com/vaeryn-uk/ollama-cli-code-agent/commit/dea1d7f2ab3e1e2fe3c2f20cd124578f63aff043,,,,,,,o,,,,
+e2af306b2dc10c4074485f11d6221f321142e327,"Add linear scale chart for format size comparison with improved readability
+
+Co-authored-by: dplatt4973 <dplatt4973@live.hccc.edu>",3235053782,https://api.github.com/repos/Vanish0314/model-format-comparision,https://github.com/Vanish0314/model-format-comparision/commit/e2af306b2dc10c4074485f11d6221f321142e327,,,,,,,,,,,
+bb23385e297771e84e75a7fc868debff1f4de80b,Improve dark theme readability,3126072025,https://api.github.com/repos/Larz1881/horse_racing_project,https://github.com/Larz1881/horse_racing_project/commit/bb23385e297771e84e75a7fc868debff1f4de80b,,,,,,,,,,,
+b900ffc4490971f1b434b43e7f664284a267e4d7,"feat: Add beautiful rich-based logging system for orchestrator
+
+## Overview
+Replaced the previous ugly JSON log output with a comprehensive, structured logging system using the rich library for beautiful terminal output. This dramatically improves the developer experience when monitoring agent orchestration.
+
+## Key Features Added
+
+### 1. Rich-Based Logging Utilities (defog/llm/utils_logging.py)
+- **OrchestrationLogger class**: Centralized logging with beautiful formatting
+- **Rich console integration**: Colors, panels, tables, and trees for structured output
+- **Global logger instance**: `orch_logger` available throughout the codebase
+
+### 2. Comprehensive Logging Methods
+- `log_request_start()`: Beautiful header with user request in styled panel
+- `log_planning_analysis()`: Formatted analysis with automatic list detection and tree rendering
+- `log_llm_call()`: Clean LLM provider/model logging with consistent styling
+- `log_subagent_plans()`: Rich table showing agent configuration + individual task panels
+- `log_task_execution_start()`: Task start with parallel/sequential mode indicators
+- `log_task_execution_complete()`: Success/failure with result previews and metadata (tokens/cost)
+- `log_retry_attempt()`: Retry progress with attempt counters and wait times
+- `log_error_detail()`: Categorized error display with color-coded error types
+- `log_orchestration_complete()`: Summary statistics table with totals
+
+### 3. Orchestrator Integration (defog/llm/orchestrator.py)
+- **Strategic logging placement**: Key orchestration events are logged with context
+- **Request lifecycle tracking**: From initial request → planning → execution → completion
+- **Error handling improvements**: Better error classification and logging
+- **Null safety**: Fixed cost calculation errors when cost_in_cents is None
+
+### 4. Visual Improvements
+- **Color-coded status**: Green (success), red (error), yellow (warning), cyan (info)
+- **Structured tables**: Agent configurations, statistics, and summaries
+- **Rich panels**: Important information highlighted in bordered panels
+- **Progress indicators**: Clear task execution flow with emojis and status
+- **Error categorization**: Network, rate limit, auth, model, validation, server errors
+
+### 5. Developer Experience Enhancements
+- **Readable output**: No more raw JSON dumps cluttering the terminal
+- **Context preservation**: Entity names, task IDs, and agent relationships are clear
+- **Real-time monitoring**: Easy to follow agent orchestration progress
+- **Debugging support**: Rich tracebacks and detailed error information
+
+## Technical Details
+- **Dependencies**: Added rich library for terminal rendering
+- **Backward compatibility**: Existing logging.getLogger() calls still work
+- **Performance**: Minimal overhead, rich output only when needed
+- **Configurability**: Easy to adjust log levels and output formatting
+
+## Before/After
+**Before**: Raw JSON dumps with ugly, unstructured output
+**After**: Beautiful, color-coded, hierarchical logging with tables, panels, and trees
+
+This logging system transforms the developer experience from frustrating JSON parsing to intuitive, visual monitoring of complex agent orchestration workflows.
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",3123544526,https://api.github.com/repos/defog-ai/defog,https://github.com/defog-ai/defog/commit/b900ffc4490971f1b434b43e7f664284a267e4d7,,,,,o,,o,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,
+,,,,/commit/,,,,,,,,,,,

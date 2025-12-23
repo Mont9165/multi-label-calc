@@ -1,0 +1,2718 @@
+sha,message,jaccard_score,rater1_labels,rater2_labels,only_rater1,only_rater2,common_labels
+007b7dfa41b285f62ed244b6a0b79b91e84abdd5,Improve variable names for clarity,0.3333333333333333,"Bad Identifier​, Incomplete or Inadequate Code Documentation​","Bad Identifier​, Inconsistent or Disrupted Formatting​",Incomplete or Inadequate Code Documentation​,Inconsistent or Disrupted Formatting​,Bad Identifier​
+008244d55c3ca9a634b6a2ac38ca8c65d319d694,"[CONTROL]: consolidate MemoryVault directory
+
+Tetrahedral impact:\n- CREATE: renamed and inserted interface docs\n- COPY: preserved PHENO files at new level\n- CONTROL: updated references and removed scaffolding\n- CULTIVATE: clarified agent usage
+
+F33ling: clarity surge\nQuantum signature: o=))))) 🐙✨",0.0,Incomplete or Inadequate Code Documentation​,"Wrong, Missing, or Inadequate String Expression or Literal​",Incomplete or Inadequate Code Documentation​,"Wrong, Missing, or Inadequate String Expression or Literal​",
+00c2f5043e80be88dc3337d5e57a73358f5ca11a,"WIP crew events emitter (#2048)
+
+* WIP crew events emitter
+
+* Refactor event handling and introduce new event types
+
+- Migrate from global `emit` function to `event_bus.emit`
+- Add new event types for task failures, tool usage, and agent execution
+- Update event listeners and event bus to support more granular event tracking
+- Remove deprecated event emission methods
+- Improve event type consistency and add more detailed event information
+
+* Add event emission for agent execution lifecycle
+
+- Emit AgentExecutionStarted and AgentExecutionError events
+- Update CrewAgentExecutor to use event_bus for tracking agent execution
+- Refactor error handling to include event emission
+- Minor code formatting improvements in task.py and crew_agent_executor.py
+- Fix a typo in test file
+
+* Refactor event system and add third-party event listeners
+
+- Move event_bus import to correct module paths
+- Introduce BaseEventListener abstract base class
+- Add AgentOpsListener for third-party event tracking
+- Update event listener initialization and setup
+- Clean up event-related imports and exports
+
+* Enhance event system type safety and error handling
+
+- Improve type annotations for event bus and event types
+- Add null checks for agent and task in event emissions
+- Update import paths for base tool and base agent
+- Refactor event listener type hints
+- Remove unnecessary print statements
+- Update test configurations to match new event handling
+
+* Refactor event classes to improve type safety and naming consistency
+
+- Rename event classes to have explicit 'Event' suffix (e.g., TaskStartedEvent)
+- Update import statements and references across multiple files
+- Remove deprecated events.py module
+- Enhance event type hints and configurations
+- Clean up unnecessary event-related code
+
+* Add default model for CrewEvaluator and fix event import order
+
+- Set default model to ""gpt-4o-mini"" in CrewEvaluator when no model is specified
+- Reorder event-related imports in task.py to follow standard import conventions
+- Update event bus initialization method return type hint
+- Export event_bus in events/__init__.py
+
+* Fix tool usage and event import handling
+
+- Update tool usage to use `.get()` method when checking tool name
+- Remove unnecessary `__all__` export list in events/__init__.py
+
+* Refactor Flow and Agent event handling to use event_bus
+
+- Remove `event_emitter` from Flow class and replace with `event_bus.emit()`
+- Update Flow and Agent tests to use event_bus event listeners
+- Remove redundant event emissions in Flow methods
+- Add debug print statements in Flow execution
+- Simplify event tracking in test cases
+
+* Enhance event handling for Crew, Task, and Event classes
+
+- Add crew name to failed event types (CrewKickoffFailedEvent, CrewTrainFailedEvent, CrewTestFailedEvent)
+- Update Task events to remove redundant task and context attributes
+- Refactor EventListener to use Logger for consistent event logging
+- Add new event types for Crew train and test events
+- Improve event bus event tracking in test cases
+
+* Remove telemetry and tracing dependencies from Task and Flow classes
+
+- Remove telemetry-related imports and private attributes from Task class
+- Remove `_telemetry` attribute from Flow class
+- Update event handling to emit events without direct telemetry tracking
+- Simplify task and flow execution by removing explicit telemetry spans
+- Move telemetry-related event handling to EventListener
+
+* Clean up unused imports and event-related code
+
+- Remove unused imports from various event and flow-related files
+- Reorder event imports to follow standard conventions
+- Remove unnecessary event type references
+- Simplify import statements in event and flow modules
+
+* Update crew test to validate verbose output and kickoff_for_each method
+
+- Enhance test_crew_verbose_output to check specific listener log messages
+- Modify test_kickoff_for_each_invalid_input to use Pydantic validation error
+- Improve test coverage for crew logging and input validation
+
+* Update crew test verbose output with improved emoji icons
+
+- Replace task and agent completion icons from 👍 to ✅
+- Enhance readability of test output logging
+- Maintain consistent test coverage for crew verbose output
+
+* Add MethodExecutionFailedEvent to handle flow method execution failures
+
+- Introduce new MethodExecutionFailedEvent in flow_events module
+- Update Flow class to catch and emit method execution failures
+- Add event listener for method execution failure events
+- Update event-related imports to include new event type
+- Enhance test coverage for method execution failure handling
+
+* Propagate method execution failures in Flow class
+
+- Modify Flow class to re-raise exceptions after emitting MethodExecutionFailedEvent
+- Reorder MethodExecutionFailedEvent import to maintain consistent import style
+
+* Enable test coverage for Flow method execution failure event
+
+- Uncomment pytest.raises() in test_events to verify exception handling
+- Ensure test validates MethodExecutionFailedEvent emission during flow kickoff
+
+* Add event handling for tool usage events
+
+- Introduce event listeners for ToolUsageFinishedEvent and ToolUsageErrorEvent
+- Log tool usage events with descriptive emoji icons (✅ and ❌)
+- Update event_listener to track and log tool usage lifecycle
+
+* Reorder and clean up event imports in event_listener
+
+- Reorganize imports for tool usage events and other event types
+- Maintain consistent import ordering and remove unused imports
+- Ensure clean and organized import structure in event_listener module
+
+* moving to dedicated eventlistener
+
+* dont forget crew level
+
+* Refactor AgentOps event listener for crew-level tracking
+
+- Modify AgentOpsListener to handle crew-level events
+- Initialize and end AgentOps session at crew kickoff and completion
+- Create agents for each crew member during session initialization
+- Improve session management and event recording
+- Clean up and simplify event handling logic
+
+* Update test_events to validate tool usage error event handling
+
+- Modify test to assert single error event with correct attributes
+- Use pytest.raises() to verify error event generation
+- Simplify error event validation in test case
+
+* Improve AgentOps listener type hints and formatting
+
+- Add string type hints for AgentOps classes to resolve potential import issues
+- Clean up unnecessary whitespace and improve code indentation
+- Simplify initialization and event handling logic
+
+* Update test_events to validate multiple tool usage events
+
+- Modify test to assert 75 events instead of a single error event
+- Remove pytest.raises() check, allowing crew kickoff to complete
+- Adjust event validation to support broader event tracking
+
+* Rename event_bus to crewai_event_bus for improved clarity and specificity
+
+- Replace all references to `event_bus` with `crewai_event_bus`
+- Update import statements across multiple files
+- Remove the old `event_bus.py` file
+- Maintain existing event handling functionality
+
+* Enhance EventListener with singleton pattern and color configuration
+
+- Implement singleton pattern for EventListener to ensure single instance
+- Add default color configuration using EMITTER_COLOR from constants
+- Modify log method calls to use default color and remove redundant color parameters
+- Improve initialization logic to prevent multiple initializations
+
+* Add FlowPlotEvent and update event bus to support flow plotting
+
+- Introduce FlowPlotEvent to track flow plotting events
+- Replace Telemetry method with event bus emission in Flow.plot()
+- Update event bus to support new FlowPlotEvent type
+- Add test case to validate flow plotting event emission
+
+* Remove RunType enum and clean up crew events module
+
+- Delete unused RunType enum from crew_events.py
+- Simplify crew_events.py by removing unnecessary enum definition
+- Improve code clarity by removing unneeded imports
+
+* Enhance event handling for tool usage and agent execution
+
+- Add new events for tool usage: ToolSelectionErrorEvent, ToolValidateInputErrorEvent
+- Improve error tracking and event emission in ToolUsage and LLM classes
+- Update AgentExecutionStartedEvent to use task_prompt instead of inputs
+- Add comprehensive test coverage for new event types and error scenarios
+
+* Refactor event system and improve crew testing
+
+- Extract base CrewEvent class to a new base_events.py module
+- Update event imports across multiple event-related files
+- Modify CrewTestStartedEvent to use eval_llm instead of openai_model_name
+- Add LLM creation validation in crew testing method
+- Improve type handling and event consistency
+
+* Refactor task events to use base CrewEvent
+
+- Move CrewEvent import from crew_events to base_events
+- Remove unnecessary blank lines in task_events.py
+- Simplify event class structure for task-related events
+
+* Update AgentExecutionStartedEvent to use task_prompt
+
+- Modify test_events.py to use task_prompt instead of inputs
+- Simplify event input validation in test case
+- Align with recent event system refactoring
+
+* Improve type hinting for TaskCompletedEvent handler
+
+- Add explicit type annotation for TaskCompletedEvent in event_listener.py
+- Enhance type safety for event handling in EventListener
+
+* Improve test_validate_tool_input_invalid_input with mock objects
+
+- Add explicit mock objects for agent and action in test case
+- Ensure proper string values for mock agent and action attributes
+- Simplify test setup for ToolUsage validation method
+
+* Remove ToolUsageStartedEvent emission in tool usage process
+
+- Remove unnecessary event emission for tool usage start
+- Simplify tool usage event handling
+- Eliminate redundant event data preparation step
+
+* refactor: clean up and organize imports in llm and flow modules
+
+* test: Improve flow persistence test cases and logging",0.2,"Bad Identifier​, Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Unnecessary Code​","Bad Identifier​, Inconsistent or Disrupted Formatting​","Inadequate Logging and Monitoring​, Unnecessary Code​","Complex, Long, or Inadequate Logic​"
+0138396e4dc66b8356914b50ff1f9a536358f2cf,"Implement `xerotrust` reconcile
+
+Update reconciliation tests
+
+Convert xerotrust reconcile tests to use snapshots
+
+- Change reconcile tests to use compare(actual, expected=snapshot()) pattern
+- Add pytest-insta import to test file
+- Generate snapshots for reconcile success and mismatch scenarios
+- Snapshots capture Rich table output for better test reliability
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+
+Add borders to Rich tables for improved readability
+
+WIP - reconcile script
+
+reconcile_daily
+
+fix sorting on main table
+
+fix sorting on main table
+
+Changes needed to get reconcilliation working
+
+Refactor attempt by claude
+
+More claude refactoring
+
+My test refactoring
+
+de-wide
+
+remove unnecessary parse_date
+
+fix typing
+
+Remove unused methods
+
+Simplify date sorting
+
+Simplify reconciliation
+
+Always show table and add --stop-on-diff
+
+unused
+
+fixup",0.0,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,
+050f87992cdd20e4e0df8d99e5be80639acbfdba,Refactor world generator for clarity,0.0,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​","Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​",
+0758e0d18c621561fec7c20b4ffe46bd9eb9b752,"Update Home Assistant YAML syntax for 2024.8 and 2024.10 changes
+
+This commit updates all YAML configurations to use the new syntax introduced in Home Assistant versions 2024.8 and 2024.10.
+
+## Changes Applied:
+
+### 2024.8 Changes:
+- Updated 160+ service calls from 'service:' to 'action:'
+
+### 2024.10 Changes:
+- Updated 85+ trigger sections from 'trigger:' to 'triggers:'
+- Updated 55+ condition sections from 'condition:' to 'conditions:'
+- Updated 85+ action sections from 'action:' to 'actions:'
+- Updated 125+ platform definitions from 'platform:' to 'trigger:'
+
+## Summary:
+- Total files processed: 66 YAML files
+- Files updated: 42 files with automations
+- Files unchanged: 24 files (no automations or already current)
+- All changes validated - no old syntax patterns remaining
+
+## Files Updated:
+- 11 area automation files
+- 10 function automation files
+- 7 routine automation files
+- 5 system & project automation files
+- 9 integration configuration files
+
+## Benefits:
+- Future-proofed for newer Home Assistant versions
+- Improved readability and consistency
+- Follows latest Home Assistant best practices
+- Fully backward compatible
+
+## Tools Created:
+- update_yaml_syntax.py: Automated update script
+- validate_yaml_syntax.py: Validation script
+- YAML_SYNTAX_CHANGES.md: Comprehensive documentation
+
+All changes have been thoroughly tested and validated.",0.0,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,
+0a791dc5c4937e2d3a7d2e80a9b7571638ed5389,"Add LFGM (New York Mets) color theme
+
+## New Theme: LFGM (Let's Fucking Go Mets)
+- **Colors**: Official New York Mets blue (#002d72) and orange (#ff671f)
+- **Design**: Blue background with orange accents and white text
+- **Styling**: Comprehensive tmux element styling including status bars, borders, messages
+
+## Implementation
+- **Questionnaire**: Added LFGM option to color scheme choices with proper ANSI codes
+- **Generator**: Full color scheme implementation with Mets blue/orange palette
+- **Documentation**: Updated color count from 5 to 6 themes, added visual preview
+- **Help Text**: Extended color scheme help to mention LFGM theme
+
+## Visual Design
+- Primary blue background (#002d72) for main status bar
+- Orange accent (#ff671f) for active windows and highlights
+- White text for optimal contrast and readability
+- Secondary blue tones for borders and inactive elements
+- Comprehensive styling for all tmux UI elements
+
+Perfect for Mets fans who want their terminal to show team pride\! ⚾️🧡💙
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",0.0,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​, Wrong, Missing, or Inadequate String Expression or Literal​",,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​, Wrong, Missing, or Inadequate String Expression or Literal​",,
+0cf077d4e0b9885e9a24457be9b86e9e0351a933,Refactor code structure for improved readability and maintainability,0.3333333333333333,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​","Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,"Complex, Long, or Inadequate Logic​"
+1058082700c5900c2f19189a1862448ff505ff4e,Merge branch 'master' into codex/update-readme.md-for-clarity,0.0,Incomplete or Inadequate Code Documentation​,,Incomplete or Inadequate Code Documentation​,,
+119db3b4896795169ad0efe40dae55c871567d8e,"refactor: implement suggested improvements from PR review
+
+- Rename variables to follow consistent snake_case convention
+- Improve documentation with detailed docstrings
+- Refactor nested try-except blocks into separate helper functions
+- Create constants for repositories and prompt templates
+- Simplify import statements for better readability
+- Add comprehensive README.md with instructions and documentation
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+Co-Authored-By: Claude <noreply@anthropic.com>",0.4,"Bad Identifier​, Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​, Missing Constant Usage​","Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​","Bad Identifier​, Inconsistent or Disrupted Formatting​, Missing Constant Usage​",,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​"
+137bfc52cec50932cdfd9b224abf88f0eb6391b2,"test(infrastructure): reorganize test suite and fix broken tests
+
+- Restructure test directory from flat to hierarchical organization:
+  • Created tests/unit/, tests/integration/, tests/performance/, tests/fixtures/
+  • Added comprehensive __init__.py files with documentation
+  • Moved all test files to organized structure
+
+- Enhance pytest configuration for clean, readable output:
+  • Updated pyproject.toml with optimized pytest settings
+  • Added clean output formatting, disabled warnings, shortened tracebacks
+  • Created scripts/test.sh for multiple test execution modes
+  • Fixed cryptic test output with human-readable summary format
+
+- Fix broken tests across multiple components:
+  • Resolved API key validation issues (valid-length test keys)
+  • Fixed crawling provider method signatures and return values
+  • Corrected embedding provider async mock setup and parameters
+  • Updated config loader to use local providers for testing
+  • Fixed EmbeddingManager config attribute references
+
+- Create comprehensive GitHub issues for remaining test work:
+  • Issue #70: Embedding provider comprehensive testing
+  • Issue #71: Crawling provider and manager testing
+  • Issue #72: DragonflyDB cache performance validation
+  • Issue #73: MCP server and integration testing
+  • Issue #74: Core component test coverage
+
+- Update documentation:
+  • Enhanced CLAUDE.md with new test commands and structure
+  • Updated TODO.md with complete session progress
+  • Added test organization and GitHub issue tracking
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",0.0,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,
+140857bfc359941658212171973d9287b43a5b31,Improve readability of discrete simulator,0.25,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​","Bad Identifier​, Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​",Inconsistent or Disrupted Formatting​,"Bad Identifier​, Complex, Long, or Inadequate Logic​",Incomplete or Inadequate Code Documentation​
+144b96986ecf85bd7e5de96c1d2742d95d6da39e,"Refactor AISuiteLLM to include tools parameter in completion methods
+
+- Update the _prepare_completion_params method to accept an optional tools parameter
+- Modify the chat completion method to utilize the new tools parameter for enhanced functionality
+- Clean up print statements for better code clarity",0.3333333333333333,"Bad Identifier​, Complex, Long, or Inadequate Logic​","Complex, Long, or Inadequate Logic​, Unnecessary Code​",Bad Identifier​,Unnecessary Code​,"Complex, Long, or Inadequate Logic​"
+14b01dd37459ea99906b6606237ba32b080781a0,Add human_readable_size util and tests,0.0,"Bad Identifier​, Complex, Long, or Inadequate Logic​",,"Bad Identifier​, Complex, Long, or Inadequate Logic​",,
+15dee211530ca41fda40fb36c4f7406910095c46,Refactor access point registration in OSM tests for improved readability,0.3333333333333333,"Bad Identifier​, Complex, Long, or Inadequate Logic​","Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​",Bad Identifier​,Incomplete or Inadequate Code Documentation​,"Complex, Long, or Inadequate Logic​"
+1fdc825535d66e5c30bd56e718f6ba0e834e25ad,Improve log readability,0.0,Inadequate Logging and Monitoring​,,Inadequate Logging and Monitoring​,,
+2097df0f41c0e665e1dbba6b88e65d03755275a7,Refactor code structure and remove redundant changes for improved readability and maintainability,0.3333333333333333,"Complex, Long, or Inadequate Logic​, Unnecessary Code​","Bad Identifier​, Unnecessary Code​","Complex, Long, or Inadequate Logic​",Bad Identifier​,Unnecessary Code​
+20ea2cb43027df70377f2e125be7b04f5f28f6c0,"style: improve code quality in sql_agent examples
+
+- Add module docstrings for better documentation
+- Remove unused imports
+- Fix f-string formatting issues
+- Standardize variable naming conventions
+- Improve code readability and formatting
+- Ensure consistent model name (gpt-4o)
+
+Co-Authored-By: Soham Ganatra <soham@composio.dev>",0.25,"Bad Identifier​, Inconsistent or Disrupted Formatting​","Bad Identifier​, Incomplete or Inadequate Code Documentation​, Unnecessary Code​",Inconsistent or Disrupted Formatting​,"Incomplete or Inadequate Code Documentation​, Unnecessary Code​",Bad Identifier​
+222aa4620995b370e3826c1d8d9969882a7a66ab,refactor: Update test cases and configuration for improved clarity and functionality,0.0,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,
+22306b1ee1558baaefdfb3b1a22ef9972b793d5e,Improve timeline tag readability,0.0,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",Inadequate Logging and Monitoring​,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",Inadequate Logging and Monitoring​,
+22907851fef89b1fac47632c6a03d500fc58add3,"feat ✨: Enhance commit message with detailed context
+
+This commit update the commit message to provide a more detailed explanation of the changes made in the `cli.py`, `client.py`, `config.py`, and `utils.py` files. The new message includes a description of the changes, their type (feat), and the related commits for reference. This enhancement improves readability and helps future contributors quickly understand the scope and impact of these changes.",0.0,Incomplete or Inadequate Code Documentation​,Inconsistent or Disrupted Formatting​,Incomplete or Inadequate Code Documentation​,Inconsistent or Disrupted Formatting​,
+246a757132d4401ef2aa0acf460d30e8f4b94d8e,"Enhance AI rules documentation and scripts for better maintainability and clarity
+
+- Updated AI rules documentation across multiple files to include notes for maintainers and detailed setup instructions.
+- Improved the Makefile to streamline AI rules generation and testing commands.
+- Enhanced the `generate_ai_rules.py` script to filter content based on target AI assistant types, ensuring appropriate sections are included or excluded.
+- Added related ADR references in existing ADR documents for better traceability.",0.0,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,
+2b3e1cd551135d9529c07a94f52f11aa3a822a77,"refactor(services): modernize service layer from classes to functions with DI
+
+- Transform 50+ complex service classes into simple functions with dependency injection
+- Replace abstract base classes and inheritance hierarchies with functional composition
+- Implement pure functions for rate limiting, monitoring, auto-detection, deployment
+- Add FastAPI Depends() for clean dependency injection throughout
+- Create backward compatibility wrappers to maintain existing API contracts
+- Preserve all critical functionality: 5-tier browser automation, RAG, AI tracking
+
+BREAKING CHANGE: Service layer now uses functional programming patterns
+
+Performance improvements:
+- 60% reduction in service layer complexity
+- Simplified testing and maintenance
+- Better separation of concerns
+- Improved code readability
+
+Files modified:
+- src/services/functional/: New functional service modules (4 files, ~800 lines)
+- src/infrastructure/client_manager.py: Updated to use functional services
+- src/unified_mcp_server.py: Modernized monitoring initialization
+- src/services/dependencies.py: Updated auto-detection imports
+
+🚀 Generated with advanced AI assistance
+
+Co-Authored-By: Advanced AI <noreply@anthropic.com>",0.3333333333333333,"Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​, Missing Constant Usage​","Complex, Long, or Inadequate Logic​","Inconsistent or Disrupted Formatting​, Missing Constant Usage​",,"Complex, Long, or Inadequate Logic​"
+2c9b9ea72e158bf400bf5d1c74dc82d8ffb48c19,"fix: resolve compilation errors and CI test failures
+
+Swift/iOS fixes:
+- Move AuthenticatedUser and AuthResponse to APIModels.swift for proper scope
+- Remove duplicate AuthenticatedUser.swift file
+- Fix nil contextual type annotation for authenticatedUser
+- Update NetworkClient requestData method with proper error handling
+- Remove complex token refresh wrapper temporarily to avoid compilation issues
+
+Backend/CI fixes:
+- Add fallback import for backend module in test configuration
+- Fix Limiter monkeypatch in conftest.py for proper test isolation
+- Add JWT package comment for clarity
+- Improve error handling in Apple auth service
+
+This resolves all reported compilation errors:
+- Cannot find type 'AuthenticatedUser' in scope
+- 'nil' requires a contextual type
+- Missing argument for parameter #2 in call
+- Cannot find type 'AuthResponse' in scope
+- Type of expression is ambiguous without a type annotation
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",0.3333333333333333,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Unnecessary Code​","Complex, Long, or Inadequate Logic​","Inadequate Logging and Monitoring​, Unnecessary Code​",,"Complex, Long, or Inadequate Logic​"
+2d8c6e70e4763041c1c7e83a5c2c58e6a1aaee8c,"fix: Update task summary format for empty tools and knowledge
+
+- Change empty tools message to 'agent has no tools'
+- Remove agent_knowledge field when empty
+- Update test assertions to match new format
+- Improve test messages for clarity
+
+Co-Authored-By: Joe Moura <joao@crewai.com>",0.0,"Bad Identifier​, Complex, Long, or Inadequate Logic​","Wrong, Missing, or Inadequate String Expression or Literal​","Bad Identifier​, Complex, Long, or Inadequate Logic​","Wrong, Missing, or Inadequate String Expression or Literal​",
+2e164c09fb35aa1d3cde86f46aaa0f48fe26fd94,style: improve pie chart label readability,0.0,Inconsistent or Disrupted Formatting​,"Wrong, Missing, or Inadequate String Expression or Literal​",Inconsistent or Disrupted Formatting​,"Wrong, Missing, or Inadequate String Expression or Literal​",
+300b4dd7e8f9f72386746b412600412fc1b72b5b,"🧹 Remove unused imports from spiritual router
+
+- Remove unused pydantic imports (BaseModel, Field)
+- Remove unused typing imports (Dict, Any, List, Optional)
+- Clean up imports after moving remedies endpoint to enhanced router
+- Improves code clarity and reduces unnecessary dependencies",0.3333333333333333,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​, Unnecessary Code​",Unnecessary Code​,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,Unnecessary Code​
+32da56c68b283ab1f65b4c1baa9e88fe8a58f3de,refactor(data): improve readability and helpers,0.25,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​","Complex, Long, or Inadequate Logic​, Missing Constant Usage​, Unnecessary Code​",Incomplete or Inadequate Code Documentation​,"Missing Constant Usage​, Unnecessary Code​","Complex, Long, or Inadequate Logic​"
+33039ca421c3444c9076219d461e531e5fbbe2dd,Improve email HTML for readability,0.0,"Bad Identifier​, Inconsistent or Disrupted Formatting​","Wrong, Missing, or Inadequate String Expression or Literal​","Bad Identifier​, Inconsistent or Disrupted Formatting​","Wrong, Missing, or Inadequate String Expression or Literal​",
+335a59ee84f361551752182a122af9b8a4c1b26e,Refactor ActionHelper for clarity,0.3333333333333333,"Bad Identifier​, Complex, Long, or Inadequate Logic​","Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​",Bad Identifier​,Incomplete or Inadequate Code Documentation​,"Complex, Long, or Inadequate Logic​"
+33daa989f5508308db7c1f1eab1764f6b4de87ff,"Fix health monitoring orchestrator reference handling
+
+- Modified startup_event() to return the orchestrator instance explicitly
+- Updated unified startup to use the returned orchestrator instead of module import
+- This prevents potential issues with incorrect orchestrator references during cleanup
+- Improves code clarity by making orchestrator instance management explicit
+- Adds proper None checking for failed initialization",0.3333333333333333,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​","Inadequate Logging and Monitoring​, Inconsistent or Disrupted Formatting​",,"Complex, Long, or Inadequate Logic​"
+34e6444b30e66ade0da1521ff3dcf151d1b90057,"foundation/_: implement complete infrastructure with geometry, patterns, and web preview
+
+This foundation implementation establishes the core infrastructure for the Luminary project:
+
+## Geometry Module
+- Complete geometric processing pipeline for polyhedral structures
+- Point operations with vector math and coordinate transformations
+- Triangle subdivision and kite-based geometry for icosahedral forms
+- Facet system supporting triangles, kites, and trapezoids
+- Beam generation with dual-extent positioning along facet edges
+- Net class managing geometric hierarchy with 6,300+ beams
+- Coordinate mapping from 3D geometry to beam arrays
+
+## Static SVG Rendering System
+- SVG export with geometric structure visualization
+- Beam polygons with positioning and OKLCH color support
+- Facet edge line rendering for structure clarity
+- Extended mode showing beam IDs and relationships
+- Responsive viewport sizing and presentation
+- Validation framework with automated test generation
+
+## Patterns Module
+- Pattern development framework with base classes
+- BeamArrayBuilder for numpy-based beam data structures
+- Pattern discovery system with automatic file scanning
+- OKLCH color space integration for color control
+- Schema definitions for beam array column access
+- Mathematical pattern implementations (ripple, spiral, wave, breathe)
+
+## Web Preview and Animation System
+- FastAPI server with WebSocket streaming for real-time animation
+- Frame generation at 30+ FPS with vectorized numpy operations
+- Concurrent client broadcasting with timeout protection
+- HTML5 client with pattern selector and live visualization
+- Client-side frame handling with immediate rendering
+- Real-time pattern switching and example collection
+
+## Configuration and Validation
+- JSON configuration system for geometric parameters
+- Validation suite with visual output generation
+- Pentagon-based configurations (3A-33, 4A-31, 4A-35, 5A-35)
+- Test coverage across all modules
+- Performance optimizations achieving 22+ FPS with 6,300 beam updates
+
+This foundation enables geometric pattern generation with real-time web visualization and establishes architecture for light installation control systems.
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",0.0,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Inconsistent or Disrupted Formatting​",,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Inconsistent or Disrupted Formatting​",,
+377317431ee1e0b2b5a8dbf21651100c2c2ac58b,Improve text readability,0.0,Inconsistent or Disrupted Formatting​,"Wrong, Missing, or Inadequate String Expression or Literal​",Inconsistent or Disrupted Formatting​,"Wrong, Missing, or Inadequate String Expression or Literal​",
+385e49a0701792bc7cae4c59f48df9aae9968c68,"Fix linter error and improve comment clarity in match prediction
+
+Co-authored-by: dyilmaz156 <dyilmaz156@gmail.com>",0.0,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",Unnecessary Code​,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",Unnecessary Code​,
+3aaa6d008e6f0fd185e87f98a6d2126962c609c8,"Refactor config comments for better readability and line wrapping
+
+Co-authored-by: zohair.ul.hasan <zohair.ul.hasan@gmail.com>",0.0,Incomplete or Inadequate Code Documentation​,Inconsistent or Disrupted Formatting​,Incomplete or Inadequate Code Documentation​,Inconsistent or Disrupted Formatting​,
+3aed20329d29ef7ad64eab74f524934b45027015,"Refactor country list display with improved formatting and readability
+
+Co-authored-by: albertmaxer6 <albertmaxer6@gmail.com>",0.0,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,
+3be3b29cd4d941d630323d4e66d267678ac6a3ea,"DOC-401 Expand exporter docs
+
+Adds usage notes to exporter module for clarity.",0.0,Missing Constant Usage​,,Missing Constant Usage​,,
+4288cc96729e94f279a6eb24bce8a9e16bc82957,Refactor solver for clarity,0.3333333333333333,"Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​","Bad Identifier​, Complex, Long, or Inadequate Logic​",Inconsistent or Disrupted Formatting​,Bad Identifier​,"Complex, Long, or Inadequate Logic​"
+4a75c09b1f49c06bcbf72f59ff44a667f6b906ec,Refactor test cases with Arrange-Act-Assert pattern and improve readability,0.0,"Complex, Long, or Inadequate Logic​",,"Complex, Long, or Inadequate Logic​",,
+524501fdd2f7d244da34510d1e5791bcd6e3ca05,Merge branch 'main' into codex/add-comments-for-code-clarity-2025-07-20,0.0,Incomplete or Inadequate Code Documentation​,,Incomplete or Inadequate Code Documentation​,,
+52cdaeb7c3f5c821464c094bb6f7d9f90487312f,"test: ✅ improve async server tests
+
+- rename test for clarity and loosen regex
+
+- add help guide and link from README
+
+- update server usage docs",0.25,"Bad Identifier​, Inconsistent or Disrupted Formatting​","Bad Identifier​, Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​",Inconsistent or Disrupted Formatting​,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​",Bad Identifier​
+53b8a5862597456ab7ffc9463dcd07a6dcdf1437,fix: Import tiktoken in token_counter method and update test stubs for clarity,0.3333333333333333,"Bad Identifier​, Complex, Long, or Inadequate Logic​","Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​",Bad Identifier​,Inconsistent or Disrupted Formatting​,"Complex, Long, or Inadequate Logic​"
+56990b8f8742004df2ae8652d8d413a3cfb0624e,Add readable CombatResult output,0.3333333333333333,"Inconsistent or Disrupted Formatting​, Wrong, Missing, or Inadequate String Expression or Literal​","Inadequate Logging and Monitoring​, Wrong, Missing, or Inadequate String Expression or Literal​",Inconsistent or Disrupted Formatting​,Inadequate Logging and Monitoring​,"Wrong, Missing, or Inadequate String Expression or Literal​"
+5748e266e6610286d72af510e60effd33bfd3e8e,Merge branch 'main' into cursor/improve-dashboard-formatting-for-clarity-5c86,0.0,Inconsistent or Disrupted Formatting​,,Inconsistent or Disrupted Formatting​,,
+5823dfccfaeb82c90bf9d862d4a1f0c01c23aa22,"refactor: rename message_file to stdout_file in from_completed_process
+
+- Rename parameter from message_file to stdout_file for better clarity
+- Update caller in run_docker_command() to use new parameter name
+- Addresses GitHub PR feedback from @aaronsteers
+
+Co-Authored-By: AJ Steers <aj@airbyte.io>",0.0,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​",Bad Identifier​,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​",Bad Identifier​,
+58c3c383c83ebca5e472c95407e6dac59918f179,"Add --log-level option and improve JSON formatting
+
+- Add --log-level option to both hal_query.py and prepare_catalog.py with INFO as default
+- Change JSON output to use indent=2 for better readability
+- Add detailed DEBUG logging for working paper/article pairs during exclusion
+- Enable requests debug logging only when --log-level=debug is specified
+
+Addresses GitHub PR feedback for improved logging and formatting.
+
+Co-Authored-By: Minh Ha-Duong <minh.haduong@gmail.com>",0.25,"Bad Identifier​, Inadequate Logging and Monitoring​, Inconsistent or Disrupted Formatting​","Inadequate Logging and Monitoring​, Wrong, Missing, or Inadequate String Expression or Literal​","Bad Identifier​, Inconsistent or Disrupted Formatting​","Wrong, Missing, or Inadequate String Expression or Literal​",Inadequate Logging and Monitoring​
+5ac01ab74cc5c1f8ef2ea1935d177dd8b4b6a954,Improve readability for downloads and show disabled plans,0.3333333333333333,"Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​",Inconsistent or Disrupted Formatting​,Incomplete or Inadequate Code Documentation​,"Complex, Long, or Inadequate Logic​"
+5c00ddd4b4d77dafef5c3bcb9b4cae5b2cb54ff2,"Improve FastAPI tracing example
+
+- Add health check endpoint for monitoring
+- Add error handling and exception tracking in spans
+- Add type hints for better code clarity
+- Enhance README with detailed usage instructions
+- Add .gitignore for Python projects
+- Record prediction value as span attribute
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",0.0,"Bad Identifier​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Incomplete or Inadequate Code Documentation​","Bad Identifier​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Incomplete or Inadequate Code Documentation​",
+5e258bd04de870da22cc12348d48aa2a9e748502,Refactor tokenizer for clarity,0.3333333333333333,Bad Identifier​,"Bad Identifier​, Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​",,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​",Bad Identifier​
+5f0e613453482a28ab38ed25e8c60b873152e88b,"Improve EMPATHY_PROMPT formatting with line breaks for readability
+
+Co-authored-by: amirbiron <amirbiron@gmail.com>",0.0,Inconsistent or Disrupted Formatting​,"Wrong, Missing, or Inadequate String Expression or Literal​",Inconsistent or Disrupted Formatting​,"Wrong, Missing, or Inadequate String Expression or Literal​",
+64ac5281726a08dac75691b67e6a4ef257d2b588,"Improves GUI layout and labeling
+
+- Reduce input field width and adjust its position
+- Rename file-open button to ""Abrir"" for clarity
+- Expand sample size label text and realign its entry and button",0.0,"Bad Identifier​, Inconsistent or Disrupted Formatting​","Wrong, Missing, or Inadequate String Expression or Literal​","Bad Identifier​, Inconsistent or Disrupted Formatting​","Wrong, Missing, or Inadequate String Expression or Literal​",
+68afd5c9e677e626218e7dc4b2584ff5c1e61b3e,"Replace chr() functions with json.dumps for cleaner email escaping
+
+- Address GitHub comment requesting 'normal strings' instead of chr(39)/chr(92)
+- Use json.dumps for proper email escaping in JavaScript strings
+- Maintains XSS protection while improving code readability
+- Eliminates f-string syntax conflicts that required chr() workaround
+
+Co-Authored-By: Alek <alek@pynecone.io>",0.0,"Bad Identifier​, Wrong, Missing, or Inadequate String Expression or Literal​","Complex, Long, or Inadequate Logic​","Bad Identifier​, Wrong, Missing, or Inadequate String Expression or Literal​","Complex, Long, or Inadequate Logic​",
+697528b48bfd7632bc110b73c9684b98ac87b5d9,Handle unreadable images during training,0.0,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​",,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​",,
+6983e2566b32b0d5ffa6503588251cfa0265de7b,"Rename chat button for clarity
+
+Co-Authored-By: aman Kumar <amandsit@gmail.com>",0.0,Bad Identifier​,Incomplete or Inadequate Code Documentation​,Bad Identifier​,Incomplete or Inadequate Code Documentation​,
+6da3c0279a4c0a39cc332983d678132b973ee347,"refactor: enhance test data consistency by utilizing TestDataFactory
+
+- Replaced direct model instantiation with TestDataFactory in various test files to ensure consistent and email-compatible user creation.
+- Updated test setup methods across multiple test cases to leverage TestDataFactory for creating churches, users, profiles, and fasts.
+- Improved readability and maintainability of test code by centralizing test data creation logic.",0.3333333333333333,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Missing Constant Usage​","Complex, Long, or Inadequate Logic​","Incomplete or Inadequate Code Documentation​, Missing Constant Usage​",,"Complex, Long, or Inadequate Logic​"
+7043da2a6ce805e6057af43099337b38c7a8c613,Refactor test board helper methods for improved readability and reusability,0.0,"Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​",,"Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​",,
+7090d0d70913ad8dd66840daa9f13832d5a87e0d,"Implement Delphi integration for CrossCoder interpretability (Issue #703)
+
+This commit adds comprehensive integration with the Delphi interpretability library,
+enabling advanced feature analysis for CrossCoder models.
+
+Key features:
+- CrossCoder adapters for Delphi compatibility (single and dual model)
+- Modified latent cache supporting dual model activation collection
+- Anthropic Batch API integration for 10-100x faster processing
+- Token alignment and chat template handling for different architectures
+- HTML visualizations with feature explanations and scores
+- Configuration-driven pipeline with YAML inheritance
+
+Components:
+- src/crosscoder/delphi_integration/: Core integration modules
+  - crosscoder_adapter.py: Adapters for Delphi's sparse coder interface
+  - crosscoder_cache.py: Extended cache for dual model activations
+  - batch_explainer.py: Batch API for efficient explanation generation
+  - tokenization_bridge.py: Handles chat templates and alignment
+- experiments/delphi_analysis/: Analysis pipeline and testing
+- configs/delphi_analysis/: YAML configurations
+- delphi/: Complete Delphi library included as subfolder
+
+The integration processes millions of tokens efficiently, generates human-readable
+explanations for features, and scores their quality using multiple metrics.
+
+Co-Authored-By: Claude <noreply@anthropic.com>",0.0,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,
+759dce6e8c0195ed6d3a6e92844db12fa41c9bca,"fix: remove Load Demo Data and Try Live Demo buttons, replace with upload instructions
+
+- Remove problematic Load Demo Data button that was causing CORS issues
+- Remove Try Live Demo button that was redirecting to same page
+- Replace with clean instruction box guiding users to upload documents
+- Update PerformanceMetrics to show static demo values instead of API calls
+- Maintain all Redis branding improvements (bigger logo, readable text)
+- Provide clear guidance for testing with suggested document types",0.3333333333333333,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​, Unnecessary Code​",Unnecessary Code​,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,Unnecessary Code​
+759e274b8f44523b994a499e1f92414c621b8620,"Improve dependency resolution in object graph
+
+The _provide() function in the MyObjectGraph class has been reworked to improve the process of dependency resolution. The logic now accumulates resolved dependencies in a results dictionary, using a stack to handle dependency traversal. Along with these changes, additional type hinting and logging has been introduced in test_design.py for better readability and troubleshooting.",0.25,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​","Inadequate Logging and Monitoring​, Inconsistent or Disrupted Formatting​",Incomplete or Inadequate Code Documentation​,"Complex, Long, or Inadequate Logic​"
+77118ce1b32955b5511138810965998d359a69a2,Reorder helper functions for readability,0.0,"Bad Identifier​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​","Bad Identifier​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​",
+779839fd78cd3bc36989135ee1eb7ee214830a1e,refactor: streamline argument formatting in check.py and async_checker.py; improve test readability in test_check.py,0.25,"Bad Identifier​, Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​","Inconsistent or Disrupted Formatting​, Unnecessary Code​","Bad Identifier​, Complex, Long, or Inadequate Logic​",Unnecessary Code​,Inconsistent or Disrupted Formatting​
+7937537177266714367e5965c63adc3781874726,Merge branch 'main' into codex/refactor-datalake-writer-for-clarity,0.0,"Complex, Long, or Inadequate Logic​",,"Complex, Long, or Inadequate Logic​",,
+7b1cd3ab41c3027a6aead39e89d1ce280a1db187,"Disentangle interbroker and intercontroller protocol information
+
+Resolves TODO comment by creating clear separation between broker and controller protocols.
+
+- Split interbroker_security_protocol to only handle broker-to-broker communication
+- Added effective_intercontroller_security_protocol for controller-to-controller communication
+- Added validation to prevent misuse when brokers/controllers are not present
+- Maintains backward compatibility for existing test code
+- Improves API clarity and reduces confusion about protocol usage
+
+This enhancement is critical for mining/industrial IoT deployments where
+different security requirements may exist for broker and controller communication.
+
+Co-Authored-By: unknown <>",0.0,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​",,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​",,
+7b9ce6661bb68dd20e6ac97757a152b5e41de693,"Refactor API documentation and improve code clarity with documentation
+
+Removes docstrings from API function definitions and adds them to the router endpoints for improved code maintainability.
+
+Replit-Commit-Author: Agent
+Replit-Commit-Session-Id: d5b7af23-c0f1-4cb5-bcc8-c118ce5b631f",0.0,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",Unnecessary Code​,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",Unnecessary Code​,
+7b9f00343bea2d3a2fc0b20fab170f23aff8c43d,"feat(slideshow): add configurable image preload buffer and improve cleanup
+
+- Added --preload-count argument to set number of images to preload (default: 20) for performance tuning.
+- Made preload buffer size a configurable parameter within ImageSlideshowApp.
+- Improved cache eviction and logging for preloaded images.
+- Changed default slideshow delay from 3.0s to 1.0s.
+- Enhanced clarity, exception handling, and code formatting (expanded compound statements, comments).
+- Updated metadata (author, version) in pyproject.toml.",0.25,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",Inconsistent or Disrupted Formatting​,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Incomplete or Inadequate Code Documentation​",,Inconsistent or Disrupted Formatting​
+7dc3ee5cd8ff6ebcf3b80631033d68a7f7e171b9,refactor: restructure project files and update README for clarity,0.3333333333333333,"Bad Identifier​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",Incomplete or Inadequate Code Documentation​,"Bad Identifier​, Inconsistent or Disrupted Formatting​",,Incomplete or Inadequate Code Documentation​
+8098ce110d39e923f5f6e370fb9672fa7a4f4147,"Fix communication message logging and add debug utilities
+
+- Fixed JSON logging to include complete simulation data with communication messages
+- Enhanced TXT logging to display communication messages in human-readable format
+- Added debug script for testing communication logging functionality
+- Verified communication messages are properly logged in both TXT and JSON formats
+- Resolves issue where communication messages were generated but not persisted to log files
+
+Co-Authored-By: Gabor Hollbeck <hollbeckg@gmx.de>",0.0,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​",,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​",,
+82ccfa3247f2a7486b2cf9d9ac27b979bbbd7058,Refactor OSM routing example for clarity and improved coordinate handling,0.3333333333333333,"Bad Identifier​, Complex, Long, or Inadequate Logic​","Complex, Long, or Inadequate Logic​, Unnecessary Code​",Bad Identifier​,Unnecessary Code​,"Complex, Long, or Inadequate Logic​"
+8343d894acf086cfb23dd6372814fdcdba6d05fa,Refactor helpers and supervisor for clarity,0.25,"Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​","Bad Identifier​, Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​",Inconsistent or Disrupted Formatting​,"Bad Identifier​, Incomplete or Inadequate Code Documentation​","Complex, Long, or Inadequate Logic​"
+839abf868a8575c617590f0cd725a0efdd2394ce,"Update webui.py
+
+Added a new Flask server initialization using werkzeug.make_server with a global _server variable, enabling a graceful shutdown before restarting to prevent port conflicts
+
+Implemented _load_ini_with_descriptions to parse comments from the .ini files and display them in the web UI for each setting
+
+Updated the HTML template to dark mode and inserted setting descriptions beneath option labels for better clarity in the interface",0.0,"Bad Identifier​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,"Bad Identifier​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,
+8c766e63f36368318d36e5e8f22e9ef89e1e7cb7,"refactor: simplify response processing by removing VertexAIParallelBase dependency
+
+- Removed the VertexAIParallelBase type from the return annotations in `process_response` and `handle_response_model` functions to streamline type hints.
+- Updated assertions in `VertexAIParallelBase` and `AnthropicParallelBase` classes for clarity and consistency.
+- Enhanced overall readability and maintainability of the `process_response.py` and `parallel.py` modules.",0.25,"Bad Identifier​, Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​","Incomplete or Inadequate Code Documentation​, Unnecessary Code​","Bad Identifier​, Complex, Long, or Inadequate Logic​",Unnecessary Code​,Incomplete or Inadequate Code Documentation​
+8d97ec81e832113455af4587db75d011e1ee9d72,"fix: improve API key validation and base URL handling
+
+- Check for both None and empty string in API key validation
+- Only use environment base URL if default hasn't been overridden
+- Improve docstring clarity around base URL precedence
+
+Co-Authored-By: Sudeep Pillai <sudeep@vlm.run>",0.3333333333333333,"Incomplete or Inadequate Code Documentation​, Wrong, Missing, or Inadequate String Expression or Literal​","Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​","Wrong, Missing, or Inadequate String Expression or Literal​","Complex, Long, or Inadequate Logic​",Incomplete or Inadequate Code Documentation​
+9431a4e2acb0458b26d4b5fe1f7f947a6d3ea813,"refactor: Modularize large files into focused subdirectories
+
+Address code review feedback by breaking down large modules into smaller,
+focused components for improved maintainability.
+
+## Refactoring Changes
+
+### PRISMA Package (knowledge_storm/prisma/)
+- **models.py**: Core data structures (Paper, SearchStrategy, etc.)
+- **search.py**: SearchStrategyBuilder for PICO methodology
+- **screening.py**: ScreeningAssistant + PRISMAScreener (80/20 rule)
+- **extraction.py**: DataExtractionHelper for systematic data extraction
+- **reporting.py**: ZeroDraftGenerator for overcoming blank page syndrome
+- **assistant.py**: Main PRISMAAssistant orchestrator
+- **__init__.py**: Clean exports for external use
+
+### VERIFY Package (knowledge_storm/verify/)
+- **models.py**: Core data structures (Claim, VerificationResult, etc.)
+- **fact_checker.py**: FactChecker for claim verification
+- **memory.py**: ResearchMemory for learning patterns
+- **fixer.py**: TargetedFixer for surgical corrections
+- **system.py**: Main VERIFYSystem orchestrator
+- **__init__.py**: Clean exports for external use
+
+## Task Management Cleanup
+
+- Simplified verbose `details` fields in tasks.json (725 → more readable)
+- Moved implementation logs to `.taskmaster/logs/` for better organization
+- Preserved essential task definitions while improving JSON readability
+- Created backup of original tasks.json
+
+## Benefits
+
+- **Maintainability**: Smaller, focused modules easier to understand/modify
+- **Testability**: Components can be tested in isolation
+- **Reusability**: Individual components can be imported as needed
+- **Organization**: Clear separation of concerns across subdirectories
+- **Documentation**: Each module has a specific, clear purpose
+
+## Backward Compatibility
+
+- All existing imports continue to work through __init__.py exports
+- Updated test_verify_system.py to use new modular imports
+- Original large files backed up as .bak files
+- No breaking changes to external APIs
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",0.3333333333333333,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​","Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,"Complex, Long, or Inadequate Logic​"
+95699a0dc3e34eefad219bb091a5ef5bc6a58b11,"refactor: migrate existing codebase to ServiceContainer architecture
+
+Comprehensive refactoring to adopt ServiceContainer dependency injection:
+
+**Controllers & Use Cases:**
+- Update all controllers to use ServiceContainer instead of Config
+- Migrate use cases from Config-based to ServiceContainer-based dependency resolution
+- Improve dependency injection clarity and testability
+
+**Repository & Service Updates:**
+- Update SessionRepository implementations for ServiceContainer integration
+- Refactor EnumConverter and StatusChecker services
+- Enhance service interfaces for better abstraction
+
+**DTO & Validation Improvements:**
+- Update DTOs to work seamlessly with ServiceContainer
+- Improve input validation integration
+- Maintain backward compatibility while improving architecture
+
+**Application Integration:**
+- Update main app.py to use new SystemManager and ApplicationBootstrapper
+- Integrate DLL Gateway into main application flow
+- Improve error handling and system lifecycle management
+
+**Testing Updates:**
+- Update all test cases to use ServiceContainer mocking
+- Improve test reliability and maintainability
+- Add comprehensive test coverage for new architecture
+
+This refactoring improves code maintainability, testability, and follows
+clean architecture principles more closely.
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",0.0,Incomplete or Inadequate Code Documentation​,"Complex, Long, or Inadequate Logic​",Incomplete or Inadequate Code Documentation​,"Complex, Long, or Inadequate Logic​",
+957eb1c548f463052e0695efc216c8d959273411,Improve readability section output,0.0,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Wrong, Missing, or Inadequate String Expression or Literal​","Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Wrong, Missing, or Inadequate String Expression or Literal​",
+9654e167a591391af62b7210c1e3713cd3bf06cd,Assign analysis category to readability metrics,0.0,Unnecessary Code​,"Complex, Long, or Inadequate Logic​",Unnecessary Code​,"Complex, Long, or Inadequate Logic​",
+990f554b74661d5f8436861708e9c02bcc05d308,"Updated object graph to better handle dependencies
+
+This commit improves the dependency resolution process in MyObjectGraph class by introducing a new implementation of the _provide() function. The new logic uses a result dictionary and traversal stack to handle dependency accumulation, ensuring more reliable and efficient dependency management. The changes also include added type hinting and improved logging within test_design.py to aid in readability and troubleshooting.",0.0,Unnecessary Code​,"Complex, Long, or Inadequate Logic​",Unnecessary Code​,"Complex, Long, or Inadequate Logic​",
+9c4a3823300fc5eb136ef8fb4e666e6d0c0ae896,refactor: improve webhook router readability,0.3333333333333333,"Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Missing Constant Usage​",Inconsistent or Disrupted Formatting​,Missing Constant Usage​,"Complex, Long, or Inadequate Logic​"
+9cbcc580f31fbfdf343dee9568481f1a0d9587a5,"Fix typos and security audit
+
+- Replace 'geos' with 'geographies' in geotesting documentation for clarity
+- Fix potential None type operation in find_doc_updates.py
+- Add comprehensive security audit report showing no vulnerabilities found
+- All API keys verified as legitimate public client-side keys
+
+Co-Authored-By: xhuang@statsig.com <xhuang@statsig.com>",0.0,"Inadequate Logging and Monitoring​, Incomplete or Inadequate Code Documentation​, Wrong, Missing, or Inadequate String Expression or Literal​","Complex, Long, or Inadequate Logic​","Inadequate Logging and Monitoring​, Incomplete or Inadequate Code Documentation​, Wrong, Missing, or Inadequate String Expression or Literal​","Complex, Long, or Inadequate Logic​",
+9f5cc5408efe801a4281ee4d049e634c180bd7f4,"feat: modify run_docker_command to always return EntrypointOutput
+
+- Always store STDOUT to disk for memory efficiency
+- Add returncode and stderr properties to EntrypointOutput for backward compatibility
+- Update all callers in standard tests to use EntrypointOutput return type
+- Improve error analysis and readability in test failure outputs
+- Maintain strict backward compatibility through enhanced EntrypointOutput properties
+
+Co-Authored-By: AJ Steers <aj@airbyte.io>",0.25,"Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​, Missing Constant Usage​","Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​","Inconsistent or Disrupted Formatting​, Missing Constant Usage​",Inadequate Logging and Monitoring​,"Complex, Long, or Inadequate Logic​"
+a1ff5d5712204c43798a01b7576e8d80ae54ecf1,"Improve chart readability by adding font sizes to chart elements
+
+Co-authored-by: tfreeman2 <tfreeman2@student.bccc.edu>",0.0,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,
+a2b93b0d02f4fa25c578041de06db719dcd4149a,"Update demo.py emoji labels for better UX
+
+- Changed emoji for user input to 🧑 for consistency
+- Updated input prompt text for clarity
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",0.0,Incomplete or Inadequate Code Documentation​,Inconsistent or Disrupted Formatting​,Incomplete or Inadequate Code Documentation​,Inconsistent or Disrupted Formatting​,
+a2e7ec9936e92600bac72d8c4b087b23c799e73c,"feat: Update pyright configuration and enhance BossBot client initialization
+
+- Added `reportPrivateImportUsage` setting to `pyrightconfig.json` to suppress warnings for private import usage.
+- Refactored `BossBot` class in `client.py` to improve initialization, including setting command prefix and allowed mentions.
+- Introduced new attributes for bot version, guild data, app info, owner ID, invite link, and uptime to enhance bot state management.
+- Updated `BossSettings` in `env.py` to include a description for the command prefix, improving clarity for configuration.
+
+These changes enhance the type checking configuration and improve the overall structure and clarity of the BossBot implementation.",0.0,"Bad Identifier​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​","Bad Identifier​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​",
+a567948548e3b99adec51c9f58ac39f1941e8987,"refactor: comprehensive code restructuring for improved maintainability
+
+## Summary
+- Eliminated 15+ auto_feature_*.py files into clean feature modules
+- Split 800+ line routes.py into domain-specific modules
+- Simplified configuration management with fallback support
+- Improved code organization, readability, and maintainability
+
+## Key Changes
+- ✅ Created src/features/ for business logic consolidation
+- ✅ Created src/api/routes/ for modular API endpoints
+- ✅ Added settings_simple.py for better dependency management
+- ✅ 100% structure validation test pass rate
+- ✅ Preserved all existing functionality and API compatibility
+
+## Benefits
+- Better separation of concerns
+- Easier to add new features and routes
+- Reduced coupling and circular dependencies
+- Test-friendly modular architecture
+- Human-readable code organization
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",0.3333333333333333,"Bad Identifier​, Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​","Bad Identifier​, Inconsistent or Disrupted Formatting​",,"Complex, Long, or Inadequate Logic​"
+a5d90b927a90be69682284d9d31d376c5c4366b0,Update people service extensively for logic and readability,0.3333333333333333,"Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Unnecessary Code​",Inconsistent or Disrupted Formatting​,Unnecessary Code​,"Complex, Long, or Inadequate Logic​"
+ab01f5b4ff6e61fd25e011d9fe4d77cf23755044,"Refactor test_all_nodes.py for improved clarity and functionality, enhancing message handling and output reporting.",0.3333333333333333,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Incomplete or Inadequate Code Documentation​",Inadequate Logging and Monitoring​,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​",,Inadequate Logging and Monitoring​
+ac1cc148c6e3108c6f7344764a196cafebbc7c98,Add EvaluationAgent with readability scoring,0.0,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Incomplete or Inadequate Code Documentation​",,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Incomplete or Inadequate Code Documentation​",,
+b02284751f90662a88dfcaf5240dab067eba0ef4,"chore: update pytest version constraints in uv.lock
+
+- Updated pytest version requirement from "">=7.0.0,<8.0.0"" to "">=7.0.0,<9.0.0"" in both the `requires-dist` and `provides-extras` sections of `uv.lock` to allow compatibility with newer versions.
+- Cleaned up whitespace in various service files and test files for consistency and readability.",0.0,Missing Constant Usage​,"Wrong, Missing, or Inadequate String Expression or Literal​",Missing Constant Usage​,"Wrong, Missing, or Inadequate String Expression or Literal​",
+b4428a75dd7c2ba62b4a7b63215eb6d89f0c8839,"refactor(extractors): use pep695 generics
+
+- Parameterize `BaseExtractor` with a PEP 695 style type variable `T`
+- Replace `Any` return type in `extract` with generic `T`
+- Update `DummyExtractor` and tests to use concrete type `str`
+- Replace loose `Any` usage in test mocks with more appropriate types
+  like `object` and `dict[str, str]`
+- Improve type clarity and prepare codebase for stricter static analysis",0.0,"Complex, Long, or Inadequate Logic​",Incomplete or Inadequate Code Documentation​,"Complex, Long, or Inadequate Logic​",Incomplete or Inadequate Code Documentation​,
+b6d668fc664c5f376626f06acdf48f9f462884e2,"Implement Flow state export method (#2134)
+
+This commit implements a method for exporting the state of a flow into a
+JSON-serializable dictionary.
+
+The idea is producing a human-readable version of state that can be
+inspected or consumed by other systems, hence JSON and not pickling or
+marshalling.
+
+I consider it an export because it's a one-way process, meaning it
+cannot be loaded back into Python because of complex types.",0.0,"Bad Identifier​, Wrong, Missing, or Inadequate String Expression or Literal​",Inadequate Logging and Monitoring​,"Bad Identifier​, Wrong, Missing, or Inadequate String Expression or Literal​",Inadequate Logging and Monitoring​,
+b7074f5e1bfd37e5e66cd565e35f81cf209404e2,"Adjust chart visualization parameters for better readability and aesthetics
+
+Co-authored-by: 283471711 <283471711@qq.com>",0.0,Incomplete or Inadequate Code Documentation​,"Wrong, Missing, or Inadequate String Expression or Literal​",Incomplete or Inadequate Code Documentation​,"Wrong, Missing, or Inadequate String Expression or Literal​",
+b7c6d196df63b5cb4bb99fd838f6782d50d55300,Fix readability metrics applied per paragraph,0.0,Incomplete or Inadequate Code Documentation​,"Complex, Long, or Inadequate Logic​",Incomplete or Inadequate Code Documentation​,"Complex, Long, or Inadequate Logic​",
+b85c85af97322e30427ca286c5541d98fddb7cf1,"refactor: update seed command to remove unused prompt descriptions and adjust email handling
+
+- Removed descriptions from LLMPrompt entries to streamline prompt creation.
+- Updated comments to reflect changes in promotional email handling, clarifying the removal of the third email option.
+- Enhanced code clarity and maintainability in the seed command.",0.0,"Bad Identifier​, Complex, Long, or Inadequate Logic​","Incomplete or Inadequate Code Documentation​, Unnecessary Code​","Bad Identifier​, Complex, Long, or Inadequate Logic​","Incomplete or Inadequate Code Documentation​, Unnecessary Code​",
+b992dd2baf305bb08d5d7ce6f097ecd2a1636457,"Fix flake8 linting errors in Order Tagging & Categorization
+
+- Fix E501 line too long errors by breaking long lines
+- Remove W293 blank line whitespace in service functions
+- Maintain readability while adhering to 79 character limit
+- All imports and functionality preserved
+
+Co-Authored-By: auraconnectai@gmail.com <auraconnectai@gmail.com>",0.0,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,
+bb23385e297771e84e75a7fc868debff1f4de80b,Improve dark theme readability,0.0,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,
+bc85fee839de3df3eb2a4e0805287554a03e4add,"Address PR feedback: refactor try/except structure and add GIVEN/WHEN/THEN comments
+
+- Move workflow crawling logic into private helper method _gather_event_display_context_from_workflow_crawling
+- Keep only importlib.import_module line in try block as requested
+- Add comprehensive GIVEN/WHEN/THEN comments to test for better readability
+- Maintain all existing functionality while improving code structure
+- All tests continue to pass after refactoring
+
+Co-Authored-By: vargas@vellum.ai <dvargas92495@gmail.com>",0.25,"Bad Identifier​, Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​","Bad Identifier​, Inconsistent or Disrupted Formatting​",Incomplete or Inadequate Code Documentation​,"Complex, Long, or Inadequate Logic​"
+c01f5aeae12f84367ac563fefbdd6fd918170ca0,Handle readability issues without type,0.0,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​","Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​",
+c0386df21a9091554bff469941eae967dac57f1f,"Add comprehensive prompt testing framework
+
+- Complete CLI tool accessible via `uv run prompt-test`
+- 8 curated test cases across 3 categories (basic, complex, edge cases)
+- Automatic evaluation with accuracy, clarity, and technical scoring
+- Human review workflow with structured feedback collection
+- A/B testing between prompt versions with statistical comparison
+- Version-controlled prompt management system
+- Integration with existing Claude explain service logic
+- Professional documentation and examples
+
+Key features:
+- Uses same ExplainRequest/ExplainResponse models as production
+- Automatic .env loading for ANTHROPIC_API_KEY
+- Comprehensive metrics tracking (tokens, response time, scores)
+- Results saved as timestamped JSON files (gitignored)
+- Easy extensibility for new test cases and evaluation metrics
+
+Usage examples:
+- uv run prompt-test list
+- uv run prompt-test run --prompt current --categories basic_optimizations
+- uv run prompt-test run --prompt v1_baseline --compare current
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",0.0,Incomplete or Inadequate Code Documentation​,,Incomplete or Inadequate Code Documentation​,,
+c38481a133925c39e80712e7273d0e4ad0ecdc25,"make the side effect in tests more readable
+
+Signed-off-by: Alex Chantavy <alex@subimage.io>",0.0,"Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​",Incomplete or Inadequate Code Documentation​,"Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​",Incomplete or Inadequate Code Documentation​,
+c4901398a8e03ae124e93eb319f215ceef930edf,"feat: Enhance documentation for download system architecture
+
+- Added a detailed section on the download system architecture in `downloaders.md`, including a comprehensive flow diagram illustrating the interaction between Discord users, CLI users, and the various download strategies.
+- Documented key features of the architecture, such as dual entry points, platform-specific strategies, feature flag control, automatic fallback mechanisms, and unified output formats.
+- Updated best practices for users to start with CLI mode for production until API mode is well-tested.
+
+These changes improve the clarity and usability of the documentation, providing users with a better understanding of the download system's structure and functionality.",0.0,Incomplete or Inadequate Code Documentation​,,Incomplete or Inadequate Code Documentation​,,
+caa5d3456b875168d56812c205e0571c122c4fa4,"Fix flake8 linting issues in test files
+
+- Break long lines to comply with 79-character limit
+- Fix continuation line indentation (E128 errors)
+- Remove trailing whitespace from blank lines (W293 errors)
+- Improve code readability while maintaining functionality
+
+Co-Authored-By: auraconnectai@gmail.com <auraconnectai@gmail.com>",0.0,Inconsistent or Disrupted Formatting​,,Inconsistent or Disrupted Formatting​,,
+cc4db0a8b6efd9af8c7e04144dc81a3d54b7426b,"Refactor batch scripts for better cross-platform compatibility and readability
+
+Co-authored-by: ctulchu <ctulchu@gmail.com>",0.0,"Bad Identifier​, Inconsistent or Disrupted Formatting​",Incomplete or Inadequate Code Documentation​,"Bad Identifier​, Inconsistent or Disrupted Formatting​",Incomplete or Inadequate Code Documentation​,
+cf92211a243b23a43e14ef4cb69e71dd3c4514f4,Refactor smart_merge for clarity,0.2,"Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​","Bad Identifier​, Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Unnecessary Code​",Inconsistent or Disrupted Formatting​,"Bad Identifier​, Incomplete or Inadequate Code Documentation​, Unnecessary Code​","Complex, Long, or Inadequate Logic​"
+cfdd315da70f38dcc0c14d3d1f1fa61b2fd9d81a,"Refactor tests and telemetry for maintainability and clarity:
+- Extract duplicated SimpleValidator to fixture in test_validation.py
+- Use stub Collector class and named timeout constant in prometheus.py
+- Move slow_run async helper to module level for reuse in test_ultra_executor_performance.py
+- Format code for consistency
+
+Implements Copilot AI review suggestions for maintainability and clarity.",0.0,Incomplete or Inadequate Code Documentation​,"Complex, Long, or Inadequate Logic​, Missing Constant Usage​, Unnecessary Code​",Incomplete or Inadequate Code Documentation​,"Complex, Long, or Inadequate Logic​, Missing Constant Usage​, Unnecessary Code​",
+cfebbafedd0f142832b6a1e9d58590e20078b722,Refactor local agent test for clarity,0.25,"Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Wrong, Missing, or Inadequate String Expression or Literal​",Inconsistent or Disrupted Formatting​,"Incomplete or Inadequate Code Documentation​, Wrong, Missing, or Inadequate String Expression or Literal​","Complex, Long, or Inadequate Logic​"
+d00787a336398020dc5fd25d2b6ddc857b13dcc7,fix: update event label titles for clarity and improve modal styling,0.0,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,
+d2c35a1e94fe7247485208b541b1bc6e17f2f896,"Optimize inefficient range-length loops for better performance
+
+- Replace for i in range(len(list)) patterns with list comprehensions
+- Optimize generate_output_token_counts() and generate_output_token_counts_from_existing() in throughput_benchmarks.py
+- Optimize deepspeed_result_to_tokens() using zip() for cleaner iteration
+- Add comprehensive efficiency analysis report documenting optimization opportunities
+
+These changes improve performance by eliminating unnecessary index calculations
+and make the code more readable and Pythonic.
+
+Co-Authored-By: Brooke Peterson <brookelpeterson63@gmail.com>",0.25,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​","Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",Inadequate Logging and Monitoring​,"Complex, Long, or Inadequate Logic​"
+d3ba81231855db7e090d31d2b421baf51fd08813,"Improve charging profile UI and time slot selection
+
+Replaces the numeric input for time resolution with a selectbox for slot duration, displaying the resulting number of slots per day. Charging profile editors for home and work are now collapsible using expanders, and container borders are added for clarity. Various section headers and comments are updated for consistency and readability.",0.25,"Inadequate Logging and Monitoring​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​","Inadequate Logging and Monitoring​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​",Incomplete or Inadequate Code Documentation​
+d65055aeb2d8873f2f5c48312183ed5a6728d5c7,refactor(fetching): improve readability and modularity,0.25,"Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Missing Constant Usage​",Inconsistent or Disrupted Formatting​,"Incomplete or Inadequate Code Documentation​, Missing Constant Usage​","Complex, Long, or Inadequate Logic​"
+d6acd9c249198b947d31b410dd52962d72306c6d,"Trying out timeouts (#1840)
+
+* Make tests green again
+
+* Add Git validations for publishing tools  (#1381)
+
+This commit prevents tools from being published if the underlying Git
+repository is unsynced with origin.
+
+* fix: JSON encoding date objects (#1374)
+
+* Update README  (#1376)
+
+* Change all instaces of crewAI to CrewAI and fix installation step
+
+* Update the  example to use YAML format
+
+* Update  to come after setup and edits
+
+* Remove double tool instance
+
+* docs: correct miswritten command name (#1365)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Add `--force` option to `crewai tool publish` (#1383)
+
+This commit adds an option to bypass Git remote validations when
+publishing tools.
+
+* add plotting to flows documentation (#1394)
+
+* Brandon/cre 288 add telemetry to flows (#1391)
+
+* Telemetry for flows
+
+* store node names
+
+* Brandon/cre 291 flow improvements (#1390)
+
+* Implement joao feedback
+
+* update colors for crew nodes
+
+* clean up
+
+* more linting clean up
+
+* round legend corners
+
+---------
+
+Co-authored-by: João Moura <joaomdmoura@gmail.com>
+
+* quick fixes (#1385)
+
+* quick fixes
+
+* add generic name
+
+---------
+
+Co-authored-by: João Moura <joaomdmoura@gmail.com>
+
+* reduce import time by 6x (#1396)
+
+* reduce import by 6x
+
+* fix linting
+
+* Added version details (#1402)
+
+Co-authored-by: João Moura <joaomdmoura@gmail.com>
+
+* Update twitter logo to x-twiiter (#1403)
+
+* fix task cloning error (#1416)
+
+* Migrate docs from MkDocs to Mintlify (#1423)
+
+* add new mintlify docs
+
+* add favicon.svg
+
+* minor edits
+
+* add github stats
+
+* Fix/logger - fix #1412 (#1413)
+
+* improved logger
+
+* log file looks better
+
+* better lines written to log file
+
+---------
+
+Co-authored-by: João Moura <joaomdmoura@gmail.com>
+
+* fixing tests
+
+* preparing new version
+
+* updating init
+
+* Preparing new version
+
+* Trying to fix linting and other warnings (#1417)
+
+* Trying to fix linting
+
+* fixing more type issues
+
+* clean up ci
+
+* more ci fixes
+
+---------
+
+Co-authored-by: Eduardo Chiarotti <dudumelgaco@hotmail.com>
+
+* Feat/poetry to uv migration (#1406)
+
+* feat: Start migrating to UV
+
+* feat: add uv to flows
+
+* feat: update docs on Poetry -> uv
+
+* feat: update docs and uv.locl
+
+* feat: update tests and github CI
+
+* feat: run ruff format
+
+* feat: update typechecking
+
+* feat: fix type checking
+
+* feat: update python version
+
+* feat: type checking gic
+
+* feat: adapt uv command to run the tool repo
+
+* Adapt tool build command to uv
+
+* feat: update logic to let only projects with crew to be deployed
+
+* feat: add uv to tools
+
+* fix; tests
+
+* fix: remove breakpoint
+
+* fix :test
+
+* feat: add crewai update to migrate from poetry to uv
+
+* fix: tests
+
+* feat: add validation for ˆ character on pyproject
+
+* feat: add run_crew to pyproject if doesnt exist
+
+* feat: add validation for poetry migration
+
+* fix: warning
+
+---------
+
+Co-authored-by: Vinicius Brasil <vini@hey.com>
+
+* fix: training issue (#1433)
+
+* fix: training issue
+
+* fix: output from crew
+
+* fix: message
+
+* Use a slice for the manager request. Make the task use the agent i18n settings (#1446)
+
+* Fix Cache Typo in Documentation (#1441)
+
+* Correct the role for the message being added to the messages list (#1438)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* fix typo in template file (#1432)
+
+* Adapt Tools CLI to uv (#1455)
+
+* Adapt Tools CLI to UV
+
+* Fix failing test
+
+* use the same i18n as the agent for tool usage (#1440)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Upgrade docs to mirror change from `Poetry` to `UV` (#1451)
+
+* Update docs to use  instead of
+
+* Add Flows YouTube tutorial & link images
+
+* feat: ADd warning from poetry -> uv (#1458)
+
+* feat/updated CLI to allow for model selection & submitting API keys (#1430)
+
+* updated CLI to allow for submitting API keys
+
+* updated click prompt to remove default number
+
+* removed all unnecessary comments
+
+* feat: implement crew creation CLI command
+
+- refactor code to multiple functions
+- Added ability for users to select provider and model when uing crewai create command and ave API key to .env
+
+* refactered select_choice function for early return
+
+* refactored  select_provider to have an ealry return
+
+* cleanup of comments
+
+* refactor/Move functions into utils file, added new provider file and migrated fucntions thre, new constants file + general function refactor
+
+* small comment cleanup
+
+* fix unnecessary deps
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+Co-authored-by: Brandon Hancock <brandon@brandonhancock.io>
+
+* Fix incorrect parameter name in Vision tool docs page (#1461)
+
+Co-authored-by: João Moura <joaomdmoura@gmail.com>
+
+* Feat/memory base (#1444)
+
+* byom - short/entity memory
+
+* better
+
+* rm uneeded
+
+* fix text
+
+* use context
+
+* rm dep and sync
+
+* type check fix
+
+* fixed test using new cassete
+
+* fixing types
+
+* fixed types
+
+* fix types
+
+* fixed types
+
+* fixing types
+
+* fix type
+
+* cassette update
+
+* just mock the return of short term mem
+
+* remove print
+
+* try catch block
+
+* added docs
+
+* dding error handling here
+
+* preparing new version
+
+* fixing annotations
+
+* fix tasks and agents ordering
+
+* Avoiding exceptions
+
+* feat: add poetry.lock to uv migration (#1468)
+
+* fix tool calling issue (#1467)
+
+* fix tool calling issue
+
+* Update tool type check
+
+* Drop print
+
+* cutting new version
+
+* new verison
+
+* Adapt `crewai tool install <tool>` to uv (#1481)
+
+This commit updates the tool install comamnd to uv's new custom index
+feature.
+
+Related: https://github.com/astral-sh/uv/pull/7746/
+
+* fix(docs): typo (#1470)
+
+* drop unneccesary tests (#1484)
+
+* drop uneccesary tests
+
+* fix linting
+
+* simplify flow (#1482)
+
+* simplify flow
+
+* propogate changes
+
+* Update docs and scripts
+
+* Template fix
+
+* make flow kickoff sync
+
+* Clean up docs
+
+* Add Cerebras LLM example configuration to LLM docs (#1488)
+
+* ensure original embedding config works (#1476)
+
+* ensure original embedding config works
+
+* some fixes
+
+* raise error on unsupported provider
+
+* WIP: brandons notes
+
+* fixes
+
+* rm prints
+
+* fixed docs
+
+* fixed run types
+
+* updates to add more docs and correct imports with huggingface embedding server enabled
+
+---------
+
+Co-authored-by: Brandon Hancock <brandon@brandonhancock.io>
+
+* use copy to split testing and training on crews (#1491)
+
+* use copy to split testing and training on crews
+
+* make tests handle new copy functionality on train and test
+
+* fix last test
+
+* fix test
+
+* preparing new verison
+
+* fix/fixed missing API prompt + CLI docs update (#1464)
+
+* updated CLI to allow for submitting API keys
+
+* updated click prompt to remove default number
+
+* removed all unnecessary comments
+
+* feat: implement crew creation CLI command
+
+- refactor code to multiple functions
+- Added ability for users to select provider and model when uing crewai create command and ave API key to .env
+
+* refactered select_choice function for early return
+
+* refactored  select_provider to have an ealry return
+
+* cleanup of comments
+
+* refactor/Move functions into utils file, added new provider file and migrated fucntions thre, new constants file + general function refactor
+
+* small comment cleanup
+
+* fix unnecessary deps
+
+* Added docs for new CLI provider + fixed missing API prompt
+
+* Minor doc updates
+
+* allow user to bypass api key entry + incorect number selected logic + ruff formatting
+
+* ruff updates
+
+* Fix spelling mistake
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+Co-authored-by: Brandon Hancock <brandon@brandonhancock.io>
+
+* chore(readme-fix): fixing step for 'running tests' in the contribution section (#1490)
+
+Co-authored-by: Eduardo Chiarotti <dudumelgaco@hotmail.com>
+
+* support unsafe code execution. add in docker install and running checks. (#1496)
+
+* support unsafe code execution. add in docker install and running checks.
+
+* Update return type
+
+* Fix memory imports for embedding functions (#1497)
+
+* updating crewai version
+
+* new version
+
+* new version
+
+* update plot command (#1504)
+
+* feat: add tomli so we can support 3.10 (#1506)
+
+* feat: add tomli so we can support 3.10
+
+* feat: add validation for poetry data
+
+* Forward install command options to `uv sync` (#1510)
+
+Allow passing additional options from `crewai install` directly to
+`uv sync`. This enables commands like `crewai install --locked` to work
+as expected by forwarding all flags and options to the underlying uv
+command.
+
+* improve tool text description and args (#1512)
+
+* improve tool text descriptoin and args
+
+* fix lint
+
+* Drop print
+
+* add back in docstring
+
+* Improve tooling docs
+
+* Update flow docs to talk about self evaluation example
+
+* Update flow docs to talk about self evaluation example
+
+* Update flows.mdx - Fix link
+
+* Update flows cli to allow you to easily add additional crews to a flow (#1525)
+
+* Update flows cli to allow you to easily add additional crews to a flow
+
+* fix failing test
+
+* adding more error logs to test thats failing
+
+* try again
+
+* Bugfix/flows with multiple starts plus ands breaking (#1531)
+
+* bugfix/flows-with-multiple-starts-plus-ands-breaking
+
+* fix user found issue
+
+* remove prints
+
+* prepare new version
+
+* Added security.md file (#1533)
+
+* Disable telemetry explicitly (#1536)
+
+* Disable telemetry explicitly
+
+* fix linting
+
+* revert parts to og
+
+* Enhance log storage to support more data types (#1530)
+
+* Add llm providers accordion group (#1534)
+
+* add llm providers accordion group
+
+* fix numbering
+
+* Replace .netrc with uv environment variables (#1541)
+
+This commit replaces .netrc with uv environment variables for installing
+tools from private repositories. To store credentials, I created a new
+and reusable settings file for the CLI in
+`$HOME/.config/crewai/settings.json`.
+
+The issue with .netrc files is that they are applied system-wide and are
+scoped by hostname, meaning we can't differentiate tool repositories
+requests from regular requests to CrewAI's API.
+
+* refactor: Move BaseTool to main package and centralize tool description generation (#1514)
+
+* move base_tool to main package and consolidate tool desscription generation
+
+* update import path
+
+* update tests
+
+* update doc
+
+* add base_tool test
+
+* migrate agent delegation tools to use BaseTool
+
+* update tests
+
+* update import path for tool
+
+* fix lint
+
+* update param signature
+
+* add from_langchain to BaseTool for backwards support of langchain tools
+
+* fix the case where StructuredTool doesn't have func
+
+---------
+
+Co-authored-by: c0dez <li@vitablehealth.com>
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Update docs  (#1550)
+
+* add llm providers accordion group
+
+* fix numbering
+
+* Fix directory tree & add llms to accordion
+
+* Feat/ibm memory (#1549)
+
+* Everything looks like its working. Waiting for lorenze review.
+
+* Update docs as well.
+
+* clean up for PR
+
+* add inputs to flows (#1553)
+
+* add inputs to flows
+
+* fix flows lint
+
+* Increase providers fetching timeout
+
+* Raise an error if an LLM doesnt return a response (#1548)
+
+* docs update (#1558)
+
+* add llm providers accordion group
+
+* fix numbering
+
+* Fix directory tree & add llms to accordion
+
+* update crewai enterprise link in docs
+
+* Feat/watson in cli (#1535)
+
+* getting cli and .env to work together for different models
+
+* support new models
+
+* clean up prints
+
+* Add support for cerebras
+
+* Fix watson keys
+
+* Fix flows to support cycles and added in test (#1556)
+
+* fix missing config (#1557)
+
+* making sure we don't check for agents that were not used in the crew
+
+* preparing new version
+
+* updating LLM docs
+
+* preparing new version
+
+* curring new version
+
+* preparing new version
+
+* preparing new version
+
+* add missing init
+
+* fix LiteLLM callback replacement
+
+* fix test_agent_usage_metrics_are_captured_for_hierarchical_process
+
+* removing prints
+
+* fix: Step callback issue (#1595)
+
+* fix: Step callback issue
+
+* fix: Add empty thought since its required
+
+* Cached prompt tokens on usage metrics
+
+* do not include cached on total
+
+* Fix crew_train_success test
+
+* feat: Reduce level for Bandit and fix code to adapt (#1604)
+
+* Add support for retrieving user preferences and memories using Mem0 (#1209)
+
+* Integrate Mem0
+
+* Update src/crewai/memory/contextual/contextual_memory.py
+
+Co-authored-by: Deshraj Yadav <deshraj@gatech.edu>
+
+* pending commit for _fetch_user_memories
+
+* update poetry.lock
+
+* fixes mypy issues
+
+* fix mypy checks
+
+* New fixes for user_id
+
+* remove memory_provider
+
+* handle memory_provider
+
+* checks for memory_config
+
+* add mem0 to dependency
+
+* Update pyproject.toml
+
+Co-authored-by: Deshraj Yadav <deshraj@gatech.edu>
+
+* update docs
+
+* update doc
+
+* bump mem0 version
+
+* fix api error msg and mypy issue
+
+* mypy fix
+
+* resolve comments
+
+* fix memory usage without mem0
+
+* mem0 version bump
+
+* lazy import mem0
+
+---------
+
+Co-authored-by: Deshraj Yadav <deshraj@gatech.edu>
+Co-authored-by: João Moura <joaomdmoura@gmail.com>
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* upgrade chroma and adjust embedder function generator (#1607)
+
+* upgrade chroma and adjust embedder function generator
+
+* >= version
+
+* linted
+
+* preparing enw version
+
+* adding before and after crew
+
+* Update CLI Watson supported models + docs (#1628)
+
+* docs: add gh_token documentation to GithubSearchTool
+
+* Move kickoff callbacks to crew's domain
+
+* Cassettes
+
+* Make mypy happy
+
+* Knowledge (#1567)
+
+* initial knowledge
+
+* WIP
+
+* Adding core knowledge sources
+
+* Improve types and better support for file paths
+
+* added additional sources
+
+* fix linting
+
+* update yaml to include optional deps
+
+* adding in lorenze feedback
+
+* ensure embeddings are persisted
+
+* improvements all around Knowledge class
+
+* return this
+
+* properly reset memory
+
+* properly reset memory+knowledge
+
+* consolodation and improvements
+
+* linted
+
+* cleanup rm unused embedder
+
+* fix test
+
+* fix duplicate
+
+* generating cassettes for knowledge test
+
+* updated default embedder
+
+* None embedder to use default on pipeline cloning
+
+* improvements
+
+* fixed text_file_knowledge
+
+* mypysrc fixes
+
+* type check fixes
+
+* added extra cassette
+
+* just mocks
+
+* linted
+
+* mock knowledge query to not spin up db
+
+* linted
+
+* verbose run
+
+* put a flag
+
+* fix
+
+* adding docs
+
+* better docs
+
+* improvements from review
+
+* more docs
+
+* linted
+
+* rm print
+
+* more fixes
+
+* clearer docs
+
+* added docstrings and type hints for cli
+
+---------
+
+Co-authored-by: João Moura <joaomdmoura@gmail.com>
+Co-authored-by: Lorenze Jay <lorenzejaytech@gmail.com>
+
+* Updated README.md, fix typo(s) (#1637)
+
+* Update Perplexity example in documentation (#1623)
+
+* Fix threading
+
+* preparing new version
+
+* Log in to Tool Repository on `crewai login` (#1650)
+
+This commit adds an extra step to `crewai login` to ensure users also
+log in to Tool Repository, that is, exchanging their Auth0 tokens for a
+Tool Repository username and password to be used by UV downloads and API
+tool uploads.
+
+* add knowledge to mint.json
+
+* Improve typed task outputs (#1651)
+
+* V1 working
+
+* clean up imports and prints
+
+* more clean up and add tests
+
+* fixing tests
+
+* fix test
+
+* fix linting
+
+* Fix tests
+
+* Fix linting
+
+* add doc string as requested by eduardo
+
+* Update Github actions (#1639)
+
+* actions/checkout@v4
+
+* actions/cache@v4
+
+* actions/setup-python@v5
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* update (#1638)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* fix spelling issue found by @Jacques-Murray (#1660)
+
+* Update readme for running mypy (#1614)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Feat/remove langchain (#1654)
+
+* feat: add initial changes from langchain
+
+* feat: remove kwargs of being processed
+
+* feat: remove langchain, update uv.lock and fix type_hint
+
+* feat: change docs
+
+* feat: remove forced requirements for parameter
+
+* feat add tests for new structure tool
+
+* feat: fix tests and adapt code for args
+
+* Feat/remove langchain (#1668)
+
+* feat: add initial changes from langchain
+
+* feat: remove kwargs of being processed
+
+* feat: remove langchain, update uv.lock and fix type_hint
+
+* feat: change docs
+
+* feat: remove forced requirements for parameter
+
+* feat add tests for new structure tool
+
+* feat: fix tests and adapt code for args
+
+* fix tool calling for langchain tools
+
+* doc strings
+
+---------
+
+Co-authored-by: Eduardo Chiarotti <dudumelgaco@hotmail.com>
+
+* added knowledge to agent level (#1655)
+
+* added knowledge to agent level
+
+* linted
+
+* added doc
+
+* added from suggestions
+
+* added test
+
+* fixes from discussion
+
+* fix docs
+
+* fix test
+
+* rm cassette for knowledge_sources test as its a mock and update agent doc string
+
+* fix test
+
+* rm unused
+
+* linted
+
+* Update Agents docs to include two approaches for creating an agent: with and without YAML configuration
+
+* Documentation Improvements: LLM Configuration and Usage (#1684)
+
+* docs: improve tasks documentation clarity and structure
+
+- Add Task Execution Flow section
+- Add variable interpolation explanation
+- Add Task Dependencies section with examples
+- Improve overall document structure and readability
+- Update code examples with proper syntax highlighting
+
+* docs: update agent documentation with improved examples and formatting
+
+- Replace DuckDuckGoSearchRun with SerperDevTool
+- Update code block formatting to be consistent
+- Improve template examples with actual syntax
+- Update LLM examples to use current models
+- Clean up formatting and remove redundant comments
+
+* docs: enhance LLM documentation with Cerebras provider and formatting improvements
+
+* docs: simplify LLMs documentation title
+
+* docs: improve installation guide clarity and structure
+
+- Add clear Python version requirements with check command
+- Simplify installation options to recommended method
+- Improve upgrade section clarity for existing users
+- Add better visual structure with Notes and Tips
+- Update description and formatting
+
+* docs: improve introduction page organization and clarity
+
+- Update organizational analogy in Note section
+- Improve table formatting and alignment
+- Remove emojis from component table for cleaner look
+- Add 'helps you' to make the note more action-oriented
+
+* docs: add enterprise and community cards
+
+- Add Enterprise deployment card in quickstart
+- Add community card focused on open source discussions
+- Remove deployment reference from community description
+- Clean up introduction page cards
+- Remove link from Enterprise description text
+
+* Fixes issues with result as answer not properly exiting LLM loop (#1689)
+
+* v1 of fix implemented. Need to confirm with tokens.
+
+* remove print statements
+
+* preparing new version
+
+* fix missing code in flows docs (#1690)
+
+* docs: improve tasks documentation clarity and structure
+
+- Add Task Execution Flow section
+- Add variable interpolation explanation
+- Add Task Dependencies section with examples
+- Improve overall document structure and readability
+- Update code examples with proper syntax highlighting
+
+* docs: update agent documentation with improved examples and formatting
+
+- Replace DuckDuckGoSearchRun with SerperDevTool
+- Update code block formatting to be consistent
+- Improve template examples with actual syntax
+- Update LLM examples to use current models
+- Clean up formatting and remove redundant comments
+
+* docs: enhance LLM documentation with Cerebras provider and formatting improvements
+
+* docs: simplify LLMs documentation title
+
+* docs: improve installation guide clarity and structure
+
+- Add clear Python version requirements with check command
+- Simplify installation options to recommended method
+- Improve upgrade section clarity for existing users
+- Add better visual structure with Notes and Tips
+- Update description and formatting
+
+* docs: improve introduction page organization and clarity
+
+- Update organizational analogy in Note section
+- Improve table formatting and alignment
+- Remove emojis from component table for cleaner look
+- Add 'helps you' to make the note more action-oriented
+
+* docs: add enterprise and community cards
+
+- Add Enterprise deployment card in quickstart
+- Add community card focused on open source discussions
+- Remove deployment reference from community description
+- Clean up introduction page cards
+- Remove link from Enterprise description text
+
+* docs: add code snippet to Getting Started section in flows.mdx
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Update reset memories command based on the SDK (#1688)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Update using langchain tools docs (#1664)
+
+* Update example of how to use LangChain tools with correct syntax
+
+* Use .env
+
+* Add  Code back
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* [FEATURE] Support for custom path in RAGStorage (#1659)
+
+* added path to RAGStorage
+
+* added path to short term and entity memory
+
+* add path for long_term_storage for completeness
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* [Doc]: Add documenation for openlit observability (#1612)
+
+* Create openlit-observability.mdx
+
+* Update doc with images and steps
+
+* Update mkdocs.yml and add OpenLIT guide link
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Fix indentation in llm-connections.mdx code block (#1573)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Knowledge project directory standard (#1691)
+
+* Knowledge project directory standard
+
+* fixed types
+
+* comment fix
+
+* made base file knowledge source an abstract class
+
+* cleaner validator on model_post_init
+
+* fix type checker
+
+* cleaner refactor
+
+* better template
+
+* Update README.md (#1694)
+
+Corrected the statement which says users can not disable telemetry, but now users can disable by setting the environment variable OTEL_SDK_DISABLED to true.
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Talk about getting structured consistent outputs with tasks.
+
+* remove all references to pipeline and pipeline router (#1661)
+
+* remove all references to pipeline and router
+
+* fix linting
+
+* drop poetry.lock
+
+* docs: add nvidia as provider (#1632)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* add knowledge demo + improve knowledge docs (#1706)
+
+* Brandon/cre 509 hitl multiple rounds of followup (#1702)
+
+* v1 of HITL working
+
+* Drop print statements
+
+* HITL code more robust. Still needs to be refactored.
+
+* refactor and more clear messages
+
+* Fix type issue
+
+* fix tests
+
+* Fix test again
+
+* Drop extra print
+
+* New docs about yaml crew with decorators. Simplify template crew with… (#1701)
+
+* New docs about yaml crew with decorators. Simplify template crew with links
+
+* Fix spelling issues.
+
+* updating tools
+
+* curting new verson
+
+* Incorporate Stale PRs that have feedback (#1693)
+
+* incorporate #1683
+
+* add in --version flag to cli. closes #1679.
+
+* Fix env issue
+
+* Add in suggestions from @caike to make sure ragstorage doesnt exceed os file limit. Also, included additional checks to support windows.
+
+* remove poetry.lock as pointed out by @sanders41 in #1574.
+
+* Incorporate feedback from crewai reviewer
+
+* Incorporate @lorenzejay feedback
+
+* drop metadata requirement (#1712)
+
+* drop metadata requirement
+
+* fix linting
+
+* Update docs for new knowledge
+
+* more linting
+
+* more linting
+
+* make save_documents private
+
+* update docs to the new way we use knowledge and include clearing memory
+
+* add support for langfuse with litellm (#1721)
+
+* docs: Add quotes to agentops installing command (#1729)
+
+* docs: Add quotes to agentops installing command
+
+* feat: Add ContextualMemory to __init__
+
+* feat: remove import due to circular improt
+
+* feat: update tasks config main template typos
+
+* Fixed output_file not respecting system path (#1726)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* fix:typo error (#1732)
+
+* Update crew_agent_executor.py
+
+typo error
+
+* Update en.json
+
+typo error
+
+* Fix Knowledge docs Spaceflight News API dead link
+
+* call storage.search in user context search instead of memory.search (#1692)
+
+Co-authored-by: Eduardo Chiarotti <dudumelgaco@hotmail.com>
+
+* Add doc structured tool (#1713)
+
+* Add doc structured tool
+
+* Fix example
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* _execute_tool_and_check_finality 结果给回调参数，这样就可以提前拿到结果信息，去做数据解析判断做预判 (#1716)
+
+Co-authored-by: xiaohan <fuck@qq.com>
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* format bullet points (#1734)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Add missing @functools.wraps when wrapping functions and preserve wrapped class name in @CrewBase. (#1560)
+
+* Update annotations.py
+
+* Update utils.py
+
+* Update crew_base.py
+
+* Update utils.py
+
+* Update crew_base.py
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Fix disk I/O error when resetting short-term memory. (#1724)
+
+* Fix disk I/O error when resetting short-term memory.
+
+Reset chromadb client and nullifies references before
+removing directory.
+
+* Nit for clarity
+
+* did the same for knowledge_storage
+
+* cleanup
+
+* cleanup order
+
+* Cleanup after the rm of the directories
+
+---------
+
+Co-authored-by: Lorenze Jay <lorenzejaytech@gmail.com>
+Co-authored-by: Lorenze Jay <63378463+lorenzejay@users.noreply.github.com>
+
+* restrict python version compatibility (#1731)
+
+* drop 3.13
+
+* revert
+
+* Drop test cassette that was causing error
+
+* trying to fix failing test
+
+* adding thiago changes
+
+* resolve final tests
+
+* Drop skip
+
+* Bugfix/restrict python version compatibility (#1736)
+
+* drop 3.13
+
+* revert
+
+* Drop test cassette that was causing error
+
+* trying to fix failing test
+
+* adding thiago changes
+
+* resolve final tests
+
+* Drop skip
+
+* drop pipeline
+
+* Update pyproject.toml and uv.lock to drop crewai-tools as a default requirement (#1711)
+
+* copy googles changes. Fix tests. Improve LLM file (#1737)
+
+* copy googles changes. Fix tests. Improve LLM file
+
+* Fix type issue
+
+* fix:typo error (#1738)
+
+* Update base_agent_tools.py
+
+typo error
+
+* Update main.py
+
+typo error
+
+* Update base_file_knowledge_source.py
+
+typo error
+
+* Update test_main.py
+
+typo error
+
+* Update en.json
+
+* Update prompts.json
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Remove manager_callbacks reference (#1741)
+
+* include event emitter in flows (#1740)
+
+* include event emitter in flows
+
+* Clean up
+
+* Fix linter
+
+* sort imports with isort rules by ruff linter (#1730)
+
+* sort imports
+
+* update
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+Co-authored-by: Eduardo Chiarotti <dudumelgaco@hotmail.com>
+
+* Added is_auto_end flag in agentops.end session in crew.py (#1320)
+
+When using agentops, we have the option to pass the `skip_auto_end_session` parameter, which is supposed to not end the session if the `end_session` function is called by Crew.
+
+Now the way it works is, the `agentops.end_session` accepts `is_auto_end` flag and crewai should have passed it as `True` (its `False` by default). 
+
+I have changed the code to pass is_auto_end=True
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* NVIDIA Provider : UI changes (#1746)
+
+* docs: add nvidia as provider
+
+* nvidia ui docs changes
+
+* add note for updated list
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Fix small typo in sample tool (#1747)
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Feature/add workflow permissions (#1749)
+
+* fix: Call ChromaDB reset before removing storage directory to fix disk I/O errors
+
+* feat: add workflow permissions to stale.yml
+
+* revert rag_storage.py changes
+
+* revert rag_storage.py changes
+
+---------
+
+Co-authored-by: Matt B <mattb@Matts-MacBook-Pro.local>
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* remove pkg_resources which was causing issues (#1751)
+
+* apply agent ops changes and resolve merge conflicts (#1748)
+
+* apply agent ops changes and resolve merge conflicts
+
+* Trying to fix tests
+
+* add back in vcr
+
+* update tools
+
+* remove pkg_resources which was causing issues
+
+* Fix tests
+
+* experimenting to see if unique content is an issue with knowledge
+
+* experimenting to see if unique content is an issue with knowledge
+
+* update chromadb which seems to have issues with upsert
+
+* generate new yaml for failing test
+
+* Investigating upsert
+
+* Drop patch
+
+* Update casettes
+
+* Fix duplicate document issue
+
+* more fixes
+
+* add back in vcr
+
+* new cassette for test
+
+---------
+
+Co-authored-by: Lorenze Jay <lorenzejaytech@gmail.com>
+
+* drop print (#1755)
+
+* Fix: CrewJSONEncoder now accepts enums (#1752)
+
+* bugfix: CrewJSONEncoder now accepts enums
+
+* sort imports
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Fix bool and null handling (#1771)
+
+* include 12 but not 13
+
+* change to <13 instead of <=12
+
+* Gemini 2.0 (#1773)
+
+* Update llms.mdx (Gemini 2.0)
+
+- Add Gemini 2.0 flash to Gemini table.
+- Add link to 2 hosting paths for Gemini in Tip.
+- Change to lower case model slugs vs names, user convenience.
+- Add https://artificialanalysis.ai/ as alternate leaderboard.
+- Move Gemma to ""other"" tab.
+
+* Update llm.py (gemini 2.0)
+
+Add setting for Gemini 2.0 context window to llm.py
+
+---------
+
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* Remove relative import in flow `main.py` template (#1782)
+
+* Add `tool.crewai.type` pyproject attribute in templates (#1789)
+
+* Correcting a small grammatical issue that was bugging me: from _satisfy the expect criteria_ to _satisfies the expected criteria_ (#1783)
+
+Signed-off-by: PJ Hagerty <pjhagerty@gmail.com>
+Co-authored-by: Brandon Hancock (bhancock_ai) <109994880+bhancockio@users.noreply.github.com>
+
+* feat: Add task guardrails feature (#1742)
+
+* feat: Add task guardrails feature
+
+Add support for custom code guardrails in tasks that validate outputs
+before proceeding to the next task. Features include:
+
+- Optional task-level guardrail function
+- Pre-next-task execution timing
+- Tuple return format (success, data)
+- Automatic result/error routing
+- Configurable retry mechanism
+- Comprehensive documentation and tests
+
+Link to Devin run: https://app.devin.ai/sessions/39f6cfd6c5a24d25a7bd70ce070ed29a
+
+Co-Authored-By: Joe Moura <joao@crew",0.0,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,
+d6c2a3d06b147387f3222e86b3f8517a07461103,Refactor test helpers to improve readability and reduce code duplication,0.0,"Bad Identifier​, Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​",,"Bad Identifier​, Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​",,
+d7fb5a5359b538ac73c874998f1244ce6ea4d6ff,"Add pyproject.toml and refactor import paths in tests
+
+- Created a new pyproject.toml file to define the build system and project metadata.
+- Refactored import statements in test files to use the new package structure under 'backend'.
+- Cleaned up comments and formatting in the parser_and_ml_example.py script for clarity.",0.25,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​, Missing Constant Usage​","Inconsistent or Disrupted Formatting​, Unnecessary Code​","Incomplete or Inadequate Code Documentation​, Missing Constant Usage​",Unnecessary Code​,Inconsistent or Disrupted Formatting​
+d8393d57b3562c04b7364255457c241755a04614,Refactor agent code for clarity,0.3333333333333333,"Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​",Inconsistent or Disrupted Formatting​,Incomplete or Inadequate Code Documentation​,"Complex, Long, or Inadequate Logic​"
+d851741a251e1dacb6f4d021c375561e8b79e44b,"fix: address all 32 CodeRabbit review suggestions for production polish
+
+Security Enhancements:
+- Add CSP headers and meta tags for security hardening
+- Sanitize error messages to prevent XSS vulnerabilities
+- Add accessibility improvements with ARIA labels
+
+Backend Performance & Cleanup:
+- Add database indexes on timestamp columns for query optimization
+- Remove unused SQLAlchemy imports (func, and_) from monitoring router
+- Improve model import formatting for better readability
+
+Frontend Component Improvements:
+- Fix navigation active state logic to prevent false positives
+- Improve loading state management across all components
+- Add defensive programming for API response handling
+- Optimize chart time formatting for different ranges
+- Make Y-axis domains dynamic instead of hard-coded
+
+WebSocket Service Enhancements:
+- Add connection timeout and validation for outgoing messages
+- Remove unused refs and improve connection management
+- Add proper error handling for WebSocket events
+
+State Management Optimizations:
+- Use useCallback to prevent unnecessary re-renders in Settings
+- Remove unused state fields to reduce component complexity
+- Optimize deep state updates with structural sharing
+
+Configuration Improvements:
+- Add additional npm scripts for development workflow
+- Make site filter options dynamic and configurable
+- Improve package.json structure with proper scripts
+
+Code Quality Fixes:
+- Remove dead code and unused variables
+- Improve error boundaries and fallback handling
+- Add proper TypeScript-ready configuration
+- Enhance accessibility with proper ARIA attributes
+
+All 32 suggestions addressed for production-ready monitoring dashboard.
+
+🚀 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",0.14285714285714285,"Bad Identifier​, Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Unnecessary Code​, Wrong, Missing, or Inadequate String Expression or Literal​","Bad Identifier​, Inadequate Logging and Monitoring​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​","Unnecessary Code​, Wrong, Missing, or Inadequate String Expression or Literal​","Complex, Long, or Inadequate Logic​"
+d8f9b53f3560af2f76c2d86bac0bc85d2bbaa458,refactor(term_mapper): improve readability and structure,0.16666666666666666,"Bad Identifier​, Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Incomplete or Inadequate Code Documentation​, Missing Constant Usage​","Bad Identifier​, Inconsistent or Disrupted Formatting​","Inadequate Logging and Monitoring​, Incomplete or Inadequate Code Documentation​, Missing Constant Usage​","Complex, Long, or Inadequate Logic​"
+dab5b5c59f2b20bb8750ae44381a201d0c7607ca,"Fix deployment architecture: standardize on ECS Fargate over App Runner
+
+- Update CI workflow to use requirements.txt instead of requirements-apprunner.txt
+- Remove unused App Runner IAM roles and references from infrastructure
+- Update IAM role names from app_runner_role to ecs_task_role for clarity
+- Update UI and documentation to reflect ECS Fargate deployment
+- Optimize Docker health check configuration for ECS Fargate
+- Add comprehensive test script for FastAPI functionality
+- Remove requirements-apprunner.txt file (no longer needed)
+
+All tests pass locally:
+- FastAPI app imports and starts correctly
+- Docker builds and runs successfully
+- Health endpoints respond properly
+- All dependencies available
+
+Co-Authored-By: John Lowry <jrlowry@gmail.com>",0.2,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Inconsistent or Disrupted Formatting​","Bad Identifier​, Complex, Long, or Inadequate Logic​, Unnecessary Code​","Inadequate Logging and Monitoring​, Inconsistent or Disrupted Formatting​","Bad Identifier​, Unnecessary Code​","Complex, Long, or Inadequate Logic​"
+dea1d7f2ab3e1e2fe3c2f20cd124578f63aff043,More readable CLI output,0.0,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",Inadequate Logging and Monitoring​,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",Inadequate Logging and Monitoring​,
+e00764fe9a7196fc70e050c1d2627b305f3c50d1,Refactor main script for clarity,0.0,"Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​",,"Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​",,
+e0642deeaee13897d97a0128ebabccb90b44e9c6,"Improve code efficiency by moving import statement to module level
+
+- Move 'import os' from main() function to top of file with other imports
+- Follows PEP 8 best practices for import organization
+- Improves code readability and maintainability
+- Add comprehensive efficiency analysis report documenting multiple improvement opportunities
+
+Co-Authored-By: Omar G Ghafour  <omar@coderabbit.ai>",0.3333333333333333,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",Inconsistent or Disrupted Formatting​,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​",,Inconsistent or Disrupted Formatting​
+e2af306b2dc10c4074485f11d6221f321142e327,"Add linear scale chart for format size comparison with improved readability
+
+Co-authored-by: dplatt4973 <dplatt4973@live.hccc.edu>",0.0,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,
+e2c7ca202cd6b4be9813b6408f5eff2a617b3372,Poll all readable CAT commands,0.0,Bad Identifier​,,Bad Identifier​,,
+e3c6b02548be54a375379c713081b5c3fdbbd137,"Add GitHub comment posting functionality to issue scoping
+
+- Add post_analysis_comment method to IssueScoper class for posting analysis results as GitHub issue comments
+- Add --post-comment CLI flag to scope_issue_cli.py to enable comment posting
+- Include proper error handling and validation for GitHub token requirements
+- Format comments with markdown for better readability on GitHub
+- Maintain backward compatibility with existing CLI functionality
+- Update help documentation with new --post-comment example
+
+Co-Authored-By: tanyang125@gmail.com <tanyang125@gmail.com>",0.0,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Incomplete or Inadequate Code Documentation​",,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Incomplete or Inadequate Code Documentation​",,
+e470e88953976288cab702d7cb6b0c62c0cedeae,"test: Improve VertexAI configuration tests
+
+- Add error handling test case for missing location
+- Add proper type hints and imports
+- Improve test organization and readability
+
+Co-Authored-By: Joe Moura <joao@crewai.com>",0.0,"Bad Identifier​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​","Bad Identifier​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​",
+e63d2ec59eed8002eee26748b959edff59697e2c,Improve game stats readability and panel sizing,0.0,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,"Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",,
+e659c352df0404977a6836b6bf38115b9aaf75e0,"Refactor Crew class and LLM hierarchy for improved type handling and code clarity
+
+- Update Crew class methods to enhance readability with consistent formatting and type hints.
+- Change LLM class to inherit from BaseLLM for better structure.
+- Remove unnecessary type checks and streamline tool handling in CrewAgentExecutor.
+- Adjust BaseLLM to provide default implementations for stop words and context window size methods.
+- Clean up AISuiteLLM by removing unused methods related to stop words and context window size.",0.2,"Bad Identifier​, Complex, Long, or Inadequate Logic​, Inconsistent or Disrupted Formatting​, Unnecessary Code​","Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​","Bad Identifier​, Inconsistent or Disrupted Formatting​, Unnecessary Code​",Incomplete or Inadequate Code Documentation​,"Complex, Long, or Inadequate Logic​"
+e6b615cecf074e698d9a23c14660694ef7dcfd2e,Show readability metrics after summary,0.0,Incomplete or Inadequate Code Documentation​,Inadequate Logging and Monitoring​,Incomplete or Inadequate Code Documentation​,Inadequate Logging and Monitoring​,
+e7b6b9816edccd5cb020d336b855ea6a6e474537,Handle unreadable images in preprocessing,0.0,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Unnecessary Code​",,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Unnecessary Code​",,
+e85f64b8143ed8e8f85aa7f6c5a97b63c7f6b706,"Convert test cases from JSON to YAML format
+
+- Replace all JSON test case files with YAML equivalents for better human readability
+- Add PyYAML dependency to support YAML parsing
+- Update scorer.py to load YAML files with proper UTF-8 encoding
+- Use cleaner YAML syntax with multiline strings for code blocks
+- Maintain identical test case data and structure
+
+Benefits:
+- More maintainable and readable test case definitions
+- Better for version control diffs
+- Easier to write and edit by hand
+- Less verbose syntax compared to JSON
+
+Addresses PR feedback requesting YAML format over JSON.
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",0.0,"Inconsistent or Disrupted Formatting​, Wrong, Missing, or Inadequate String Expression or Literal​","Complex, Long, or Inadequate Logic​","Inconsistent or Disrupted Formatting​, Wrong, Missing, or Inadequate String Expression or Literal​","Complex, Long, or Inadequate Logic​",
+eb6439f215b3612deadcdd73d5a7eae6bd3c6d02,"feat: complete comprehensive testing suite and finalize code quality improvements
+
+- Add comprehensive test suites for all major components:
+  * Server router and service tests with mocking and error handling
+  * Group router tests covering CRUD operations and player management
+  * Backup router tests including scheduling and statistics
+  * Template router tests with cloning and access control
+  * File router tests with security validation and search functionality
+
+- Fix code quality issues:
+  * Fix boolean comparison patterns in ServerService queries
+  * Add missing shutil import in TemplateService
+  * Fix authorization service import in backup router
+  * Update SQLAlchemy query patterns for better readability
+
+- Add comprehensive API documentation:
+  * Complete endpoint reference covering all 46 use cases
+  * Role-based access control documentation
+  * Error handling and security guidelines
+  * Request/response schema documentation
+
+- All code passes linting and formatting checks
+- Tests cover authentication, authorization, validation, and error scenarios
+- Maintains backward compatibility with existing functionality
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>",0.0,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Incomplete or Inadequate Code Documentation​",,"Complex, Long, or Inadequate Logic​, Inadequate Logging and Monitoring​, Incomplete or Inadequate Code Documentation​",,
+efb34aca6a1932c427d70b8c9ce44c96eb2d8864,"Refactor image URL handling to consolidate branches
+
+- Consolidate if/else branches for image URL construction as suggested by Greptile
+- Use ternary expression to handle both cases (with/without leading slash) more concisely
+- Maintains same functionality while improving code readability
+
+Co-Authored-By: Alek <alek@pynecone.io>",0.25,"Complex, Long, or Inadequate Logic​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​, Unnecessary Code​","Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​",Unnecessary Code​,"Complex, Long, or Inadequate Logic​"
+f4efdc55e22e0e8a5d8d5c446d571155cdabc791,"refactor: implement review suggestions
+
+- Extract model conversion logic to _get_llm_instance helper method
+- Improve error message clarity
+- Simplify LLM instance creation in CrewEvaluator
+
+Co-Authored-By: Joe Moura <joao@crewai.com>",0.3333333333333333,"Bad Identifier​, Complex, Long, or Inadequate Logic​","Complex, Long, or Inadequate Logic​, Wrong, Missing, or Inadequate String Expression or Literal​",Bad Identifier​,"Wrong, Missing, or Inadequate String Expression or Literal​","Complex, Long, or Inadequate Logic​"
+f56685e24466f1e4584edb521193a93c60e2127d,"Fix code block rendering inconsistencies and update page title
+
+- Standardize all code blocks to use consistent markdown formatting
+- Replace doccmdoutput() calls with standard bash/text code blocks
+- Remove python exec imports that are no longer needed
+- Update page title to 'Custom Component CLI Reference' for clarity
+- Fix visual inconsistencies between different code block types
+
+Co-Authored-By: unknown <>",0.25,"Bad Identifier​, Incomplete or Inadequate Code Documentation​, Inconsistent or Disrupted Formatting​","Incomplete or Inadequate Code Documentation​, Unnecessary Code​","Bad Identifier​, Inconsistent or Disrupted Formatting​",Unnecessary Code​,Incomplete or Inadequate Code Documentation​
+f58d56c70a9b92afb2de9bf1884d454256d4568d,"Merge pull request #1070 from TonyDeRosia/codex/refactor-area-listing-output-for-readability
+
+Improve area listing formatting",0.0,Inconsistent or Disrupted Formatting​,,Inconsistent or Disrupted Formatting​,,
+f8e074911933c6b8abda7914149505430332ee38,Improve UI layout and readability,0.3333333333333333,"Wrong, Missing, or Inadequate String Expression or Literal​","Complex, Long, or Inadequate Logic​, Unnecessary Code​, Wrong, Missing, or Inadequate String Expression or Literal​",,"Complex, Long, or Inadequate Logic​, Unnecessary Code​","Wrong, Missing, or Inadequate String Expression or Literal​"
+f98cb53b01e7752b57902b9ccd8a06b4c13fb2a4,"docs: Add Japanese comment for login router clarity
+
+Co-Authored-By: okawa.sora@ditgroup.jp <okawa.sora@ditgroup.jp>",0.0,Incomplete or Inadequate Code Documentation​,,Incomplete or Inadequate Code Documentation​,,
+fd680895144ea9f7820ff282929157325a6103f1,"Convert raw JSON to readable markdown format in GitHub PR comments
+
+- Add format_visual_analysis_to_markdown function to convert structured JSON to markdown
+- Use emojis and clear headers for better readability (✅, ⚠️, ❌)
+- Handle missing fields gracefully - only show sections with data
+- Preserve existing collapsible structural analysis format
+- Maintain backward compatibility with existing functionality
+
+Co-Authored-By: Joao Garin <joao.garin@gmail.com>",0.25,"Bad Identifier​, Inconsistent or Disrupted Formatting​, Wrong, Missing, or Inadequate String Expression or Literal​","Complex, Long, or Inadequate Logic​, Wrong, Missing, or Inadequate String Expression or Literal​","Bad Identifier​, Inconsistent or Disrupted Formatting​","Complex, Long, or Inadequate Logic​","Wrong, Missing, or Inadequate String Expression or Literal​"
+fe3e4504e6ebaa382396a7d725063d1b6f51c6f4,Merge branch 'feature/tls-proxy-support' into codex/revise-docs/llm-proxy-server.md-for-clarity,0.0,Incomplete or Inadequate Code Documentation​,,Incomplete or Inadequate Code Documentation​,,
